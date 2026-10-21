@@ -1,0 +1,35 @@
+export default function Home() {
+  return (
+    <main style={{background:'#0a0a0a', color:'white', minHeight:'100vh', fontFamily:'system-ui'}}>
+      <header style={{padding:'24px', display:'flex', justifyContent:'space-between', borderBottom:'1px solid #222'}}>
+        <div style={{fontWeight:900, fontSize:'20px'}}><span style={{color:'#FF6B00'}}>V</span>R VELORA</div>
+        <div style={{opacity:0.6, fontSize:'12px'}}>FOUNDED BY YADAV RAVISH</div>
+      </header>
+      <div style={{padding:'40px 24px'}}>
+        <h1 style={{fontSize:'48px', fontWeight:800}}>Got an Idea?<br/><span style={{color:'#FF6B00'}}>Let&apos;s Build It.</span></h1>
+        <p style={{opacity:0.7, marginTop:'16px', maxWidth:'600px'}}>We design & build modern tools to bring your ideas to life — fast, clean, and scalable.</p>
+        
+        <div style={{marginTop:'40px', border:'2px solid #FF6B00', borderRadius:'20px', padding:'24px'}}>
+          <h2 style={{fontSize:'22px', fontWeight:700}}>⚡ LOREM PRO TOOL - 13 TOOLS SUITE</h2>
+          <p style={{opacity:0.6, fontSize:'14px'}}>All-in-one toolkit - LIVE at loremprotool.com</p>
+          <div style={{marginTop:'20px', display:'grid', gridTemplateColumns:'1fr 1fr', gap:'10px', fontSize:'13px'}}>
+            <div style={{padding:'12px', background:'#141414', borderRadius:'10px'}}>Avatar Generator HOT</div>
+            <div style={{padding:'12px', background:'#141414', borderRadius:'10px'}}>Case Converter</div>
+            <div style={{padding:'12px', background:'#141414', borderRadius:'10px'}}>Character Counter HOT</div>
+            <div style={{padding:'12px', background:'#141414', borderRadius:'10px'}}>Fake Data Generator HOT</div>
+            <div style={{padding:'12px', background:'#141414', borderRadius:'10px'}}>Password Generator HOT</div>
+            <div style={{padding:'12px', background:'#141414', borderRadius:'10px'}}>Color Palette Generator HOT</div>
+          </div>
+        </div>
+
+        <div style={{marginTop:'20px', display:'grid', gridTemplateColumns:'1fr 1fr', gap:'16px'}}>
+          <div style={{border:'1px dashed #333', borderRadius:'16px', padding:'20px', opacity:0.5}}>PRODUCT 2 - Coming Soon (Blank Template)</div>
+          <div style={{border:'1px dashed #333', borderRadius:'16px', padding:'20px', opacity:0.5}}>PRODUCT 3 - Coming Soon (Blank Template)</div>
+        </div>
+      </div>
+      <footer style={{textAlign:'center', padding:'24px', opacity:0.4, borderTop:'1px solid #222', fontSize:'12px'}}>
+        © 2026 VELORA.cloud • FOUNDED BY YADAV RAVISH • All Rights Reserved
+      </footer>
+    </main>
+  )
+}
