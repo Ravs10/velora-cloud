@@ -1,31 +1,29 @@
-<svg width="800" height="600" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
-  <!-- Background white for preview - website pe transparent lagega -->
-  <rect width="800" height="600" fill="white"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 720">
+  <rect width="800" height="720" fill="white"/>
+  <!-- VR -->
+  <path d="M 172 22 L 292 22 L 358 255 L 424 22 L 544 22 L 358 512 Z" fill="#FF7300"/>
+  <path d="M 288 22 L 538 22 C 658 22 730 112 730 222 C 730 332 658 415 538 415 L 543 420 L 658 560 L 536 560 L 424 415 L 326 415 L 378 313 L 538 313 C 586 313 612 286 612 222 C 612 158 586 129 538 129 L 372 129 L 288 22 Z" fill="#0F0F0F"/>
   
-  <!-- VR MONOGRAM -->
-  <!-- V Orange #FF6B00 -->
-  <path d="M 110 60 L 210 60 L 280 280 L 350 60 L 450 60 L 280 440 L 110 60 Z" fill="#FF7300"/>
-  <!-- R Black -->
-  <path d="M 320 60 L 510 60 C 600 60 670 120 670 200 C 670 280 600 340 520 360 L 670 480 L 550 480 L 430 370 L 350 370 L 395 280 L 510 280 C 545 280 570 260 570 225 C 570 190 545 170 510 170 L 390 170 L 320 60 Z" fill="#111111"/>
-  
-  <!-- VELORA TEXT -->
-  <!-- V -->
-  <path d="M 110 500 L 155 600 L 200 500 L 185 500 L 155 570 L 125 500 Z" fill="black"/>
-  <!-- E with 3 lines -->
-  <rect x="250" y="500" width="70" height="10" fill="black"/>
-  <rect x="250" y="542" width="50" height="10" fill="black"/>
-  <rect x="250" y="584" width="70" height="10" fill="black"/>
-  <!-- L -->
-  <path d="M 350 500 L 365 500 L 365 590 L 430 590 L 430 600 L 350 600 Z" fill="black"/>
-  <!-- O -->
-  <circle cx="500" cy="550" r="42" fill="none" stroke="black" stroke-width="10"/>
-  <!-- RA Orange -->
-  <path d="M 590 500 L 640 500 C 665 500 680 515 680 530 C 680 545 665 560 640 560 L 625 560 L 660 600 L 643 600 L 608 560 L 605 560 L 605 600 L 590 600 L 590 500 Z M 605 515 L 605 548 L 638 548 C 652 548 664 540 664 531 C 664 522 652 515 638 515 L 605 515 Z" fill="#FF7300"/>
-  <path d="M 695 500 L 715 500 L 765 600 L 748 600 L 735 570 L 695 570 L 682 600 L 665 600 L 695 500 Z M 700 558 L 730 558 L 715 525 L 700 558 Z" fill="#FF7300"/>
-  
-  <!-- Orange underline under RA -->
-  <rect x="590" y="608" width="175" height="4" fill="#FF7300"/>
-  
-  <!-- FOUNDED BY YADAV RAVISH -->
-  <text x="400" y="645" font-family="Arial, sans-serif" font-size="22" font-weight="400" letter-spacing="4" fill="#999999" text-anchor="middle">FOUNDED BY <tspan font-weight="400" fill="#999999">YADAV RAVISH</tspan></text>
+  <!-- VELORA -->
+  <g transform="translate(48, 560)">
+    <!-- V -->
+    <path d="M 10 0 L 48 0 L 78 92 L 108 0 L 146 0 L 78 145 Z" fill="#0F0F0F"/>
+    <!-- E = 3 lines -->
+    <rect x="190" y="8" width="90" height="14" fill="#0F0F0F"/>
+    <rect x="190" y="65" width="72" height="14" fill="#0F0F0F"/>
+    <rect x="190" y="122" width="90" height="14" fill="#0F0F0F"/>
+    <!-- L -->
+    <path d="M 330 8 L 348 8 L 348 122 L 428 122 L 428 136 L 330 136 Z" fill="#0F0F0F"/>
+    <!-- O -->
+    <circle cx="498" cy="72" r="52" fill="none" stroke="#0F0F0F" stroke-width="13"/>
+    <!-- R orange -->
+    <path d="M 595 8 L 675 8 L 675 22 L 610 22 L 610 58 L 655 58 L 710 136 L 688 136 L 638 62 L 610 62 L 610 136 L 595 136 Z M 610 22 L 660 22 C 672 22 678 28 678 40 C 678 52 672 58 660 58 L 610 58 Z" fill="#FF7300"/>
+    <!-- A = Λ -->
+    <path d="M 730 136 L 750 136 L 802 30 L 854 136 L 874 136 L 802 -2 Z" fill="#FF7300"/>
+    <!-- Underline -->
+    <rect x="595" y="148" width="282" height="5" fill="#FF7300"/>
+  </g>
+  <!-- FOUNDED BY -->
+  <text x="110" y="700" font-family="Arial" font-size="26" letter-spacing="5" fill="#A8A8A8">FOUNDED BY</text>
+  <text x="358" y="700" font-family="Arial" font-size="34" letter-spacing="6" fill="#A8A8A8">YADAV RAVISH</text>
 </svg>
