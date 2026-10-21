@@ -1,0 +1,8 @@
+<svg width="180" height="60" viewBox="0 0 180 60" xmlns="http://www.w3.org/2000/svg">
+  <path d="M10 5 L30 45 L50 5 L40 5 L30 25 L20 5 Z" fill="#FF6B00"/>
+  <path d="M45 5 L75 5 C85 5 90 12 90 20 C90 28 85 32 75 32 L60 32 L70 50 L60 50 L52 32 L45 32 Z M45 15 L45 24 L70 24 C76 24 80 22 80 19 C80 16 76 15 70 15 Z" fill="white"/>
+  <g transform="translate(0,38)">
+    <text x="0" y="15" font-family="Arial Black" font-weight="800" font-size="18" letter-spacing="3"><tspan fill="white">VELO</tspan><tspan fill="#FF6B00">RA</tspan></text>
+    <text x="0" y="26" font-size="6" letter-spacing="2" fill="#888">FOUNDED BY YADAV RAVISH</text>
+  </g>
+</svg>
