@@ -1,35 +1,51 @@
+"use client";
+
+import { useState } from "react";
+
 export default function Home() {
   return (
-    <main style={{background:'#0a0a0a', color:'white', minHeight:'100vh', fontFamily:'system-ui'}}>
-      <header style={{padding:'24px', display:'flex', justifyContent:'space-between', borderBottom:'1px solid #222'}}>
-        <div style={{fontWeight:900, fontSize:'20px'}}><span style={{color:'#FF6B00'}}>V</span>R VELORA</div>
-        <div style={{opacity:0.6, fontSize:'12px'}}>FOUNDED BY YADAV RAVISH</div>
-      </header>
-      <div style={{padding:'40px 24px'}}>
-        <h1 style={{fontSize:'48px', fontWeight:800}}>Got an Idea?<br/><span style={{color:'#FF6B00'}}>Let&apos;s Build It.</span></h1>
-        <p style={{opacity:0.7, marginTop:'16px', maxWidth:'600px'}}>We design & build modern tools to bring your ideas to life — fast, clean, and scalable.</p>
+    <main className="min-h-screen bg-[#0a0a0a] text-white flex flex-col items-center justify-center px-6">
+      
+      {/* Logo Section */}
+      <div className="flex flex-col items-center gap-6">
+        <img 
+          src="/logo-dark.png" 
+          alt="VELORA - Founded by Yadav Ravish" 
+          width={280}
+          height={280}
+          className="w-[220px] md:w-[280px] h-auto object-contain"
+        />
         
-        <div style={{marginTop:'40px', border:'2px solid #FF6B00', borderRadius:'20px', padding:'24px'}}>
-          <h2 style={{fontSize:'22px', fontWeight:700}}>⚡ LOREM PRO TOOL - 13 TOOLS SUITE</h2>
-          <p style={{opacity:0.6, fontSize:'14px'}}>All-in-one toolkit - LIVE at loremprotool.com</p>
-          <div style={{marginTop:'20px', display:'grid', gridTemplateColumns:'1fr 1fr', gap:'10px', fontSize:'13px'}}>
-            <div style={{padding:'12px', background:'#141414', borderRadius:'10px'}}>Avatar Generator HOT</div>
-            <div style={{padding:'12px', background:'#141414', borderRadius:'10px'}}>Case Converter</div>
-            <div style={{padding:'12px', background:'#141414', borderRadius:'10px'}}>Character Counter HOT</div>
-            <div style={{padding:'12px', background:'#141414', borderRadius:'10px'}}>Fake Data Generator HOT</div>
-            <div style={{padding:'12px', background:'#141414', borderRadius:'10px'}}>Password Generator HOT</div>
-            <div style={{padding:'12px', background:'#141414', borderRadius:'10px'}}>Color Palette Generator HOT</div>
-          </div>
+        {/* Tagline */}
+        <div className="text-center mt-4">
+          <p className="text-zinc-400 text-sm tracking-[0.3em] uppercase">
+            Premium Digital Solutions
+          </p>
         </div>
 
-        <div style={{marginTop:'20px', display:'grid', gridTemplateColumns:'1fr 1fr', gap:'16px'}}>
-          <div style={{border:'1px dashed #333', borderRadius:'16px', padding:'20px', opacity:0.5}}>PRODUCT 2 - Coming Soon (Blank Template)</div>
-          <div style={{border:'1px dashed #333', borderRadius:'16px', padding:'20px', opacity:0.5}}>PRODUCT 3 - Coming Soon (Blank Template)</div>
+        {/* CTA Buttons */}
+        <div className="flex gap-4 mt-8">
+          <a 
+            href="#contact"
+            className="px-8 py-3 bg-[#FF6B00] text-black font-semibold rounded-full hover:bg-[#ff7f26] transition"
+          >
+            Get Started
+          </a>
+          <a 
+            href="https://github.com"
+            target="_blank"
+            className="px-8 py-3 border border-zinc-700 rounded-full hover:bg-zinc-900 transition"
+          >
+            GitHub
+          </a>
         </div>
       </div>
-      <footer style={{textAlign:'center', padding:'24px', opacity:0.4, borderTop:'1px solid #222', fontSize:'12px'}}>
-        © 2026 VELORA.cloud • FOUNDED BY YADAV RAVISH • All Rights Reserved
+
+      {/* Footer */}
+      <footer className="absolute bottom-6 text-zinc-600 text-xs tracking-widest">
+        © {new Date().getFullYear()} VELORA — FOUNDED BY YADAV RAVISH
       </footer>
+
     </main>
-  )
+  );
 }
