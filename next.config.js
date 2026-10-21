@@ -1,6 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'export',
-  images: { unoptimized: true },
+  // output: 'export'  -> hata diya, ab dynamic!
+  reactStrictMode: true,
 }
+
 module.exports = nextConfig
