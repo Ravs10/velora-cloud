@@ -1,15 +1,31 @@
-<svg width="500" height="300" viewBox="0 0 500 300" xmlns="http://www.w3.org/2000/svg">
-  <!-- VR Monogram -->
-  <g font-family="Arial Black, sans-serif" font-weight="900">
-    <text x="120" y="180" font-size="150" fill="#FF6B00">V</text>
-    <text x="220" y="180" font-size="150" fill="white" style="mix-blend-mode:normal">R</text>
-  </g>
-  <!-- VELORA Text -->
-  <g font-family="Arial Black, sans-serif" font-weight="900" font-size="60">
-    <text x="30" y="260" fill="black">VEL</text>
-    <text x="185" y="260" fill="black">O</text>
-    <text x="255" y="260" fill="#FF6B00">RA</text>
-  </g>
-  <rect x="255" y="272" width="175" height="5" fill="#FF6B00"/>
-  <text x="85" y="290" font-family="Arial, sans-serif" font-size="12" letter-spacing="2" fill="black">FOUNDED BY YADAV RAVISH</text>
+<svg width="800" height="600" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background white for preview - website pe transparent lagega -->
+  <rect width="800" height="600" fill="white"/>
+  
+  <!-- VR MONOGRAM -->
+  <!-- V Orange #FF6B00 -->
+  <path d="M 110 60 L 210 60 L 280 280 L 350 60 L 450 60 L 280 440 L 110 60 Z" fill="#FF7300"/>
+  <!-- R Black -->
+  <path d="M 320 60 L 510 60 C 600 60 670 120 670 200 C 670 280 600 340 520 360 L 670 480 L 550 480 L 430 370 L 350 370 L 395 280 L 510 280 C 545 280 570 260 570 225 C 570 190 545 170 510 170 L 390 170 L 320 60 Z" fill="#111111"/>
+  
+  <!-- VELORA TEXT -->
+  <!-- V -->
+  <path d="M 110 500 L 155 600 L 200 500 L 185 500 L 155 570 L 125 500 Z" fill="black"/>
+  <!-- E with 3 lines -->
+  <rect x="250" y="500" width="70" height="10" fill="black"/>
+  <rect x="250" y="542" width="50" height="10" fill="black"/>
+  <rect x="250" y="584" width="70" height="10" fill="black"/>
+  <!-- L -->
+  <path d="M 350 500 L 365 500 L 365 590 L 430 590 L 430 600 L 350 600 Z" fill="black"/>
+  <!-- O -->
+  <circle cx="500" cy="550" r="42" fill="none" stroke="black" stroke-width="10"/>
+  <!-- RA Orange -->
+  <path d="M 590 500 L 640 500 C 665 500 680 515 680 530 C 680 545 665 560 640 560 L 625 560 L 660 600 L 643 600 L 608 560 L 605 560 L 605 600 L 590 600 L 590 500 Z M 605 515 L 605 548 L 638 548 C 652 548 664 540 664 531 C 664 522 652 515 638 515 L 605 515 Z" fill="#FF7300"/>
+  <path d="M 695 500 L 715 500 L 765 600 L 748 600 L 735 570 L 695 570 L 682 600 L 665 600 L 695 500 Z M 700 558 L 730 558 L 715 525 L 700 558 Z" fill="#FF7300"/>
+  
+  <!-- Orange underline under RA -->
+  <rect x="590" y="608" width="175" height="4" fill="#FF7300"/>
+  
+  <!-- FOUNDED BY YADAV RAVISH -->
+  <text x="400" y="645" font-family="Arial, sans-serif" font-size="22" font-weight="400" letter-spacing="4" fill="#999999" text-anchor="middle">FOUNDED BY <tspan font-weight="400" fill="#999999">YADAV RAVISH</tspan></text>
 </svg>
