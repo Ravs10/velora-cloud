@@ -13,7 +13,7 @@ export default function Home() {
       <header className="max-w-[1100px] mx-auto mt-4 mx-3 md:mx-auto bg-[#14141F]/90 border border-white/10 rounded-xl px-4 py-2.5 flex justify-between items-center">
         <div className="flex items-center gap-3">
           <img 
-            src="/logo.png" 
+            src="/logo-dark.png" 
             alt="Velora Logo"
             className="w-11 h-11 object-contain rounded-md"
           />
