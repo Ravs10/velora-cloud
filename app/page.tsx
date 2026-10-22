@@ -4,11 +4,22 @@ import { useState } from "react";
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeModal, setActiveModal] = useState<string | null>(null);
+  const [selectedTool, setSelectedTool] = useState<string | null>(null);
 
-  const tools = [
-    "Avatar Generator", "Background Remover", "Code Formamter", "Image Compressor",
-    "SEO Analyzer", "PDF Merger", "QR Code Maker", "Color Palette",
-    "Json Formamter", "Markdown Editor", "Lorem Generator", "Favicon Creator"
+  const toolsList = [
+    { name: "Avatar Generator", url: "https://lorem-pro-tool.run4ravish.workers.dev/?tool=avatar" },
+    { name: "Background Remover", url: "https://lorem-pro-tool.run4ravish.workers.dev/?tool=bg-remover" },
+    { name: "Code Formamter", url: "https://lorem-pro-tool.run4ravish.workers.dev/?tool=code-formatter" },
+    { name: "Image Compressor", url: "https://lorem-pro-tool.run4ravish.workers.dev/?tool=compressor" },
+    { name: "SEO Analyzer", url: "https://lorem-pro-tool.run4ravish.workers.dev/?tool=seo" },
+    { name: "PDF Merger", url: "https://lorem-pro-tool.run4ravish.workers.dev/?tool=pdf-merge" },
+    { name: "QR Code Maker", url: "https://lorem-pro-tool.run4ravish.workers.dev/?tool=qr" },
+    { name: "Color Palette", url: "https://lorem-pro-tool.run4ravish.workers.dev/?tool=palette" },
+    { name: "Json Formamter", url: "https://lorem-pro-tool.run4ravish.workers.dev/?tool=json" },
+    { name: "Markdown Editor", url: "https://lorem-pro-tool.run4ravish.workers.dev/?tool=markdown" },
+    { name: "Lorem Generator", url: "https://lorem-pro-tool.run4ravish.workers.dev/?tool=lorem" },
+    { name: "Favicon Creator", url: "https://lorem-pro-tool.run4ravish.workers.dev/?tool=favicon" },
+    { name: "Image Resizer", url: "https://lorem-pro-tool.run4ravish.workers.dev/?tool=resizer" },
   ];
 
   return (
@@ -65,13 +76,13 @@ export default function Home() {
               <img src="/logo.png" className="w-9 h-9 object-contain" alt="YR" />
             </div>
             <div>
-              <h2 className="font-extrabold text-[18px] tracking-wide">Ravish Chandra Yadav</h2>
-              <p className="text-[#FF7A1A] text-[11px] font-bold tracking-[0.2em]">Portfolio - FOUNDER @ VELORA</p>
+              <h2 className="font-extrabold text-[18px] tracking-wide">Yadav Ravish</h2>
+              <p className="text-[#FF7A1A] text-[11px] font-bold tracking-[0.2em]">FOUNDER @ VELORA</p>
             </div>
             <div className="ml-auto hidden md:block"><span className="text-[10px] bg-[#1E1E2A] border border-white/10 px-3 py-1 rounded-full text-white/50">Available for work</span></div>
           </div>
           <div className="space-y-3 text-[13px] text-white/65 leading-relaxed">
-            <p className="flex gap-2.5"><span className="text-[#FF7A1A] font-bold">•</span> AI Product Builder | Full-Stack Developer — Next.js, Cloudflare Workers, Supabase, Vercel, Github and Blogger</p>
+            <p className="flex gap-2.5"><span className="text-[#FF7A1A] font-bold">•</span> Full-Stack Developer — Next.js, Cloudflare Workers, Supabase expert</p>
             <p className="flex gap-2.5"><span className="text-[#FF7A1A] font-bold">•</span> Founder of Velora — Building fast, modern tools for founders & creators</p>
             <p className="flex gap-2.5"><span className="text-[#FF7A1A] font-bold">•</span> SaaS Builder — Shipped 13-in-1 Lorem Pro Tool + multiple products</p>
             <p className="flex gap-2.5"><span className="text-[#FF7A1A] font-bold">•</span> Obsessed with AI Automation & Dev Tools that save weeks of work</p>
@@ -81,7 +92,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* PRODUCTS */}
+      {/* PRODUCTS - 13 TOOLS WITH URL + HOVER + SELECT */}
       <section id="products" className="max-w-[700px] mx-auto px-4 pb-10">
         <p className="text-[#FF7A1A] font-bold tracking-[0.15em] text-[13px]">OUR PRODUCTS</p>
         <p className="text-white/40 text-[11px] tracking-[0.3em] mb-5">— BUILT BY VELORA</p>
@@ -92,9 +103,31 @@ export default function Home() {
             <div><p className="font-extrabold text-[18px]">LOREM PRO TOOL — 13 Tools Suite</p><p className="text-white/50 text-[12px] mt-1">All-in-one toolkit for creators & developers. 13 utilities in one place</p></div>
             <span className="bg-[#FF7A1A] text-black text-[11px] font-black px-3 py-1 rounded-full animate-pulse">OPEN LIVE</span>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-2 mt-5">
-            {tools.map(t=><div key={t} className="bg-[#1E1E2A] border border-white/5 rounded-lg px-2.5 py-2 text-[11px] text-white/70 hover:bg-[#252535] hover:text-white hover:border-[#FF7A1A]/20 transition-all cursor-default">{t}</div>)}
+          
+          <div className="grid grid-cols-2 gap-2.5 mt-5">
+            {toolsList.map((t) => {
+              const isSelected = selectedTool === t.name;
+              return (
+                <a
+                  key={t.name}
+                  href={t.url}
+                  target="_blank"
+                  onClick={() => setSelectedTool(t.name)}
+                  className={`
+                    border rounded-xl px-3.5 py-3 text-[12px] font-medium cursor-pointer
+                    transition-all duration-300 ease-out transform
+                    ${isSelected 
+                      ? "bg-[#FF7A1A] border-[#FF7A1A] text-white shadow-[0_0_20px_rgba(255,122,26,0.5)] scale-[1.02]" 
+                      : "bg-[#1E1E2A] border-white/5 text-white/70 hover:bg-[#FF7A1A]/10 hover:border-[#FF7A1A]/40 hover:text-[#FF7A1A] hover:scale-[1.04] hover:shadow-[0_0_18px_rgba(255,122,26,0.25)] hover:-translate-y-[1px]"
+                    }
+                  `}
+                >
+                  {t.name}
+                </a>
+              )
+            })}
           </div>
+
           <a href="https://lorem-pro-tool.run4ravish.workers.dev" target="_blank" className="mt-5 block w-full text-center py-3.5 bg-[#FF7A1A] rounded-xl font-bold hover:bg-[#ff8c38] hover:scale-[1.01] transition-all">Open Live →</a>
         </div>
 
