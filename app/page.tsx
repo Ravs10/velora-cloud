@@ -117,7 +117,7 @@ export default function Home() {
             </div>
 
             <p className="mt-4 text-center text-white/40 text-[11px] tracking-widest flex items-center justify-center gap-2">
-              <span>⚡</span> REPLY IN 2 HOURS • 100% CONFIDENTIAL
+              <span>⚡</span> REPLY IN 3 HOURS • 100% CONFIDENTIAL
             </p>
           </div>
         </div>
@@ -138,7 +138,7 @@ export default function Home() {
             </div>
           </div>
           <div className="space-y-3 text-[12px] md:text-[13px] text-white/65">
-            <p className="flex gap-2.5"><span className="text-[#FF7A1A]">•</span> AI Product Builder | Full-Stack Developer — Next.js, Cloudflare Workers, Vercel, Supabase</p>
+            <p className="flex gap-2.5"><span className="text-[#FF7A1A]">•</span> AI Product Builder | Full-Stack Developer — Next.js, Cloudflare Workers, Vercel, Supabase, Github, Blogger etc.</p>
             <p className="flex gap-2.5"><span className="text-[#FF7A1A]">•</span> Founder of Velora — Building fast, modern tools for founders & creators</p>
             <p className="flex gap-2.5"><span className="text-[#FF7A1A]">•</span> SaaS Builder — Shipped 13-in-1 Lorem Pro Tool + multiple products</p>
             <p className="flex gap-2.5"><span className="text-[#FF7A1A]">•</span> Obsessed with AI Automation & Dev Tools that save weeks of work</p>
