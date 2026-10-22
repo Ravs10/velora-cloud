@@ -6,20 +6,18 @@ export default function Home() {
   const [activeModal, setActiveModal] = useState<string | null>(null);
   const [selectedTool, setSelectedTool] = useState<string | null>(null);
 
-  const toolsList = [
-    { name: "Avatar Generator", url: "https://lorem-pro-tool.run4ravish.workers.dev/?tool=avatar" },
-    { name: "Background Remover", url: "https://lorem-pro-tool.run4ravish.workers.dev/?tool=bg-remover" },
-    { name: "Code Formamter", url: "https://lorem-pro-tool.run4ravish.workers.dev/?tool=code-formatter" },
-    { name: "Image Compressor", url: "https://lorem-pro-tool.run4ravish.workers.dev/?tool=compressor" },
-    { name: "SEO Analyzer", url: "https://lorem-pro-tool.run4ravish.workers.dev/?tool=seo" },
-    { name: "PDF Merger", url: "https://lorem-pro-tool.run4ravish.workers.dev/?tool=pdf-merge" },
-    { name: "QR Code Maker", url: "https://lorem-pro-tool.run4ravish.workers.dev/?tool=qr" },
-    { name: "Color Palette", url: "https://lorem-pro-tool.run4ravish.workers.dev/?tool=palette" },
-    { name: "Json Formamter", url: "https://lorem-pro-tool.run4ravish.workers.dev/?tool=json" },
-    { name: "Markdown Editor", url: "https://lorem-pro-tool.run4ravish.workers.dev/?tool=markdown" },
-    { name: "Lorem Generator", url: "https://lorem-pro-tool.run4ravish.workers.dev/?tool=lorem" },
-    { name: "Favicon Creator", url: "https://lorem-pro-tool.run4ravish.workers.dev/?tool=favicon" },
-    { name: "Word Counter", url: "https://lorem-pro-tool.run4ravish.workers.dev/?tool=word" },
+    const toolsList = [
+    { name: "Avatar Generator", url: "https://lorem-pro-tool.run4ravish.workers.dev/avatar" },
+    { name: "Case Converter", url: "https://lorem-pro-tool.run4ravish.workers.dev/case-converter" },
+    { name: "Character Counter", url: "https://lorem-pro-tool.run4ravish.workers.dev/character-counter" },
+    { name: "Fake Data Generator", url: "https://lorem-pro-tool.run4ravish.workers.dev/fake-data-generator" },
+    { name: "Fancy Text", url: "https://lorem-pro-tool.run4ravish.workers.dev/fancy-text" },
+    { name: "Image to Text", url: "https://lorem-pro-tool.run4ravish.workers.dev/image-to-text" },
+    { name: "Password Generator", url: "https://lorem-pro-tool.run4ravish.workers.dev/password-generator" },
+    { name: "QR Generator", url: "https://lorem-pro-tool.run4ravish.workers.dev/placeholder-qr-generator" },
+    { name: "Remove Duplicates", url: "https://lorem-pro-tool.run4ravish.workers.dev/remove-duplicates" },
+    { name: "Text to Handwriting", url: "https://lorem-pro-tool.run4ravish.workers.dev/text-to-handwriting" },
+    { name: "Word Counter", url: "https://lorem-pro-tool.run4ravish.workers.dev/word-counter" },
   ];
 
   return (
