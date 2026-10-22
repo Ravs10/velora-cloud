@@ -19,7 +19,7 @@ export default function Home() {
     { name: "Markdown Editor", url: "https://lorem-pro-tool.run4ravish.workers.dev/?tool=markdown" },
     { name: "Lorem Generator", url: "https://lorem-pro-tool.run4ravish.workers.dev/?tool=lorem" },
     { name: "Favicon Creator", url: "https://lorem-pro-tool.run4ravish.workers.dev/?tool=favicon" },
-    { name: "Image Resizer", url: "https://lorem-pro-tool.run4ravish.workers.dev/?tool=resizer" },
+    { name: "Word Counter", url: "https://lorem-pro-tool.run4ravish.workers.dev/?tool=word" },
   ];
 
   return (
