@@ -71,7 +71,7 @@ export default function Home() {
             <div className="ml-auto hidden md:block"><span className="text-[10px] bg-[#1E1E2A] border border-white/10 px-3 py-1 rounded-full text-white/50">Available for work</span></div>
           </div>
           <div className="space-y-3 text-[13px] text-white/65 leading-relaxed">
-            <p className="flex gap-2.5"><span className="text-[#FF7A1A] font-bold">•</span> AI Product Builder | Full-Stack Developer — Next.js, Cloudflare Workers, Supabase, Cloudfare, Vercel, Github and Blogspot expert</p>
+            <p className="flex gap-2.5"><span className="text-[#FF7A1A] font-bold">•</span> AI Product Builder | Full-Stack Developer — Next.js, Cloudflare Workers, Supabase, Vercel, Github and Blogspot</p>
             <p className="flex gap-2.5"><span className="text-[#FF7A1A] font-bold">•</span> Founder of Velora — Building fast, modern tools for founders & creators</p>
             <p className="flex gap-2.5"><span className="text-[#FF7A1A] font-bold">•</span> SaaS Builder — Shipped 13-in-1 Lorem Pro Tool + multiple products</p>
             <p className="flex gap-2.5"><span className="text-[#FF7A1A] font-bold">•</span> Obsessed with AI Automation & Dev Tools that save weeks of work</p>
