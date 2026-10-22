@@ -63,7 +63,8 @@ export default function Home() {
       </section>
 
       {/* NEW CONTACT CTA - SCREENSHOT JAISA - ORANGE SECTION */}
-      <section id="contact" className="w-full bg-[#FF7A1A] py-10 px-4 mt-2">
+            {/* NEW CONTACT CTA - FIXED VERSION */}
+      <section id="contact" className="w-full bg-[#FF7A1A] py-10 px-5 md:px-8 mt-4 rounded-[32px] max-w-[760px] mx-auto">
         <div className="max-w-[700px] mx-auto">
           {/* Top Pill */}
           <div className="inline-flex items-center gap-2 bg-black text-white text-[11px] md:text-[12px] font-bold tracking-widest px-4 py-2 rounded-full mb-5">
@@ -79,14 +80,14 @@ export default function Home() {
             I don't just build apps. I build <span className="font-black text-black">money-making tools, high-converting websites, SaaS & automation systems</span> that save time & make you money.
           </p>
 
-          {/* Tags */}
-          <div className="flex flex-wrap gap-2.5 mt-6">
+          {/* 6 BLACK TAGS - CENTER JUSTIFY FIXED */}
+          <div className="flex flex-wrap justify-center md:justify-start gap-2.5 mt-6">
             {["Custom Tools","Websites","Web Apps","Mobile Apps","SaaS","AI Tools"].map(tag=>(
-              <span key={tag} className="bg-black text-white text-[13px] font-bold px-4 py-2 rounded-full">{tag}</span>
+              <span key={tag} className="bg-black text-white text-[13px] font-bold px-5 py-2.5 rounded-full text-center">{tag}</span>
             ))}
           </div>
 
-          {/* Black Card - What I Can Do */}
+          {/* Black Card */}
           <div className="mt-8 bg-black rounded-[28px] p-6 md:p-8 border border-white/10">
             <h3 className="text-white text-[20px] md:text-[24px] font-extrabold flex items-center gap-2">
               What I Can Do For You <span>👇</span>
@@ -98,18 +99,18 @@ export default function Home() {
               <p className="flex gap-3 text-[14px]"><span className="text-[#FF7A1A]">✓</span><span className="text-white"><span className="font-bold">Web & Mobile Apps</span> — Idea to Play Store</span></p>
             </div>
 
-            {/* WhatsApp + Email Buttons */}
-            <div className="mt-7 grid-cols-1 md:grid-cols-2 gap-3">
+            {/* WHATSAPP + EMAIL BUTTONS - GAP FIXED */}
+            <div className="mt-7 grid grid-cols-2 gap-4">
               <a 
-                href="https://wa.me/919999999999?text=Hi%20Ravish,%20I%20want%20to%20build%20a%20project%20with%20Velora!" 
+                href="https://wa.me/919999999999?text=Hi%20Ravish,%20I%20want%20to%20build%20a%20project!" 
                 target="_blank"
-                className="w-full bg-[#25D366] text-black font-black text-[15px] text-center py-3.5 rounded-full hover:scale-[1.02] transition-all"
+                className="flex items-center justify-center w-full bg-[#25D366] text-black font-black text-[14px] md:text-[15px] py-3.5 rounded-full hover:scale-[1.02] transition-all"
               >
                 WhatsApp Me
               </a>
               <a 
-                href="mailto:hello@velora.dev?subject=New%20Project%20Inquiry%20-%20Velora&body=Hi%20Ravish,%0A%0AI%20want%20to%20build..." 
-                className="w-full bg-white text-black font-black text-[15px] text-center py-3.5 rounded-full hover:scale-[1.02] transition-all"
+                href="mailto:hello@velora.dev?subject=New%20Project%20Inquiry" 
+                className="flex items-center justify-center w-full bg-white text-black font-black text-[14px] md:text-[15px] py-3.5 rounded-full hover:scale-[1.02] transition-all"
               >
                 Email Me
               </a>
@@ -121,7 +122,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
       {/* FOUNDER */}
       <section className="max-w-[700px] mx-auto px-4 py-8">
         <p className="text-[#FF7A1A] font-bold tracking-[0.15em] text-[12px]">ABOUT FOUNDER</p>
