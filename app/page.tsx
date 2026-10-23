@@ -21,6 +21,7 @@ export default function Home() {
     { name: "Text to Handwriting", url: "https://lorem-pro-tool.run4ravish.workers.dev/text-to-handwriting" },
     { name: "Word Counter", url: "https://lorem-pro-tool.run4ravish.workers.dev/word-counter" },
     { name: "Color Palette Generator", url: "https://lorem-pro-tool.run4ravish.workers.dev/color-palette" },
+    { name: "Slug Generator", url: "https://lorem-pro-tool.run4ravish.workers.dev/slug-generator" },
   ];
 
   const faqs = [
