@@ -20,6 +20,7 @@ export default function Home() {
     { name: "Remove Duplicates", url: "https://lorem-pro-tool.run4ravish.workers.dev/remove-duplicates" },
     { name: "Text to Handwriting", url: "https://lorem-pro-tool.run4ravish.workers.dev/text-to-handwriting" },
     { name: "Word Counter", url: "https://lorem-pro-tool.run4ravish.workers.dev/word-counter" },
+    { name: "Color Palette Generator", url: "https://lorem-pro-tool.run4ravish.workers.dev/color-palette" },
   ];
 
   const faqs = [
