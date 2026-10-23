@@ -1,9 +1,9 @@
 import "./globals.css";
 import type { Metadata, Viewport } from "next";
 
-const SITE_URL = "https://velora.cloud";
-const SITE_NAME = "VELORA.cloud";
-const TITLE = "VELORA.cloud - Founded by Yadav Ravish | AI Product Studio";
+const SITE_URL = "https://velora-cloud.run4ravish.workers.dev";
+const SITE_NAME = "VELORA";
+const TITLE = "VELORA - Founded by Yadav Ravish | AI Product Studio";
 const DESCRIPTION = "Velora is a product studio founded by Yadav Ravish. We build fast, modern tools like Lorem Pro Tool (11-in-1 suite), SaaS, websites & AI automation for founders. Available for new projects.";
 
 export const viewport: Viewport = {
@@ -71,9 +71,6 @@ export const metadata: Metadata = {
     description: DESCRIPTION,
     images: ["/opengraph-image.png"],
     creator: "@yadavravish",
-  },
-  verification: {
-    // google: "your-google-verification-code",
   },
 };
 
