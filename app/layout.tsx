@@ -58,7 +58,7 @@ export const metadata: Metadata = {
     description: DESCRIPTION,
     images: [
       {
-        url: "/opengraph-image.png",
+        url: `${SITE_URL}/opengraph-image.png?v=2`,
         width: 1200,
         height: 630,
         alt: "VELORA - Founded by Yadav Ravish",
@@ -69,7 +69,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: TITLE,
     description: DESCRIPTION,
-    images: ["/opengraph-image.png"],
+    images: [`${SITE_URL}/opengraph-image.png?v=2`],
     creator: "@yadavravish",
   },
 };
