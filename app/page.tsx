@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -7,6 +7,10 @@ export default function Home() {
   const [selectedTool, setSelectedTool] = useState<string | null>(null);
   const [showSeo, setShowSeo] = useState(false);
   const [openFaq, setOpenFaq] = useState<number | null>(0);
+  const [theme, setTheme] = useState("dark");
+
+  const isDark = theme === "dark";
+  const toggleTheme = () => setTheme(theme === "dark" ? "light" : "dark");
 
   const toolsList = [
     { name: "Avatar Generator", url: "https://lorem-pro-tool.run4ravish.workers.dev/avatar" },
@@ -33,7 +37,7 @@ export default function Home() {
   ];
 
   return (
-    <div className="min-h-screen bg-[#0A0A14] text-white selection:bg-[#FF7A1A]/30 overflow-x-hidden">
+    <div className={`min-h-screen selection:bg-[#FF7A1A]/30 overflow-x-hidden transition-colors duration-300 ${isDark ? "bg-[#0A0A14] text-white" : "bg-[#F8F8FC] text-black"}`}>
       {/* SCHEMA */}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         "@context": "https://schema.org",
@@ -51,27 +55,34 @@ export default function Home() {
         "mainEntity": faqs.map(f=>({ "@type": "Question", "name": f.q, "acceptedAnswer": { "@type": "Answer", "text": f.a }}))
       })}} />
 
-      {/* HEADER - SAME */}
+      {/* HEADER - SAME + THEME TOGGLE ADDED */}
       <div className="w-full pt-4 px-3 md:px-0">
-        <header className="relative z-50 max-w-[1100px] mx-auto bg-[#14141F]/90 backdrop-blur-xl border border-white/[0.07] rounded-[14px] px-4 py-[10px] flex justify-between items-center">
+        <header className={`relative z-50 max-w-[1100px] mx-auto backdrop-blur-xl border rounded-[14px] px-4 py-[10px] flex justify-between items-center transition-colors ${isDark ? "bg-[#14141F]/90 border-white/[0.07]" : "bg-white/90 border-black/[0.07] shadow-sm"}`}>
           <div className="flex items-center gap-3">
-            <div className="w-11 h-11 bg-[#0A0A14] rounded-lg flex items-center justify-center border border-white/10 overflow-hidden">
+            <div className={`w-11 h-11 rounded-lg flex items-center justify-center border overflow-hidden ${isDark ? "bg-[#0A0A14] border-white/10" : "bg-white border-black/10"}`}>
               <img src="/logo.png" alt="VR" className="w-9 h-9 object-contain" />
             </div>
             <img src="/velora-text.png" alt="VELORA" className="h-[28px] md:h-[36px] object-contain" />
           </div>
           <nav className="hidden md:flex items-center gap-6 text-[13px] font-medium">
             {["About","Contact","Disclaimer","Privacy"].map(l=>(
-              <button key={l} onClick={()=>setActiveModal(l)} className="text-white/60 hover:text-[#FF7A1A]">{l}</button>
+              <button key={l} onClick={()=>setActiveModal(l)} className={`${isDark ? "text-white/60 hover:text-[#FF7A1A]" : "text-black/60 hover:text-[#FF7A1A]"}`}>{l}</button>
             ))}
+            {/* THEME TOGGLE BUTTON ADDED */}
+            <button onClick={toggleTheme} className={`w-9 h-9 rounded-full flex items-center justify-center border transition-all ${isDark ? "bg-white/5 border-white/10" : "bg-black/5 border-black/10"}`}>
+              {isDark ? "🌙" : "☀️"}
+            </button>
             <a href="#contact" className="bg-[#FF7A1A] px-4 py-2 rounded-full font-bold text-white">Hire Me</a>
           </nav>
-          <button onClick={()=>setMenuOpen(!menuOpen)} className="md:hidden text-[#FF7A1A] text-2xl">☰</button>
+          <div className="flex items-center gap-2 md:hidden">
+            <button onClick={toggleTheme} className={`w-8 h-8 rounded-full flex items-center justify-center ${isDark ? "bg-white/10" : "bg-black/10"}`}>{isDark ? "🌙" : "☀️"}</button>
+            <button onClick={()=>setMenuOpen(!menuOpen)} className="text-[#FF7A1A] text-2xl">☰</button>
+          </div>
         </header>
         {menuOpen && (
-          <div className="md:hidden max-w-[1100px] mx-auto mt-3 bg-[#14141F] border border-white/10 rounded-xl p-4 flex flex-col gap-3">
+          <div className={`md:hidden max-w-[1100px] mx-auto mt-3 border rounded-xl p-4 flex flex-col gap-3 ${isDark ? "bg-[#14141F] border-white/10" : "bg-white border-black/10"}`}>
             {["About","Contact","Disclaimer","Privacy Policy"].map(l=>(
-              <button key={l} onClick={()=>{setActiveModal(l); setMenuOpen(false)}} className="text-left py-2.5 text-white/70 text-[14px]">{l}</button>
+              <button key={l} onClick={()=>{setActiveModal(l); setMenuOpen(false)}} className={`text-left py-2.5 text-[14px] ${isDark ? "text-white/70" : "text-black/70"}`}>{l}</button>
             ))}
           </div>
         )}
@@ -82,12 +93,12 @@ export default function Home() {
         <h1 className="text-[36px] sm:text-[42px] md:text-[68px] font-extrabold leading-[0.95]">
           Got an Idea?<br/><span className="text-[#FF7A1A]">Let's Build It.</span>
         </h1>
-        <p className="mt-5 text-white/60 max-w-[520px] mx-auto text-[14px] md:text-[15px] px-2">
+        <p className={`mt-5 max-w-[520px] mx-auto text-[14px] md:text-[15px] px-2 ${isDark ? "text-white/60" : "text-black/60"}`}>
           We design & develop products that launch fast. From tools to SaaS, we build what founders need.
         </p>
         <div className="mt-8 flex flex-col items-center gap-3">
           <a href="#contact" className="w-[280px] max-w-[90vw] px-8 py-3.5 bg-[#FF7A1A] text-white font-bold rounded-xl">Start a Project →</a>
-          <a href="#products" className="w-[280px] max-w-[90vw] px-8 py-3 border border-[#FF7A1A]/40 text-[#FF7A1A] rounded-xl">View Our Work</a>
+          <a href="#products" className={`w-[280px] max-w-[90vw] px-8 py-3 border rounded-xl ${isDark ? "border-[#FF7A1A]/40 text-[#FF7A1A]" : "border-[#FF7A1A]/40 text-[#FF7A1A] bg-white"}`}>View Our Work</a>
         </div>
       </section>
 
@@ -128,16 +139,16 @@ export default function Home() {
       {/* FOUNDER - SAME */}
       <section className="max-w-[700px] mx-auto px-4 py-8">
         <p className="text-[#FF7A1A] font-bold tracking-[0.15em] text-[12px]">ABOUT FOUNDER</p>
-        <p className="text-white/40 text-[10px] tracking-[0.3em] mb-4">— THE BUILDER BEHIND VELORA</p>
-        <div className="bg-[#15151F] border border-white/[0.07] rounded-2xl p-5 md:p-6 relative overflow-hidden">
+        <p className={`text-[10px] tracking-[0.3em] mb-4 ${isDark ? "text-white/40" : "text-black/40"}`}>— THE BUILDER BEHIND VELORA</p>
+        <div className={`border rounded-2xl p-5 md:p-6 relative overflow-hidden ${isDark ? "bg-[#15151F] border-white/[0.07]" : "bg-white border-black/[0.07] shadow-sm"}`}>
           <div className="absolute left-0 top-0 bottom-0 w-[3px] bg-[#FF7A1A]" />
           <div className="flex items-center gap-4 mb-5">
-            <div className="w-[60px] h-[60px] rounded-xl bg-[#0A0A14] border border-white/10 flex items-center justify-center overflow-hidden shrink-0">
+            <div className={`w-[60px] h-[60px] rounded-xl border flex items-center justify-center overflow-hidden shrink-0 ${isDark ? "bg-[#0A0A14] border-white/10" : "bg-white border-black/10"}`}>
               <img src="/logo.png" className="w-11 h-11 object-contain" alt="VR" />
             </div>
             <div><h2 className="font-extrabold text-[17px] md:text-[20px]">Ravish Chandra Yadav</h2><p className="text-[#FF7A1A] text-[10px] font-bold tracking-[0.15em]">Portfolio - FOUNDER @ VELORA</p></div>
           </div>
-          <div className="space-y-3 text-[12px] md:text-[13px] text-white/65">
+          <div className={`space-y-3 text-[12px] md:text-[13px] ${isDark ? "text-white/65" : "text-black/65"}`}>
             <p className="flex gap-2.5"><span className="text-[#FF7A1A]">•</span> AI Product Builder | Full-Stack Developer — Next.js, Cloudflare Workers, Vercel, Supabase, Github, Blogger etc.</p>
             <p className="flex gap-2.5"><span className="text-[#FF7A1A]">•</span> Founder of Velora — Building fast, modern tools for founders & creators</p>
             <p className="flex gap-2.5"><span className="text-[#FF7A1A]">•</span> SaaS Builder — Shipped 13-in-1 Lorem Pro Tool + multiple products</p>
@@ -149,10 +160,10 @@ export default function Home() {
       {/* PRODUCTS - SAME */}
       <section id="products" className="max-w-[700px] mx-auto px-4 pb-10">
         <p className="text-[#FF7A1A] font-bold tracking-[0.15em] text-[12px]">OUR PRODUCTS</p>
-        <p className="text-white/40 text-[10px] tracking-[0.3em] mb-5">— BUILT BY VELORA</p>
-        <div className="bg-[#15151F] border border-white/[0.07] rounded-2xl p-5 md:p-6 mb-5">
+        <p className={`text-[10px] tracking-[0.3em] mb-5 ${isDark ? "text-white/40" : "text-black/40"}`}>— BUILT BY VELORA</p>
+        <div className={`border rounded-2xl p-5 md:p-6 mb-5 ${isDark ? "bg-[#15151F] border-white/[0.07]" : "bg-white border-black/[0.07] shadow-sm"}`}>
           <div className="flex justify-between items-start gap-2">
-            <div><p className="font-extrabold text-[16px]">LOREM PRO TOOL — 11 Tools Suite</p><p className="text-white/50 text-[11px] mt-1">All-in-one toolkit for creators & developers</p></div>
+            <div><p className="font-extrabold text-[16px]">LOREM PRO TOOL — 11 Tools Suite</p><p className={`text-[11px] mt-1 ${isDark ? "text-white/50" : "text-black/50"}`}>All-in-one toolkit for creators & developers</p></div>
             <span className="bg-[#FF7A1A] text-black text-[10px] font-black px-3 py-1 rounded-full">OPEN LIVE</span>
           </div>
           <div className="grid grid-cols-2 gap-2.5 mt-5">
@@ -160,19 +171,44 @@ export default function Home() {
               const isSelected = selectedTool === t.name;
               return (
                 <a key={t.name} href={t.url} target="_blank" onClick={() => setSelectedTool(t.name)}
-                  className={`border rounded-xl px-3 py-3 text-[11px] font-medium transition-all ${isSelected ? "bg-[#FF7A1A] border-[#FF7A1A] text-white" : "bg-[#1E1E2A] border-white/5 text-white/70 hover:bg-[#FF7A1A]/10 hover:text-[#FF7A1A]"}`}>
+                  className={`border rounded-xl px-3 py-3 text-[11px] font-medium transition-all ${isSelected ? "bg-[#FF7A1A] border-[#FF7A1A] text-white" : isDark ? "bg-[#1E1E2A] border-white/5 text-white/70 hover:bg-[#FF7A1A]/10 hover:text-[#FF7A1A]" : "bg-[#F2F2F6] border-black/5 text-black/70 hover:bg-[#FF7A1A]/10 hover:text-[#FF7A1A]"}`}>
                   {t.name}
                 </a>
               )
             })}
           </div>
-          <a href="https://lorem-pro-tool.run4ravish.workers.dev" target="_blank" className="mt-5 block w-full text-center py-3.5 bg-[#FF7A1A] rounded-xl font-bold">Open Live →</a>
+          <a href="https://lorem-pro-tool.run4ravish.workers.dev" target="_blank" className="mt-5 block w-full text-center py-3.5 bg-[#FF7A1A] rounded-xl font-bold text-white">Open Live →</a>
         </div>
       </section>
 
+      {/* ===== NEW SECTION ADDED - SAME AS LOREM PRO TOOL ===== */}
+      <section id="products-2" className="max-w-[700px] mx-auto px-4 pb-10">
+        <p className="text-[#FF7A1A] font-bold tracking-[0.15em] text-[12px]">OUR PRODUCTS</p>
+        <p className={`text-[10px] tracking-[0.3em] mb-5 ${isDark ? "text-white/40" : "text-black/40"}`}>— MORE TOOLS BY VELORA</p>
+        <div className={`border rounded-2xl p-5 md:p-6 mb-5 ${isDark ? "bg-[#15151F] border-white/[0.07]" : "bg-white border-black/[0.07] shadow-sm"}`}>
+          <div className="flex justify-between items-start gap-2">
+            <div><p className="font-extrabold text-[16px]">LOREM PRO TOOL — 11 Tools Suite</p><p className={`text-[11px] mt-1 ${isDark ? "text-white/50" : "text-black/50"}`}>All-in-one toolkit for creators & developers - Copy</p></div>
+            <span className="bg-[#FF7A1A] text-black text-[10px] font-black px-3 py-1 rounded-full">OPEN LIVE</span>
+          </div>
+          <div className="grid grid-cols-2 gap-2.5 mt-5">
+            {toolsList.map((t) => {
+              const isSelected = selectedTool === t.name;
+              return (
+                <a key={t.name} href={t.url} target="_blank" onClick={() => setSelectedTool(t.name)}
+                  className={`border rounded-xl px-3 py-3 text-[11px] font-medium transition-all ${isSelected ? "bg-[#FF7A1A] border-[#FF7A1A] text-white" : isDark ? "bg-[#1E1E2A] border-white/5 text-white/70 hover:bg-[#FF7A1A]/10 hover:text-[#FF7A1A]" : "bg-[#F2F2F6] border-black/5 text-black/70 hover:bg-[#FF7A1A]/10 hover:text-[#FF7A1A]"}`}>
+                  {t.name}
+                </a>
+              )
+            })}
+          </div>
+          <a href="https://lorem-pro-tool.run4ravish.workers.dev" target="_blank" className="mt-5 block w-full text-center py-3.5 bg-[#FF7A1A] rounded-xl font-bold text-white">Open Live →</a>
+        </div>
+      </section>
+      {/* ===== NEW SECTION END ===== */}
+
       {/* NEW SEO INFORMATIONAL CONTENT - BELOW LOREM PRO TOOL - WITH SHOW/HIDE */}
       <section id="seo-content" className="max-w-[700px] mx-auto px-4 pb-10">
-        <div className="bg-[#15151F] border border-white/[0.07] rounded-[28px] overflow-hidden relative">
+        <div className={`border rounded-[28px] overflow-hidden relative ${isDark ? "bg-[#15151F] border-white/[0.07]" : "bg-white border-black/[0.07] shadow-sm"}`}>
           <div className="absolute top-0 left-0 w-full h-[3px] bg-gradient-to-r from-[#FF7A1A] to-orange-300" />
           
           {/* Header with Show/Hide Button */}
@@ -188,46 +224,46 @@ export default function Home() {
 
           {/* Always Visible Short Summary */}
           <div className="p-6 md:p-8 pt-4">
-            <p className="text-[13px] leading-relaxed text-white/60">
-              <strong className="text-white">Velora is a leading product studio</strong> founded by Ravish Chandra Yadav. We build fast tools like Lorem Pro Tool (11-in-1 suite) for founders, bloggers, and creators. All tools are free, browser-based, and SEO optimized. Click Show to read full company profile, how to use guide, and FAQs.
+            <p className={`text-[13px] leading-relaxed ${isDark ? "text-white/60" : "text-black/60"}`}>
+              <strong className={isDark ? "text-white" : "text-black"}>Velora is a leading product studio</strong> founded by Ravish Chandra Yadav. We build fast tools like Lorem Pro Tool (11-in-1 suite) for founders, bloggers, and creators. All tools are free, browser-based, and SEO optimized. Click Show to read full company profile, how to use guide, and FAQs.
             </p>
           </div>
 
           {/* Show/Hide Full Content */}
           <div className={`grid transition-all duration-500 ease-in-out ${showSeo ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"}`}>
             <div className="overflow-hidden">
-              <div className="px-6 md:px-8 pb-8 space-y-8 text-[14px] leading-[1.8] text-white/70 border-t border-white/[0.06] mt-2 pt-6">
+              <div className={`px-6 md:px-8 pb-8 space-y-8 text-[14px] leading-[1.8] border-t mt-2 pt-6 ${isDark ? "text-white/70 border-white/[0.06]" : "text-black/70 border-black/[0.06]"}`}>
                 
                 <div className="group">
-                  <h1 className="text-[22px] md:text-[28px] font-extrabold text-white leading-tight group-hover:text-[#FF7A1A] transition-colors">Velora - Company Profile: Leading Organization for Fast Product Development</h1>
-                  <h2 className="text-[18px] md:text-[20px] font-bold text-white mt-6 mb-3 hover:text-[#FF7A1A] transition-colors">Who We Are & What We Build</h2>
-                  <p>Velora is a modern product studio based in India, founded by <strong className="text-white">Ravish Chandra Yadav</strong>. We are not a traditional agency. We are builders who ship. Our mission is simple — to help founders, creators, and bloggers launch tools, websites, and SaaS products in weeks, not months. What started as a collection of small utility tools has now become <strong className="text-white">Lorem Pro Tool — an 11-in-1 toolkit</strong> used by thousands. Velora operates on three pillars: Speed, Quality, and Automation. We use Next.js, Cloudflare Workers, Vercel, Supabase, and AI to build products that are lightning fast, SEO ready, and scalable from day one. We build Custom Tools, Lightning Fast Websites, Web Apps, Mobile Apps, SaaS Products, and AI Tools.</p>
+                  <h1 className={`text-[22px] md:text-[28px] font-extrabold leading-tight group-hover:text-[#FF7A1A] transition-colors ${isDark ? "text-white" : "text-black"}`}>Velora - Company Profile: Leading Organization for Fast Product Development</h1>
+                  <h2 className={`text-[18px] md:text-[20px] font-bold mt-6 mb-3 hover:text-[#FF7A1A] transition-colors ${isDark ? "text-white" : "text-black"}`}>Who We Are & What We Build</h2>
+                  <p>Velora is a modern product studio based in India, founded by <strong className={isDark ? "text-white" : "text-black"}>Ravish Chandra Yadav</strong>. We are not a traditional agency. We are builders who ship. Our mission is simple — to help founders, creators, and bloggers launch tools, websites, and SaaS products in weeks, not months. What started as a collection of small utility tools has now become <strong className={isDark ? "text-white" : "text-black"}>Lorem Pro Tool — an 11-in-1 toolkit</strong> used by thousands. Velora operates on three pillars: Speed, Quality, and Automation. We use Next.js, Cloudflare Workers, Vercel, Supabase, and AI to build products that are lightning fast, SEO ready, and scalable from day one. We build Custom Tools, Lightning Fast Websites, Web Apps, Mobile Apps, SaaS Products, and AI Tools.</p>
                 </div>
 
                 <div>
-                  <h2 className="text-[18px] md:text-[20px] font-bold text-white mb-3 hover:text-[#FF7A1A] transition-colors">User Guide: How To Use Lorem Pro Tool for Blogger</h2>
-                  <p><strong className="text-white">Step 1:</strong> Go to Our Products section and click on any tool. <strong className="text-white">Step 2:</strong> Paste your text or upload image — processing happens in browser, data never leaves device. <strong className="text-white">Step 3:</strong> Click generate and copy result for your Blogger post. <strong className="text-white">Step 4:</strong> For Blogger, use Case Converter for titles, Character Counter to keep meta description under 160 chars, Fancy Text for stylish headings, and Remove Duplicates to clean keyword lists. No account needed, no limits.</p>
-                  <h3 className="text-[16px] font-bold text-white mt-4 mb-2 hover:text-[#FF7A1A] transition-colors">Why Bloggers Love Velora Tools</h3>
+                  <h2 className={`text-[18px] md:text-[20px] font-bold mb-3 hover:text-[#FF7A1A] transition-colors ${isDark ? "text-white" : "text-black"}`}>User Guide: How To Use Lorem Pro Tool for Blogger</h2>
+                  <p><strong className={isDark ? "text-white" : "text-black"}>Step 1:</strong> Go to Our Products section and click on any tool. <strong className={isDark ? "text-white" : "text-black"}>Step 2:</strong> Paste your text or upload image — processing happens in browser, data never leaves device. <strong className={isDark ? "text-white" : "text-black"}>Step 3:</strong> Click generate and copy result for your Blogger post. <strong className={isDark ? "text-white" : "text-black"}>Step 4:</strong> For Blogger, use Case Converter for titles, Character Counter to keep meta description under 160 chars, Fancy Text for stylish headings, and Remove Duplicates to clean keyword lists. No account needed, no limits.</p>
+                  <h3 className={`text-[16px] font-bold mt-4 mb-2 hover:text-[#FF7A1A] transition-colors ${isDark ? "text-white" : "text-black"}`}>Why Bloggers Love Velora Tools</h3>
                   <p>Bloggers need speed and simplicity. Unlike other tool sites filled with ads, Velora tools are clean, fast, and distraction-free. The suite helps you optimize Blogger SEO without technical knowledge. All tools are mobile responsive and load in under 1 second on slow 4G, even in Barabanki, UP. Because we use Cloudflare Workers, everything is instant.</p>
                 </div>
 
                 <div>
-                  <h2 className="text-[18px] md:text-[20px] font-bold text-white mb-3 hover:text-[#FF7A1A] transition-colors">How To Hire Velora - Simple Process</h2>
-                  <p>Hiring us is straightforward. If you have an idea, scroll to orange contact section. Click <strong className="text-white">WhatsApp Me</strong> — pre-filled message opens. Or <strong className="text-white">Email Me</strong> — mail client opens with subject. We reply within 3 hours IST. All discussions 100% confidential. Fixed timeline and price — most MVPs delivered in 7 to 14 days. We sign NDAs if needed.</p>
+                  <h2 className={`text-[18px] md:text-[20px] font-bold mb-3 hover:text-[#FF7A1A] transition-colors ${isDark ? "text-white" : "text-black"}`}>How To Hire Velora - Simple Process</h2>
+                  <p>Hiring us is straightforward. If you have an idea, scroll to orange contact section. Click <strong className={isDark ? "text-white" : "text-black"}>WhatsApp Me</strong> — pre-filled message opens. Or <strong className={isDark ? "text-white" : "text-black"}>Email Me</strong> — mail client opens with subject. We reply within 3 hours IST. All discussions 100% confidential. Fixed timeline and price — most MVPs delivered in 7 to 14 days. We sign NDAs if needed.</p>
                 </div>
 
                 {/* FAQ WITH SHOW/HIDE */}
                 <div>
-                  <h2 className="text-[20px] font-extrabold text-white mb-4">Frequently Asked Questions</h2>
+                  <h2 className={`text-[20px] font-extrabold mb-4 ${isDark ? "text-white" : "text-black"}`}>Frequently Asked Questions</h2>
                   <div className="space-y-3">
                     {faqs.map((faq, idx)=>(
-                      <div key={idx} className="group bg-[#0A0A14] border border-white/[0.06] rounded-2xl overflow-hidden hover:border-[#FF7A1A]/30 transition-all">
+                      <div key={idx} className={`group border rounded-2xl overflow-hidden hover:border-[#FF7A1A]/30 transition-all ${isDark ? "bg-[#0A0A14] border-white/[0.06]" : "bg-[#F8F8FC] border-black/[0.06]"}`}>
                         <button onClick={()=>setOpenFaq(openFaq===idx?null:idx)} className="w-full text-left p-4 flex justify-between items-start gap-3">
-                          <span className="font-bold text-[13px] md:text-[14px] text-white group-hover:text-[#FF7A1A] transition-colors">{faq.q}</span>
-                          <span className={`shrink-0 w-7 h-7 rounded-full bg-white/5 flex items-center justify-center text-[12px] transition-all duration-300 ${openFaq===idx?'rotate-45 bg-[#FF7A1A] text-black':''}`}>+</span>
+                          <span className={`font-bold text-[13px] md:text-[14px] group-hover:text-[#FF7A1A] transition-colors ${isDark ? "text-white" : "text-black"}`}>{faq.q}</span>
+                          <span className={`shrink-0 w-7 h-7 rounded-full flex items-center justify-center text-[12px] transition-all duration-300 ${openFaq===idx?'rotate-45 bg-[#FF7A1A] text-black': isDark ? 'bg-white/5' : 'bg-black/5'}`}>+</span>
                         </button>
                         <div className={`grid transition-all duration-300 ${openFaq===idx?'grid-rows-[1fr] opacity-100':'grid-rows-[0fr] opacity-0'}`}>
-                          <div className="overflow-hidden"><p className="px-4 pb-4 text-[12px] leading-relaxed text-white/60">{faq.a}</p></div>
+                          <div className="overflow-hidden"><p className={`px-4 pb-4 text-[12px] leading-relaxed ${isDark ? "text-white/60" : "text-black/60"}`}>{faq.a}</p></div>
                         </div>
                       </div>
                     ))}
@@ -244,28 +280,28 @@ export default function Home() {
       </section>
 
       {/* FOOTER - SAME */}
-      <footer className="max-w-[1100px] mx-auto mt-8 border-t border-white/[0.06] mx-3 md:mx-auto pt-8 pb-8">
+      <footer className={`max-w-[1100px] mx-auto mt-8 border-t mx-3 md:mx-auto pt-8 pb-8 ${isDark ? "border-white/[0.06]" : "border-black/[0.06]"}`}>
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 px-6 md:px-2">
-          <div className="pl-1"><div className="flex items-center gap-2"><img src="/logo.png" className="w-8 h-8 object-contain" alt="" /><img src="/velora-text.png" className="h-6 object-contain" alt="" /></div><p className="text-white/40 text-[12px] mt-3">We build fast, modern products for founders.</p></div>
-          <div className="pl-2 md:pl-4"><p className="text-white font-bold text-[13px] mb-3">Quick Links</p><div className="flex flex-col gap-2.5 text-[13px] text-white/50"><a href="#products" className="hover:text-[#FF7A1A]">Our Products</a><a href="#contact" className="hover:text-[#FF7A1A]">Start a Project</a></div></div>
-          <div className="pl-2 md:pl-4"><p className="text-white font-bold text-[13px] mb-3">Legal</p><div className="flex flex-col gap-2.5 text-[13px] text-white/50"><button onClick={()=>setActiveModal("Disclaimer")} className="text-left hover:text-[#FF7A1A]">Disclaimer</button><button onClick={()=>setActiveModal("Privacy")} className="text-left hover:text-[#FF7A1A]">Privacy Policy</button><button onClick={()=>setActiveModal("About")} className="text-left hover:text-[#FF7A1A]">About Us</button></div></div>
-          <div className="pl-2 md:pl-4"><p className="text-white font-bold text-[13px] mb-3">Contact</p><p className="text-[13px] text-white/50">hello@velora.dev</p><p className="text-[11px] text-white/30 mt-2">Founded by Yadav Ravish</p></div>
+          <div className="pl-1"><div className="flex items-center gap-2"><img src="/logo.png" className="w-8 h-8 object-contain" alt="" /><img src="/velora-text.png" className="h-6 object-contain" alt="" /></div><p className={`text-[12px] mt-3 ${isDark ? "text-white/40" : "text-black/40"}`}>We build fast, modern products for founders.</p></div>
+          <div className="pl-2 md:pl-4"><p className="font-bold text-[13px] mb-3">Quick Links</p><div className={`flex flex-col gap-2.5 text-[13px] ${isDark ? "text-white/50" : "text-black/50"}`}><a href="#products" className="hover:text-[#FF7A1A]">Our Products</a><a href="#contact" className="hover:text-[#FF7A1A]">Start a Project</a></div></div>
+          <div className="pl-2 md:pl-4"><p className="font-bold text-[13px] mb-3">Legal</p><div className={`flex flex-col gap-2.5 text-[13px] ${isDark ? "text-white/50" : "text-black/50"}`}><button onClick={()=>setActiveModal("Disclaimer")} className="text-left hover:text-[#FF7A1A]">Disclaimer</button><button onClick={()=>setActiveModal("Privacy")} className="text-left hover:text-[#FF7A1A]">Privacy Policy</button><button onClick={()=>setActiveModal("About")} className="text-left hover:text-[#FF7A1A]">About Us</button></div></div>
+          <div className="pl-2 md:pl-4"><p className="font-bold text-[13px] mb-3">Contact</p><p className={`text-[13px] ${isDark ? "text-white/50" : "text-black/50"}`}>hello@velora.dev</p><p className={`text-[11px] mt-2 ${isDark ? "text-white/30" : "text-black/30"}`}>Founded by Yadav Ravish</p></div>
         </div>
-        <p className="text-center text-white/20 text-[10px] mt-8 tracking-[0.2em]">© 2024 VELORA • hello@velora.dev • All rights reserved</p>
+        <p className={`text-center text-[10px] mt-8 tracking-[0.2em] ${isDark ? "text-white/20" : "text-black/20"}`}>© 2024 VELORA • hello@velora.dev • All rights reserved</p>
       </footer>
 
       {activeModal && (
         <div className="fixed inset-0 z-[100] bg-black/70 backdrop-blur flex items-center justify-center p-4" onClick={()=>setActiveModal(null)}>
-          <div className="bg-[#15151F] border border-white/10 rounded-2xl p-6 max-w-[500px] w-full" onClick={e=>e.stopPropagation()}>
-            <div className="flex justify-between items-center mb-4"><h3 className="font-bold text-[18px]">{activeModal}</h3><button onClick={()=>setActiveModal(null)} className="text-white/50">✕</button></div>
-            <div className="text-white/60 text-[13px] leading-relaxed">
+          <div className={`border rounded-2xl p-6 max-w-[500px] w-full ${isDark ? "bg-[#15151F] border-white/10" : "bg-white border-black/10"}`} onClick={e=>e.stopPropagation()}>
+            <div className="flex justify-between items-center mb-4"><h3 className="font-bold text-[18px]">{activeModal}</h3><button onClick={()=>setActiveModal(null)} className={isDark ? "text-white/50" : "text-black/50"}>✕</button></div>
+            <div className={`text-[13px] leading-relaxed ${isDark ? "text-white/60" : "text-black/60"}`}>
               {activeModal==="About" && "Velora is founded by Yadav Ravish. We build modern SaaS tools, AI automation, and creator utilities that launch fast."}
               {activeModal==="Contact" && "Email us at hello@velora.dev for projects, collaborations, and inquiries."}
               {activeModal==="Disclaimer" && "All tools provided by Velora are for informational purposes."}
               {activeModal==="Privacy" && "We don't collect personal data without consent."}
               {activeModal==="Privacy Policy" && "We don't collect personal data without consent."}
             </div>
-            <button onClick={()=>setActiveModal(null)} className="mt-5 w-full py-2.5 bg-[#FF7A1A] rounded-lg font-bold">Close</button>
+            <button onClick={()=>setActiveModal(null)} className="mt-5 w-full py-2.5 bg-[#FF7A1A] rounded-lg font-bold text-white">Close</button>
           </div>
         </div>
       )}
