@@ -163,7 +163,7 @@ export default function Home() {
         <p className={`text-[10px] tracking-[0.3em] mb-5 ${isDark ? "text-white/40" : "text-black/40"}`}>— BUILT BY VELORA</p>
         <div className={`border rounded-2xl p-5 md:p-6 mb-5 ${isDark ? "bg-[#15151F] border-white/[0.07]" : "bg-white border-black/[0.07] shadow-sm"}`}>
           <div className="flex justify-between items-start gap-2">
-            <div><p className="font-extrabold text-[16px]">LOREM PRO TOOL — 11 Tools Suite</p><p className={`text-[11px] mt-1 ${isDark ? "text-white/50" : "text-black/50"}`}>All-in-one toolkit for creators & developers</p></div>
+            <div><p className="font-extrabold text-[16px]">LOREM PRO TOOL — 15+ Tools Suite</p><p className={`text-[11px] mt-1 ${isDark ? "text-white/50" : "text-black/50"}`}>All-in-one toolkit for creators & developers</p></div>
             <span className="bg-[#FF7A1A] text-black text-[10px] font-black px-3 py-1 rounded-full">OPEN LIVE</span>
           </div>
           <div className="grid grid-cols-2 gap-2.5 mt-5">
@@ -187,7 +187,7 @@ export default function Home() {
         <p className={`text-[10px] tracking-[0.3em] mb-5 ${isDark ? "text-white/40" : "text-black/40"}`}>— MORE TOOLS BY VELORA</p>
         <div className={`border rounded-2xl p-5 md:p-6 mb-5 ${isDark ? "bg-[#15151F] border-white/[0.07]" : "bg-white border-black/[0.07] shadow-sm"}`}>
           <div className="flex justify-between items-start gap-2">
-            <div><p className="font-extrabold text-[16px]">LOREM PRO TOOL — 11 Tools Suite</p><p className={`text-[11px] mt-1 ${isDark ? "text-white/50" : "text-black/50"}`}>All-in-one toolkit for creators & developers - Copy</p></div>
+            <div><p className="font-extrabold text-[16px]">LOREM PRO TOOL — 14+ Tools Suite</p><p className={`text-[11px] mt-1 ${isDark ? "text-white/50" : "text-black/50"}`}>All-in-one toolkit for creators & developers - Copy</p></div>
             <span className="bg-[#FF7A1A] text-black text-[10px] font-black px-3 py-1 rounded-full">OPEN LIVE</span>
           </div>
           <div className="grid grid-cols-2 gap-2.5 mt-5">
