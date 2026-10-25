@@ -26,6 +26,7 @@ export default function Home() {
     { name: "Word Counter", url: "https://lorem-pro-tool.run4ravish.workers.dev/word-counter" },
     { name: "Color Palette Generator", url: "https://lorem-pro-tool.run4ravish.workers.dev/color-palette" },
     { name: "Slug Generator", url: "https://lorem-pro-tool.run4ravish.workers.dev/slug-generator" },
+    { name: "AI Detector", url: "https://lorem-pro-tool.run4ravish.workers.dev/ai-detector" },
   ];
 
   const favouriteTools = [
