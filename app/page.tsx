@@ -29,6 +29,7 @@ export default function Home() {
     { name: "AI Detector", url: "https://lorem-pro-tool.run4ravish.workers.dev/ai-detector" },
     { name: "Hashtag Generator", url: "https://lorem-pro-tool.run4ravish.workers.dev/hashtag-generator" },
     { name: "YouTube Title/Tag Generator", url: "https://lorem-pro-tool.run4ravish.workers.dev/youtube-title-generator" },
+    { name: "Resume Builder", url: "https://lorem-pro-tool.run4ravish.workers.dev/resume-builder" },
   ];
 
   const favouriteTools = [
