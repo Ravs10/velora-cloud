@@ -30,7 +30,6 @@ export default function Home() {
     { name: "Hashtag Generator", url: "https://lorem-pro-tool.run4ravish.workers.dev/hashtag-generator" },
     { name: "YouTube Title/Tag Generator", url: "https://lorem-pro-tool.run4ravish.workers.dev/youtube-title-generator" },
     { name: "Resume Builder", url: "https://lorem-pro-tool.run4ravish.workers.dev/resume-builder" },
-    { name: "YouTube Thumbnail Downloader", url: "https://lorem-pro-tool.run4ravish.workers.dev/youtube-thumbnail-downlodar" },
   ];
 
   const favouriteTools = [
@@ -211,7 +210,7 @@ export default function Home() {
         <p className={`text-[10px] tracking-[0.3em] mb-5 ${isDark ? "text-white/40" : "text-black/40"}`}>— BUILT BY VELORA</p>
         <div className={`border rounded-2xl p-5 md:p-6 mb-5 ${isDark ? "bg-[#15151F] border-white/[0.07]" : "bg-white border-black/[0.07] shadow-sm"}`}>
           <div className="flex justify-between items-start gap-2">
-            <div><p className="font-extrabold text-[16px]">LOREM PRO TOOL — 20+ Tools Suite</p><p className={`text-[11px] mt-1 ${isDark ? "text-white/50" : "text-black/50"}`}>All-in-one toolkit for creators & developers</p></div>
+            <div><p className="font-extrabold text-[16px]">LOREM PRO TOOL — 15+ Tools Suite</p><p className={`text-[11px] mt-1 ${isDark ? "text-white/50" : "text-black/50"}`}>All-in-one toolkit for creators & developers</p></div>
             <span className="animate-small-live bg-[#FF7A1A] text-black text-[10px] font-black px-3 py-1 rounded-full">OPEN LIVE</span>
           </div>
           <div className="grid grid-cols-2 gap-2.5 mt-5">
