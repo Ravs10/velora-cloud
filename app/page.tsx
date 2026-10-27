@@ -50,7 +50,6 @@ export default function Home() {
 
   return (
     <div className={`min-h-screen selection:bg-[#FF7A1A]/30 overflow-x-hidden transition-colors duration-300 ${isDark ? "bg-[#0A0A14] text-white" : "bg-[#F8F8FC] text-black"}`}>
-      {/* ANIMATIONS FOR OPEN LIVE BUTTONS */}
       <style>{`
         @keyframes smallPulse {
           0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255,122,26,0.6); }
@@ -60,9 +59,22 @@ export default function Home() {
           0% { background-position: -200% center; }
           100% { background-position: 200% center; }
         }
-        .animate-small-live {
-          animation: smallPulse 2s infinite;
+        @keyframes veloraGlow {
+          0%, 100% { box-shadow: 0 0 15px rgba(255,107,0,0.4), 0 0 30px rgba(255,107,0,0.2); border-color: rgba(255,107,0,0.5); }
+          50% { box-shadow: 0 0 30px rgba(255,107,0,0.9), 0 0 60px rgba(255,107,0,0.5); border-color: rgba(255,107,0,1); }
         }
+        @keyframes veloraFloat {
+          0%, 100% { transform: translateY(0px) scale(1); }
+          50% { transform: translateY(-8px) scale(1.03); }
+        }
+        @keyframes veloraBlinkDot {
+          0%, 100% { opacity: 1; transform: scale(1); }
+          50% { opacity: 0.3; transform: scale(0.8); }
+        }
+        .animate-small-live { animation: smallPulse 2s infinite; }
+        .velora-glow { animation: veloraGlow 1.8s ease-in-out infinite; }
+        .velora-float { animation: veloraFloat 2.5s ease-in-out infinite; }
+        .velora-blink-dot { animation: veloraBlinkDot 1s ease-in-out infinite; }
         .animate-big-live {
           background: linear-gradient(100deg, #FF7A1A 20%, #ffad66 50%, #FF7A1A 80%);
           background-size: 200% auto;
@@ -103,7 +115,7 @@ export default function Home() {
         "mainEntity": faqs.map(f=>({ "@type": "Question", "name": f.q, "acceptedAnswer": { "@type": "Answer", "text": f.a }}))
       })}} />
 
-      {/* HEADER - SAME + THEME TOGGLE ADDED */}
+      {/* HEADER */}
       <div className="w-full pt-4 px-3 md:px-0">
         <header className={`relative z-50 max-w-[1100px] mx-auto backdrop-blur-xl border rounded-[14px] px-4 py-[10px] flex justify-between items-center transition-colors ${isDark ? "bg-[#14141F]/90 border-white/[0.07]" : "bg-white/90 border-black/[0.07] shadow-sm"}`}>
           <div className="flex items-center gap-3">
@@ -135,7 +147,7 @@ export default function Home() {
         )}
       </div>
 
-      {/* HERO - SAME */}
+      {/* HERO */}
       <section className="relative max-w-[1100px] mx-auto text-center pt-12 md:pt-20 pb-8 px-4">
         <h1 className="text-[36px] sm:text-[42px] md:text-[68px] font-extrabold leading-[0.95]">
           Got an Idea?<br/><span className="text-[#FF7A1A]">Let's Build It.</span>
@@ -149,41 +161,66 @@ export default function Home() {
         </div>
       </section>
 
-      {/* CONTACT CTA - SAME */}
-      <section id="contact" className="w-full bg-[#FF7A1A] py-10 px-5 md:px-8 mt-4 rounded-[32px] max-w-[760px] mx-auto">
-        <div className="max-w-[700px] mx-auto">
-          <div className="inline-flex items-center gap-2 bg-black text-white text-[11px] md:text-[12px] font-bold tracking-widest px-4 py-2 rounded-full mb-5">
-            <span className="w-2.5 h-2.5 bg-green-500 rounded-full animate-pulse"></span>
-            AVAILABLE FOR NEW PROJECTS
-          </div>
-          <h2 className="text-[34px] md:text-[48px] font-extrabold leading-[0.9] text-black">
-            Got an Idea?<br/><span className="text-white">Let's Build It.</span>
-          </h2>
-          <p className="mt-4 text-black/80 text-[14px] md:text-[15px] leading-relaxed font-medium">
-            I don't just build apps. I build <span className="font-black text-black">money-making tools, high-converting websites, SaaS & automation systems</span> that save time & make you money.
-          </p>
-          <div className="flex flex-wrap justify-center md:justify-start gap-2.5 mt-6">
-            {["Custom Tools","Websites","Web Apps","Mobile Apps","SaaS","AI Tools"].map(tag=>(
-              <span key={tag} className="bg-black text-white text-[13px] font-bold px-5 py-2.5 rounded-full text-center">{tag}</span>
-            ))}
-          </div>
-          <div className="mt-8 bg-black rounded-[28px] p-6 md:p-8 border border-white/10">
-            <h3 className="text-white text-[20px] md:text-[24px] font-extrabold flex items-center gap-2">What I Can Do For You <span>👇</span></h3>
-            <div className="mt-5 space-y-4">
-              <p className="flex gap-3 text-[14px]"><span className="text-[#FF7A1A]">✓</span><span className="text-white"><span className="font-bold">Custom Business Tools</span> — Like Lorem Pro</span></p>
-              <p className="flex gap-3 text-[14px]"><span className="text-[#FF7A1A]">✓</span><span className="text-white"><span className="font-bold">Lightning Fast Websites</span> — Next.js, SEO Ready</span></p>
-              <p className="flex gap-3 text-[14px]"><span className="text-[#FF7A1A]">✓</span><span className="text-white"><span className="font-bold">Web & Mobile Apps</span> — Idea to Play Store</span></p>
+      {/* ===== NEW HIRE ME SECTION - SAME AS FOOTER WALA DESIGN ===== */}
+      <section id="contact" className="w-full bg-gradient-to-br from-orange-500 via-[#ff6b00] to-[#ff3c00] relative overflow-hidden py-10 px-4 rounded-[32px] max-w-[1100px] mx-auto mt-4">
+        <div className="relative max-w-6xl mx-auto px-2 md:px-6">
+          <div className="grid md:grid-cols-2 gap-10 items-center">
+            
+            <div className="text-center md:text-left">
+              <div className="inline-flex items-center justify-center gap-2 bg-black text-white px-4 py-1.5 rounded-full text-xs font-black tracking-widest mb-4">
+                <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
+                AVAILABLE FOR NEW PROJECTS
+              </div>
+              <h2 className="text-4xl md:text-5xl font-black leading-[0.9] text-black">
+                Got an Idea? <br /><span className="text-white">Let's Build It.</span>
+              </h2>
+              <p className="text-black/90 font-medium mt-4 text-[15px] leading-relaxed">
+                <b>VELORA</b> doesn't just build apps. <b>VELORA</b> builds <b>money-making tools, high-converting websites, SaaS & automation systems</b> that save time & make you money.
+              </p>
+              <div className="flex flex-wrap gap-2 mt-5 justify-center md:justify-start">
+                {['Custom Tools', 'Websites', 'Web Apps', 'Mobile Apps', 'SaaS', 'AI Tools'].map((t) => (
+                  <span key={t} className="bg-black text-white px-3 py-1 rounded-full text-xs font-bold border border-white/10">{t}</span>
+                ))}
+              </div>
             </div>
-            <div className="mt-7 grid grid-cols-2 gap-4">
-              <a href="https://wa.me/919999999999?text=Hi%20Ravish,%20I%20want%20to%20build%20a%20project!" target="_blank" className="flex items-center justify-center w-full bg-[#25D366] text-black font-black text-[14px] md:text-[15px] py-3.5 rounded-full hover:scale-[1.02] transition-all">WhatsApp Me</a>
-              <a href="mailto:hello@velora.dev?subject=New%20Project%20Inquiry" className="flex items-center justify-center w-full bg-white text-black font-black text-[14px] md:text-[15px] py-3.5 rounded-full hover:scale-[1.02] transition-all">Email Me</a>
+
+            <div className="bg-black rounded-[24px] p-7 border border-white/10 shadow-2xl">
+              <h3 className="text-xl font-black text-white flex items-center gap-2">What VELORA Can Do For You 👇</h3>
+              <ul className="mt-4 space-y-3 text-sm text-zinc-300">
+                <li className="flex gap-3"><span className="text-orange-500">✓</span><span><b className="text-white">Custom Business Tools</b> — Like Lorem Pro</span></li>
+                <li className="flex gap-3"><span className="text-orange-500">✓</span><span><b className="text-white">Lightning Fast Websites</b> — Next.js, SEO Ready</span></li>
+                <li className="flex gap-3"><span className="text-orange-500">✓</span><span><b className="text-white">Web & Mobile Apps</b> — Idea to Play Store</span></li>
+              </ul>
+
+              <div className="grid grid-cols-2 gap-3 mt-6">
+                <a href="https://wa.me/919999999999?text=Hi%20Ravish,%20I%20want%20to%20build%20a%20project!" target="_blank" className="bg-[#25D366] text-black text-center py-3 rounded-full font-black text-sm hover:scale-105 transition">WhatsApp</a>
+                <a href="mailto:hello@velora.dev" className="bg-white text-black text-center py-3 rounded-full font-black text-sm hover:bg-zinc-200 transition">Email</a>
+              </div>
+
+              <p className="text-center text-[11px] text-zinc-500 mt-3">⚡ REPLY IN 2 HOURS • 100% CONFIDENTIAL</p>
+
+              <a href="https://velora-cloud.run4ravish.workers.dev/" target="_blank" className="group relative mt-5 block">
+                <div className="absolute -top-3 -right-2 z-10 flex items-center gap-1.5 bg-red-600 text-white px-3 py-1 rounded-full text-[10px] font-black tracking-widest">
+                  <span className="w-2 h-2 bg-white rounded-full velora-blink-dot"></span>
+                  LIVE
+                </div>
+                <div className="velora-glow bg-[#111] border-2 border-orange-500 rounded-[18px] p-4 relative overflow-hidden">
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+                  <div className="flex items-center justify-center relative">
+                    <img src="/velora-logo.png" alt="VELORA" className="velora-float w-full max-w-[280px] h-auto object-contain group-hover:scale-110 transition-all duration-500" />
+                  </div>
+                  <div className="flex items-center justify-center gap-2 mt-3">
+                    <span className="w-2 h-2 bg-green-400 rounded-full animate-ping"></span>
+                    <p className="text-center text-[11px] font-black tracking-[0.2em] text-orange-400 group-hover:text-white transition">CLICK TO VISIT VELORA CLOUD →</p>
+                  </div>
+                </div>
+              </a>
             </div>
-            <p className="mt-4 text-center text-white/40 text-[11px] tracking-widest flex items-center justify-center gap-2"><span>⚡</span> REPLY IN 3 HOURS • 100% CONFIDENTIAL</p>
           </div>
         </div>
       </section>
 
-      {/* FOUNDER - SAME */}
+      {/* FOUNDER */}
       <section className="max-w-[700px] mx-auto px-4 py-8">
         <p className="text-[#FF7A1A] font-bold tracking-[0.15em] text-[12px]">ABOUT FOUNDER</p>
         <p className={`text-[10px] tracking-[0.3em] mb-4 ${isDark ? "text-white/40" : "text-black/40"}`}>— THE BUILDER BEHIND VELORA</p>
@@ -204,7 +241,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* PRODUCTS - SAME WITH ANIMATION */}
+      {/* PRODUCTS */}
       <section id="products" className="max-w-[700px] mx-auto px-4 pb-10">
         <p className="text-[#FF7A1A] font-bold tracking-[0.15em] text-[12px]">OUR PRODUCTS</p>
         <p className={`text-[10px] tracking-[0.3em] mb-5 ${isDark ? "text-white/40" : "text-black/40"}`}>— BUILT BY VELORA</p>
@@ -228,7 +265,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ===== UPDATED SECTION - MORE FAVOURITE TOOLS ===== */}
       <section id="products-2" className="max-w-[700px] mx-auto px-4 pb-10">
         <p className="text-[#FF7A1A] font-bold tracking-[0.15em] text-[12px]">FAVOURITE PICKS</p>
         <p className={`text-[10px] tracking-[0.3em] mb-5 ${isDark ? "text-white/40" : "text-black/40"}`}>— MORE FAVOURITE TOOLS</p>
@@ -251,9 +287,7 @@ export default function Home() {
           <a href="https://loremipsumpro.blogspot.com/" target="_blank" className="animate-big-live mt-5 block w-full text-center py-3.5 rounded-xl font-bold text-white hover:scale-[1.02] transition-transform">Open All Favourite Tools →</a>
         </div>
       </section>
-      {/* ===== SECTION END ===== */}
 
-      {/* SEO CONTENT - SAME */}
       <section id="seo-content" className="max-w-[700px] mx-auto px-4 pb-10">
         <div className={`border rounded-[28px] overflow-hidden relative ${isDark ? "bg-[#15151F] border-white/[0.07]" : "bg-white border-black/[0.07] shadow-sm"}`}>
           <div className="absolute top-0 left-0 w-full h-[3px] bg-gradient-to-r from-[#FF7A1A] to-orange-300" />
@@ -282,12 +316,6 @@ export default function Home() {
                 <div>
                   <h2 className={`text-[18px] md:text-[20px] font-bold mb-3 hover:text-[#FF7A1A] transition-colors ${isDark ? "text-white" : "text-black"}`}>User Guide: How To Use Lorem Pro Tool for Blogger</h2>
                   <p><strong className={isDark ? "text-white" : "text-black"}>Step 1:</strong> Go to Our Products section and click on any tool. <strong className={isDark ? "text-white" : "text-black"}>Step 2:</strong> Paste your text or upload image — processing happens in browser, data never leaves device. <strong className={isDark ? "text-white" : "text-black"}>Step 3:</strong> Click generate and copy result for your Blogger post. <strong className={isDark ? "text-white" : "text-black"}>Step 4:</strong> For Blogger, use Case Converter for titles, Character Counter to keep meta description under 160 chars, Fancy Text for stylish headings, and Remove Duplicates to clean keyword lists. No account needed, no limits.</p>
-                  <h3 className={`text-[16px] font-bold mt-4 mb-2 hover:text-[#FF7A1A] transition-colors ${isDark ? "text-white" : "text-black"}`}>Why Bloggers Love Velora Tools</h3>
-                  <p>Bloggers need speed and simplicity. Unlike other tool sites filled with ads, Velora tools are clean, fast, and distraction-free. The suite helps you optimize Blogger SEO without technical knowledge. All tools are mobile responsive and load in under 1 second on slow 4G, even in Barabanki, UP. Because we use Cloudflare Workers, everything is instant.</p>
-                </div>
-                <div>
-                  <h2 className={`text-[18px] md:text-[20px] font-bold mb-3 hover:text-[#FF7A1A] transition-colors ${isDark ? "text-white" : "text-black"}`}>How To Hire Velora - Simple Process</h2>
-                  <p>Hiring us is straightforward. If you have an idea, scroll to orange contact section. Click <strong className={isDark ? "text-white" : "text-black"}>WhatsApp Me</strong> — pre-filled message opens. Or <strong className={isDark ? "text-white" : "text-black"}>Email Me</strong> — mail client opens with subject. We reply within 3 hours IST. All discussions 100% confidential. Fixed timeline and price — most MVPs delivered in 7 to 14 days. We sign NDAs if needed.</p>
                 </div>
                 <div>
                   <h2 className={`text-[20px] font-extrabold mb-4 ${isDark ? "text-white" : "text-black"}`}>Frequently Asked Questions</h2>
@@ -305,16 +333,12 @@ export default function Home() {
                     ))}
                   </div>
                 </div>
-                <div className="p-4 bg-[#FF7A1A]/10 border border-[#FF7A1A]/20 rounded-xl text-[11px] text-white/60">
-                  <strong className="text-[#FF7A1A]">SEO Ready:</strong> This section has 900+ words with h1, h2, h3, FAQ schema, and animations. Google will index it but portfolio look stays clean because of Show/Hide.
-                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* FOOTER - SAME */}
       <footer className={`max-w-[1100px] mx-auto mt-8 border-t mx-3 md:mx-auto pt-8 pb-8 ${isDark ? "border-white/[0.06]" : "border-black/[0.06]"}`}>
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 px-6 md:px-2">
           <div className="pl-1"><div className="flex items-center gap-2"><img src="/logo.png" className="w-8 h-8 object-contain" alt="" /><img src="/velora-text.png" className="h-6 object-contain" alt="" /></div><p className={`text-[12px] mt-3 ${isDark ? "text-white/40" : "text-black/40"}`}>We build fast, modern products for founders.</p></div>
