@@ -207,7 +207,7 @@ export default function Home() {
                 <div className="velora-glow bg-[#111] border-2 border-orange-500 rounded-[18px] p-4 relative overflow-hidden">
                   <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
                   <div className="flex items-center justify-center relative">
-                    <img src="/velora-logo.png" alt="VELORA" className="velora-float w-full max-w-[280px] h-auto object-contain group-hover:scale-110 transition-all duration-500" />
+                    <img src="public/logo-dark.png" alt="VELORA" className="velora-float w-full max-w-[280px] h-auto object-contain group-hover:scale-110 transition-all duration-500" />
                   </div>
                   <div className="flex items-center justify-center gap-2 mt-3">
                     <span className="w-2 h-2 bg-green-400 rounded-full animate-ping"></span>
