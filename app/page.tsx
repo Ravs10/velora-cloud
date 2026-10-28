@@ -188,7 +188,7 @@ export default function Home() {
             <div className="bg-black rounded-[24px] p-7 border border-white/10 shadow-2xl">
               <h3 className="text-xl font-black text-white flex items-center gap-2">What VELORA Can Do For You 👇</h3>
               <ul className="mt-4 space-y-3 text-sm text-zinc-300">
-                <li className="flex gap-3"><span className="text-orange-500">✓</span><span><b className="text-white">Custom Business Tools</b> — Like Lorem Pro</span></li>
+                <li className="flex gap-3"><span className="text-orange-500">✓</span><span><b className="text-white">Custom Business Tools</b> — Like Lorem Pro - 20+ Tools Suite</span></li>
                 <li className="flex gap-3"><span className="text-orange-500">✓</span><span><b className="text-white">Lightning Fast Websites</b> — Next.js, SEO Ready</span></li>
                 <li className="flex gap-3"><span className="text-orange-500">✓</span><span><b className="text-white">Web & Mobile Apps</b> — Idea to Play Store</span></li>
               </ul>
@@ -234,7 +234,7 @@ export default function Home() {
             <div><h2 className="font-extrabold text-[17px] md:text-[20px]">Ravish Chandra Yadav</h2><p className="text-[#FF7A1A] text-[10px] font-bold tracking-[0.15em]">Portfolio - FOUNDER @ VELORA</p></div>
           </div>
           <div className={`space-y-3 text-[12px] md:text-[13px] ${isDark ? "text-white/65" : "text-black/65"}`}>
-            <p className="flex gap-2.5"><span className="text-[#FF7A1A]">•</span> AI Product Builder | AI Full-Stack Builder | AI Product Engineer — Next.js, Cloudflare Workers, Vercel, Supabase, Github, Blogger etc.</p>
+            <p className="flex gap-2.5"><span className="text-[#FF7A1A]">•</span> AI Product Engineer — Next.js, Cloudflare Workers, Vercel, Supabase</p>
             <p className="flex gap-2.5"><span className="text-[#FF7A1A]">•</span> Founder of Velora — Building fast, modern tools and websites for founders & creators</p>
             <p className="flex gap-2.5"><span className="text-[#FF7A1A]">•</span> SaaS Builder — Shipped 20+-in-1 Lorem Pro Tool + multiple products</p>
             <p className="flex gap-2.5"><span className="text-[#FF7A1A]">•</span> Obsessed with AI Automation & Dev Tools that save weeks of work</p>
