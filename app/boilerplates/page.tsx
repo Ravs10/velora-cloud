@@ -15,7 +15,7 @@ export default function BoilerplatesPage() {
       desc: "LOREM PRO TOOL jaisa - 1 code se 20 tools. AdSense + SEO ready.",
       color: "from-orange-500 to-red-500",
       demoUrl: "https://lorem-pro-tool.run4ravish.workers.dev",
-      buyUrl: "https://wa.me/919999999999?text=Hi, I want to buy 20-in-1 Tools Boilerplate"
+      buyUrl: "https://wa.me/918299746179?text=Hi, I want to buy 20-in-1 Tools Boilerplate"
     },
     { 
       name: "SaaS Starter Kit", 
