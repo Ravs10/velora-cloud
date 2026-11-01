@@ -20,12 +20,12 @@ export default function BoilerplatesPage() {
     { 
       name: "SaaS Starter Kit", 
       price: "$99", 
-      tag: "COMING SOON",
-      status: "soon",
+      tag: "Live Now",
+      status: "Getting ready to sell",
       desc: "Auth + Stripe + Dashboard + Landing Page. Launch in 2 days.",
       color: "from-blue-500 to-cyan-500",
       demoUrl: "#",
-      buyUrl: "#"
+      buyUrl: "https://saas-starter-kit.run4ravish.workers.dev"
     },
     { 
       name: "Directory Boilerplate", 
@@ -35,7 +35,7 @@ export default function BoilerplatesPage() {
       desc: "Product Hunt clone - Tools / Startup list with submit.",
       color: "from-purple-500 to-pink-500",
       demoUrl: "#",
-      buyUrl: "#"
+      buyUrl: "https://saas-starter-kit.run4ravish.workers.dev"
     },
     { 
       name: "Job Board Kit", 
