@@ -21,11 +21,11 @@ export default function BoilerplatesPage() {
       name: "SaaS Starter Kit", 
       price: "$99", 
       tag: "Live Now",
-      status: "Getting ready to sell",
+      status: "Getting ready",
       desc: "Auth + Stripe + Dashboard + Landing Page. Launch in 2 days.",
       color: "from-blue-500 to-cyan-500",
-      demoUrl: "#",
-      buyUrl: "https://saas-starter-kit.run4ravish.workers.dev"
+      demoUrl: "https://saas-starter-kit.run4ravish.workers.dev",
+      buyUrl: "#"
     },
     { 
       name: "Directory Boilerplate", 
