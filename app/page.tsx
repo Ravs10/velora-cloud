@@ -164,66 +164,6 @@ export default function Home() {
         </div>
       </section>
     
-      {/* ===== NEW HIRE ME SECTION - SAME AS FOOTER WALA DESIGN ===== 
-          <section id="contact" className="w-full bg-gradient-to-br from-orange-500 via-[#ff6b00] to-[#ff3c00] relative overflow-hidden py-10 px-4 rounded-[32px] max-w-[1100px] mx-auto mt-4">
-        <div className="relative max-w-6xl mx-auto px-2 md:px-6">
-          <div className="grid md:grid-cols-2 gap-10 items-center">
-            
-            <div className="text-center md:text-left">
-              <div className="inline-flex items-center justify-center gap-2 bg-black text-white px-4 py-1.5 rounded-full text-xs font-black tracking-widest mb-4">
-                <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
-                AVAILABLE FOR NEW PROJECTS
-              </div>
-              <h2 className="text-4xl md:text-5xl font-black leading-[0.9] text-black">
-                Got an Idea? <br /><span className="text-white">Let's Build It.</span>
-              </h2>
-              <p className="text-black/90 font-medium mt-4 text-[15px] leading-relaxed">
-                <b>VELORA</b> doesn't just build apps. <b>VELORA</b> builds <b>money-making tools, high-converting websites, SaaS & automation systems</b> that save time & make you money.
-              </p>
-              <div className="flex flex-wrap gap-2 mt-5 justify-center md:justify-start">
-                {['Custom Tools', 'Websites', 'Web Apps', 'Mobile Apps', 'SaaS', 'AI Tools'].map((t) => (
-                  <span key={t} className="bg-black text-white px-3 py-1 rounded-full text-xs font-bold border border-white/10">{t}</span>
-                ))}
-              </div>
-            </div>
-
-            <div className="bg-black rounded-[24px] p-7 border border-white/10 shadow-2xl">
-              <h3 className="text-xl font-black text-white flex items-center gap-2">What VELORA Can Do For You 👇</h3>
-              <ul className="mt-4 space-y-3 text-sm text-zinc-300">
-                <li className="flex gap-3"><span className="text-orange-500">✓</span><span><b className="text-white">Custom Business Tools</b> — Like Lorem Pro - 20+ Tools Suite</span></li>
-                <li className="flex gap-3"><span className="text-orange-500">✓</span><span><b className="text-white">Lightning Fast Websites</b> — Next.js, SEO Ready</span></li>
-                <li className="flex gap-3"><span className="text-orange-500">✓</span><span><b className="text-white">Web & Mobile Apps</b> — Idea to Play Store</span></li>
-              </ul>
-
-              <div className="grid grid-cols-2 gap-3 mt-6">
-                <a href="https://wa.me/919999999999?text=Hi%20Ravish,%20I%20want%20to%20build%20a%20project!" target="_blank" className="bg-[#25D366] text-black text-center py-3 rounded-full font-black text-sm hover:scale-105 transition">WhatsApp</a>
-                <a href="mailto:hello@velora.dev" className="bg-white text-black text-center py-3 rounded-full font-black text-sm hover:bg-zinc-200 transition">Email</a>
-              </div>
-
-              <p className="text-center text-[11px] text-zinc-500 mt-3">⚡ REPLY IN 2 HOURS • 100% CONFIDENTIAL</p>
-
-              <a href="https://velora-cloud.run4ravish.workers.dev/" target="_blank" className="group relative mt-5 block">
-                <div className="absolute -top-3 -right-2 z-10 flex items-center gap-1.5 bg-red-600 text-white px-3 py-1 rounded-full text-[10px] font-black tracking-widest">
-                  <span className="w-2 h-2 bg-white rounded-full velora-blink-dot"></span>
-                  LIVE
-                </div>
-                <div className="velora-glow bg-[#111] border-2 border-orange-500 rounded-[18px] p-4 relative overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
-                  <div className="flex items-center justify-center relative">
-                    <img src="/logo-dark.png" alt="VELORA" className="velora-float w-full max-w-[280px] h-auto object-contain group-hover:scale-110 transition-all duration-500" />
-                  </div>
-                  <div className="flex items-center justify-center gap-2 mt-3">
-                    <span className="w-2 h-2 bg-green-400 rounded-full animate-ping"></span>
-                    <p className="text-center text-[11px] font-black tracking-[0.2em] text-orange-400 group-hover:text-white transition">CLICK TO VISIT VELORA CLOUD →</p>
-                  </div>
-                </div>
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-*/} 
       {/* ===== NEW HIRE ME SECTION - SAME AS FOOTER WALA DESIGN ===== */}
       <section id="contact" className="w-full bg-gradient-to-br from-orange-500 via-[#ff6b00] to-[#ff3c00] relative overflow-hidden py-10 px-4 rounded-[32px] max-w-[1100px] mx-auto mt-4">
         <div className="relative max-w-6xl mx-auto px-2 md:px-6">
