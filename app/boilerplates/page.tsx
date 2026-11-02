@@ -94,23 +94,33 @@ export default function BoilerplatesPage() {
 
         <div className="grid md:grid-cols-3 gap-5">
           {list.map((b) => (
-            <div key={b.name} className={`border rounded-2xl p-5 transition ${b.status === "soon" ? "opacity-70" : "hover:border-[#FF7A1A]/50"} ${isDark ? "bg-[#15151F] border-white/[0.07]" : "bg-white border-black/[0.07] shadow-sm"}`}>
-              <div className={`h-[130px] rounded-xl bg-gradient-to-br ${b.color} flex items-center justify-center font-black text-white text-[16px] text-center px-4`}>{b.name}</div>
+            <div key={b.name} className={`group border rounded-2xl p-5 transition-all duration-300 hover:-translate-y-1 ${b.status === "soon" ? "opacity-70" : "hover:border-[#FF7A1A]/50 hover:shadow-[0_10px_40px_-15px_rgba(255,122,26,0.3)]"} ${isDark ? "bg-[#15151F] border-white/[0.07]" : "bg-white border-black/[0.07] shadow-sm"}`}>
+              <div className={`h-[130px] rounded-xl bg-gradient-to-br ${b.color} flex items-center justify-center font-black text-white text-[16px] text-center px-4 transition-transform duration-300 group-hover:scale-[1.02]`}>{b.name}</div>
               <div className="flex justify-between items-center mt-4 mb-2">
-                <span className={`text-[10px] px-2 py-1 font-black rounded-full ${b.status === "live" ? "bg-[#FF7A1A] text-black" : "bg-zinc-700 text-zinc-300"}`}>{b.tag}</span>
+                <span className={`text-[10px] px-2.5 py-1 font-black rounded-full flex items-center gap-1.5 ${b.status === "live" ? "bg-[#FF7A1A] text-black shadow-[0_0_15px_rgba(255,122,26,0.5)] animate-pulse" : "bg-zinc-700 text-zinc-300"}`}>
+                  {b.status === "live" && <span className="w-1.5 h-1.5 bg-black rounded-full animate-ping"></span>}
+                  {b.tag}
+                </span>
                 <span className="font-black text-[18px]">{b.price}</span>
               </div>
               <h3 className="font-bold text-[15px]">{b.name}</h3>
               <p className={`text-[12px] mt-1 ${isDark ? "text-white/50" : "text-black/50"}`}>{b.desc}</p>
               
               {b.status === "live" ? (
-                <div className="grid grid-cols-2 gap-2 mt-4">
-                  <a href={b.demoUrl} target="_blank" className="text-center py-3 bg-zinc-800 text-white rounded-full font-bold text-[13px] hover:bg-white hover:text-black transition border border-white/10">Live Demo ↗</a>
-                  <a href={b.buyUrl} target="_blank" className="text-center py-3 bg-white text-black rounded-full font-black text-[13px] hover:bg-[#FF7A1A] hover:text-white transition">Buy Now</a>
+                <div className="grid grid-cols-2 gap-2.5 mt-5">
+                  <a href={b.demoUrl} target="_blank" className="group/btn relative text-center py-3 bg-zinc-800 text-white rounded-full font-bold text-[13px] border border-white/10 overflow-hidden transition-all duration-300 hover:bg-white hover:text-black hover:scale-105 hover:-translate-y-0.5 active:scale-95">
+                    <span className="relative z-10 flex items-center justify-center gap-1">Live Demo <span className="transition-transform duration-300 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5">↗</span></span>
+                  </a>
+                  <a href={b.buyUrl} target="_blank" className="group/btn relative text-center py-3 bg-white text-black rounded-full font-black text-[13px] overflow-hidden transition-all duration-300 hover:bg-[#FF7A1A] hover:text-white hover:scale-105 hover:-translate-y-0.5 hover:shadow-[0_0_20px_rgba(255,122,26,0.6)] active:scale-95">
+                    <span className="absolute inset-0 bg-gradient-to-r from-[#FF7A1A] to-[#FF4D00] opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300"></span>
+                    <span className="relative z-10">Buy Now</span>
+                  </a>
                 </div>
               ) : (
-                <div className="mt-4">
-                  <button disabled className="w-full py-3 bg-zinc-800 text-zinc-400 rounded-full font-bold text-[13px] cursor-not-allowed border border-white/10">Coming Soon - Stay Tuned</button>
+                <div className="mt-5">
+                  <button disabled className="w-full py-3 bg-zinc-800/80 text-zinc-400 rounded-full font-bold text-[13px] cursor-not-allowed border border-white/5 transition-all">
+                    Coming Soon - Stay Tuned
+                  </button>
                 </div>
               )}
             </div>
