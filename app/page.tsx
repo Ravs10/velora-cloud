@@ -163,9 +163,9 @@ export default function Home() {
           <a href="#products" className={`w-[280px] max-w-[90vw] px-8 py-3 border rounded-xl ${isDark ? "border-[#FF7A1A]/40 text-[#FF7A1A]" : "border-[#FF7A1A]/40 text-[#FF7A1A] bg-white"}`}>View Our Work</a>
         </div>
       </section>
-
-      {/* ===== NEW HIRE ME SECTION - SAME AS FOOTER WALA DESIGN ===== */}
-        {/*   <section id="contact" className="w-full bg-gradient-to-br from-orange-500 via-[#ff6b00] to-[#ff3c00] relative overflow-hidden py-10 px-4 rounded-[32px] max-w-[1100px] mx-auto mt-4">
+    
+      {/* ===== NEW HIRE ME SECTION - SAME AS FOOTER WALA DESIGN ===== 
+          <section id="contact" className="w-full bg-gradient-to-br from-orange-500 via-[#ff6b00] to-[#ff3c00] relative overflow-hidden py-10 px-4 rounded-[32px] max-w-[1100px] mx-auto mt-4">
         <div className="relative max-w-6xl mx-auto px-2 md:px-6">
           <div className="grid md:grid-cols-2 gap-10 items-center">
             
@@ -222,9 +222,9 @@ export default function Home() {
           </div>
         </div>
       </section>
-*/} 
-// ... upar ka same rahega
 
+// ... upar ka same rahega
+*/} 
       {/* ===== NEW HIRE ME SECTION - SAME AS FOOTER WALA DESIGN ===== */}
       <section id="contact" className="w-full bg-gradient-to-br from-orange-500 via-[#ff6b00] to-[#ff3c00] relative overflow-hidden py-10 px-4 rounded-[32px] max-w-[1100px] mx-auto mt-4">
         <div className="relative max-w-6xl mx-auto px-2 md:px-6">
