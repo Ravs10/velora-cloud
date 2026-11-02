@@ -99,7 +99,6 @@ export default function Home() {
         }
       `}</style>
 
-      {/* SCHEMA */}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         "@context": "https://schema.org",
         "@type": "Organization",
@@ -116,7 +115,6 @@ export default function Home() {
         "mainEntity": faqs.map(f=>({ "@type": "Question", "name": f.q, "acceptedAnswer": { "@type": "Answer", "text": f.a }}))
       })}} />
 
-      {/* HEADER */}
       <div className="w-full pt-4 px-3 md:px-0">
         <header className={`relative z-50 max-w-[1100px] mx-auto backdrop-blur-xl border rounded-[14px] px-4 py-[10px] flex justify-between items-center transition-colors ${isDark ? "bg-[#14141F]/90 border-white/[0.07]" : "bg-white/90 border-black/[0.07] shadow-sm"}`}>
           <div className="flex items-center gap-3">
@@ -150,7 +148,6 @@ export default function Home() {
         )}
       </div>
 
-      {/* HERO */}
       <section className="relative max-w-[1100px] mx-auto text-center pt-12 md:pt-20 pb-8 px-4">
         <h1 className="text-[36px] sm:text-[42px] md:text-[68px] font-extrabold leading-[0.95]">
           Got an Idea?<br/><span className="text-[#FF7A1A]">Let's Build It.</span>
@@ -164,7 +161,6 @@ export default function Home() {
         </div>
       </section>
     
-      {/* ===== NEW HIRE ME SECTION - SAME AS FOOTER WALA DESIGN ===== */}
       <section id="contact" className="w-full bg-gradient-to-br from-orange-500 via-[#ff6b00] to-[#ff3c00] relative overflow-hidden py-10 px-4 rounded-[32px] max-w-[1100px] mx-auto mt-4">
         <div className="relative max-w-6xl mx-auto px-2 md:px-6">
           <div className="grid md:grid-cols-2 gap-10 items-center">
@@ -224,9 +220,6 @@ export default function Home() {
         </div>
       </section>
 
-// ... neeche ka same rahega
-      
-      {/* FOUNDER */}
       <section className="max-w-[700px] mx-auto px-4 py-8">
         <p className="text-[#FF7A1A] font-bold tracking-[0.15em] text-[12px]">ABOUT FOUNDER</p>
         <p className={`text-[10px] tracking-[0.3em] mb-4 ${isDark ? "text-white/40" : "text-black/40"}`}>— THE BUILDER BEHIND VELORA</p>
@@ -247,7 +240,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* PRODUCTS */}
       <section id="products" className="max-w-[700px] mx-auto px-4 pb-10">
         <p className="text-[#FF7A1A] font-bold tracking-[0.15em] text-[12px]">OUR PRODUCTS</p>
         <p className={`text-[10px] tracking-[0.3em] mb-5 ${isDark ? "text-white/40" : "text-black/40"}`}>— BUILT BY VELORA</p>
