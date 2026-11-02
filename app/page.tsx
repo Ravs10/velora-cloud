@@ -223,7 +223,6 @@ export default function Home() {
         </div>
       </section>
 
-// ... upar ka same rahega
 */} 
       {/* ===== NEW HIRE ME SECTION - SAME AS FOOTER WALA DESIGN ===== */}
       <section id="contact" className="w-full bg-gradient-to-br from-orange-500 via-[#ff6b00] to-[#ff3c00] relative overflow-hidden py-10 px-4 rounded-[32px] max-w-[1100px] mx-auto mt-4">
