@@ -31,6 +31,9 @@ export default function Home() {
     { name: "YouTube Title/Tag Generator", url: "https://lorem-pro-tool.run4ravish.workers.dev/youtube-title-generator" },
     { name: "Resume Builder", url: "https://lorem-pro-tool.run4ravish.workers.dev/resume-builder" },
     { name: "YouTube Thumbnail Downloader", url: "https://lorem-pro-tool.run4ravish.workers.dev/youtube-thumbnail-downlodar" },
+    { name: "SIP Calculator", url: "https://lorem-pro-tool.run4ravish.workers.dev/sip-calculator" },
+    { name: "YouTube Earnings Calculator", url: "https://lorem-pro-tool.run4ravish.workers.dev/youtube-earnings-calculator" },
+    { name: "Mortgage Calculator", url: "https://lorem-pro-tool.run4ravish.workers.dev/mortgage-calculator" },
   ];
 
   const favouriteTools = [
