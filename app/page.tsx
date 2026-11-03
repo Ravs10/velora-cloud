@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -8,32 +8,88 @@ export default function Home() {
   const [showSeo, setShowSeo] = useState(false);
   const [openFaq, setOpenFaq] = useState<number | null>(0);
   const [theme, setTheme] = useState("dark");
+  const audioCtxRef = useRef<AudioContext | null>(null);
 
   const isDark = theme === "dark";
   const toggleTheme = () => setTheme(theme === "dark" ? "light" : "dark");
 
-  const toolsList = [
-    { name: "Avatar Generator", url: "https://lorem-pro-tool.run4ravish.workers.dev/avatar" },
-    { name: "Case Converter", url: "https://lorem-pro-tool.run4ravish.workers.dev/case-converter" },
-    { name: "Character Counter", url: "https://lorem-pro-tool.run4ravish.workers.dev/character-counter" },
-    { name: "Fake Data Generator", url: "https://lorem-pro-tool.run4ravish.workers.dev/fake-data-generator" },
-    { name: "Fancy Text", url: "https://lorem-pro-tool.run4ravish.workers.dev/fancy-text" },
-    { name: "Image to Text - OCR", url: "https://lorem-pro-tool.run4ravish.workers.dev/image-to-text" },
-    { name: "Password Generator", url: "https://lorem-pro-tool.run4ravish.workers.dev/password-generator" },
-    { name: "QR Generator", url: "https://lorem-pro-tool.run4ravish.workers.dev/placeholder-qr-generator" },
-    { name: "Remove Duplicates", url: "https://lorem-pro-tool.run4ravish.workers.dev/remove-duplicates" },
-    { name: "Text to Handwriting", url: "https://lorem-pro-tool.run4ravish.workers.dev/text-to-handwriting" },
-    { name: "Word Counter", url: "https://lorem-pro-tool.run4ravish.workers.dev/word-counter" },
-    { name: "Color Palette Generator", url: "https://lorem-pro-tool.run4ravish.workers.dev/color-palette" },
-    { name: "Slug Generator", url: "https://lorem-pro-tool.run4ravish.workers.dev/slug-generator" },
-    { name: "AI Detector", url: "https://lorem-pro-tool.run4ravish.workers.dev/ai-detector" },
-    { name: "Hashtag Generator", url: "https://lorem-pro-tool.run4ravish.workers.dev/hashtag-generator" },
-    { name: "YouTube Title/Tag Generator", url: "https://lorem-pro-tool.run4ravish.workers.dev/youtube-title-generator" },
-    { name: "Resume Builder", url: "https://lorem-pro-tool.run4ravish.workers.dev/resume-builder" },
-    { name: "YouTube Thumbnail Downloader", url: "https://lorem-pro-tool.run4ravish.workers.dev/youtube-thumbnail-downloader" },
-    { name: "SIP Calculator", url: "https://lorem-pro-tool.run4ravish.workers.dev/sip-calculator" },
-    { name: "YouTube Earnings Calculator", url: "https://lorem-pro-tool.run4ravish.workers.dev/youtube-earnings-calculator" },
-    { name: "Mortgage Calculator", url: "https://lorem-pro-tool.run4ravish.workers.dev/mortgage-calculator" },
+  // SOUND EFFECT - Web Audio API (no external file)
+  const playSound = (type: "hover" | "click") => {
+    try {
+      if (!audioCtxRef.current) audioCtxRef.current = new (window.AudioContext || (window as any).webkitAudioContext)();
+      const ctx = audioCtxRef.current;
+      if (ctx.state === "suspended") ctx.resume();
+      const osc = ctx.createOscillator();
+      const gain = ctx.createGain();
+      osc.connect(gain); gain.connect(ctx.destination);
+      if (type === "hover") {
+        osc.frequency.value = 800; gain.gain.setValueAtTime(0.05, ctx.currentTime);
+        osc.start(); gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.15); osc.stop(ctx.currentTime + 0.15);
+      } else {
+        osc.frequency.value = 1200; gain.gain.setValueAtTime(0.15, ctx.currentTime);
+        osc.start(); gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.3); osc.stop(ctx.currentTime + 0.3);
+      }
+    } catch {}
+  };
+
+  // CATEGORY WISE TOOLS - Ab new tool add karna ho to isme category me daal dena
+  const toolCategories = [
+    {
+      title: "💰 HIGH CPC - Finance Calculators",
+      desc: "Most profitable tools - $10+ CPC",
+      color: "from-emerald-500 to-green-600",
+      tools: [
+        { name: "SIP Calculator", url: "https://lorem-pro-tool.run4ravish.workers.dev/sip-calculator", hot: true, icon: "📈" },
+        { name: "Mortgage Calculator", url: "https://lorem-pro-tool.run4ravish.workers.dev/mortgage-calculator", hot: true, icon: "🏠" },
+        { name: "YouTube Earnings Calculator", url: "https://lorem-pro-tool.run4ravish.workers.dev/youtube-earnings-calculator", hot: true, icon: "💵" },
+      ]
+    },
+    {
+      title: "▶️ YouTube & Creator Tools",
+      desc: "For YouTubers & Bloggers",
+      color: "from-red-500 to-orange-500",
+      tools: [
+        { name: "YouTube Title/Tag Generator", url: "https://lorem-pro-tool.run4ravish.workers.dev/youtube-title-generator", icon: "🎬" },
+        { name: "YouTube Thumbnail Downloader", url: "https://lorem-pro-tool.run4ravish.workers.dev/youtube-thumbnail-downloader", icon: "🖼️" },
+        { name: "Hashtag Generator", url: "https://lorem-pro-tool.run4ravish.workers.dev/hashtag-generator", icon: "#️⃣" },
+      ]
+    },
+    {
+      title: "✍️ Text & Writing Tools",
+      desc: "Content writers ke liye",
+      color: "from-blue-500 to-cyan-500",
+      tools: [
+        { name: "Word Counter", url: "https://lorem-pro-tool.run4ravish.workers.dev/word-counter", icon: "📝" },
+        { name: "Character Counter", url: "https://lorem-pro-tool.run4ravish.workers.dev/character-counter", icon: "🔤" },
+        { name: "Case Converter", url: "https://lorem-pro-tool.run4ravish.workers.dev/case-converter", icon: "🔠" },
+        { name: "Fancy Text", url: "https://lorem-pro-tool.run4ravish.workers.dev/fancy-text", icon: "✨" },
+        { name: "Remove Duplicates", url: "https://lorem-pro-tool.run4ravish.workers.dev/remove-duplicates", icon: "🧹" },
+        { name: "Slug Generator", url: "https://lorem-pro-tool.run4ravish.workers.dev/slug-generator", icon: "🔗" },
+        { name: "Text to Handwriting", url: "https://lorem-pro-tool.run4ravish.workers.dev/text-to-handwriting", icon: "✍️" },
+      ]
+    },
+    {
+      title: "🎨 Generators & Utilities",
+      desc: "Daily use tools",
+      color: "from-purple-500 to-pink-500",
+      tools: [
+        { name: "Avatar Generator", url: "https://lorem-pro-tool.run4ravish.workers.dev/avatar", icon: "👤" },
+        { name: "Fake Data Generator", url: "https://lorem-pro-tool.run4ravish.workers.dev/fake-data-generator", icon: "🧪" },
+        { name: "Password Generator", url: "https://lorem-pro-tool.run4ravish.workers.dev/password-generator", icon: "🔐" },
+        { name: "QR Generator", url: "https://lorem-pro-tool.run4ravish.workers.dev/placeholder-qr-generator", icon: "📱" },
+        { name: "Color Palette Generator", url: "https://lorem-pro-tool.run4ravish.workers.dev/color-palette", icon: "🎨" },
+      ]
+    },
+    {
+      title: "🤖 AI Tools",
+      desc: "AI powered",
+      color: "from-orange-500 to-yellow-500",
+      tools: [
+        { name: "AI Detector", url: "https://lorem-pro-tool.run4ravish.workers.dev/ai-detector", icon: "🤖" },
+        { name: "Image to Text - OCR", url: "https://lorem-pro-tool.run4ravish.workers.dev/image-to-text", icon: "📷" },
+        { name: "Resume Builder", url: "https://lorem-pro-tool.run4ravish.workers.dev/resume-builder", icon: "📄" },
+      ]
+    }
   ];
 
   const favouriteTools = [
@@ -75,10 +131,15 @@ export default function Home() {
           0%, 100% { opacity: 1; transform: scale(1); }
           50% { opacity: 0.3; transform: scale(0.8); }
         }
+        @keyframes hotPulse {
+          0%, 100% { box-shadow: 0 0 10px rgba(16,185,129,0.5); }
+          50% { box-shadow: 0 0 20px rgba(16,185,129,0.9); }
+        }
         .animate-small-live { animation: smallPulse 2s infinite; }
         .velora-glow { animation: veloraGlow 1.8s ease-in-out infinite; }
         .velora-float { animation: veloraFloat 2.5s ease-in-out infinite; }
         .velora-blink-dot { animation: veloraBlinkDot 1s ease-in-out infinite; }
+        .hot-glow { animation: hotPulse 1.5s infinite; }
         .animate-big-live {
           background: linear-gradient(100deg, #FF7A1A 20%, #ffad66 50%, #FF7A1A 80%);
           background-size: 200% auto;
@@ -99,6 +160,12 @@ export default function Home() {
         @keyframes shimmerSlide {
           0% { left: -100%; }
           100% { left: 200%; }
+        }
+        .tool-card {
+          transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .tool-card:hover {
+          transform: translateY(-3px) scale(1.02);
         }
       `}</style>
 
@@ -167,7 +234,6 @@ export default function Home() {
       <section id="contact" className="w-full bg-gradient-to-br from-orange-500 via-[#ff6b00] to-[#ff3c00] relative overflow-hidden py-10 px-4 rounded-[32px] max-w-[1100px] mx-auto mt-4">
         <div className="relative max-w-6xl mx-auto px-2 md:px-6">
           <div className="grid md:grid-cols-2 gap-10 items-center">
-            
             <div className="text-center md:text-left">
               <div className="inline-flex items-center justify-center gap-2 bg-black text-white px-4 py-1.5 rounded-full text-xs font-black tracking-widest mb-4">
                 <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
@@ -185,7 +251,6 @@ export default function Home() {
                 ))}
               </div>
             </div>
-
             <div className="bg-black rounded-[24px] p-7 border border-white/10 shadow-2xl">
               <h3 className="text-xl font-black text-white flex items-center gap-2">What VELORA Can Do For You 👇</h3>
               <ul className="mt-4 space-y-3 text-sm text-zinc-300">
@@ -194,15 +259,12 @@ export default function Home() {
                 <li className="flex gap-3"><span className="text-orange-500">✓</span><span><b className="text-white">Web & Mobile Apps</b> — Idea to Play Store</span></li>
                 <li className="flex gap-3"><span className="text-orange-500">✓</span><span><b className="text-white">SaaS Boilerplate Kits</b> — Auth + Payments + Dashboard, Launch in 48H</span></li>
               </ul>
-
               <div className="grid grid-cols-2 gap-3 mt-6">
                 <a href="https://wa.me/919999999999?text=Hi%20Ravish,%20I%20want%20to%20build%20a%20project!" target="_blank" className="bg-[#25D366] text-black text-center py-3 rounded-full font-black text-sm hover:scale-105 transition">WhatsApp</a>
                 <a href="mailto:hello@velora.dev" className="bg-white text-black text-center py-3 rounded-full font-black text-sm hover:bg-zinc-200 transition">Email</a>
               </div>
-
               <p className="text-center text-[11px] text-zinc-500 mt-3">⚡ REPLY IN 2 HOURS • 100% CONFIDENTIAL</p>
-
-              <a href="https://velora-cloud.run4ravish.workers.dev/" target="_blank" className="group relative mt-5 block">
+              <a href="https://velora-cloud.pages.dev/" target="_blank" className="group relative mt-5 block">
                 <div className="absolute -top-3 -right-2 z-10 flex items-center gap-1.5 bg-red-600 text-white px-3 py-1 rounded-full text-[10px] font-black tracking-widest">
                   <span className="w-2 h-2 bg-white rounded-full velora-blink-dot"></span>
                   LIVE
@@ -243,27 +305,59 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="products" className="max-w-[700px] mx-auto px-4 pb-10">
+      {/* CATEGORY WISE TOOLS - NEW ATTRACTIVE SECTION */}
+      <section id="products" className="max-w-[800px] mx-auto px-4 pb-10">
         <p className="text-[#FF7A1A] font-bold tracking-[0.15em] text-[12px]">OUR PRODUCTS</p>
-        <p className={`text-[10px] tracking-[0.3em] mb-5 ${isDark ? "text-white/40" : "text-black/40"}`}>— BUILT BY VELORA</p>
-        <div className={`border rounded-2xl p-5 md:p-6 mb-5 ${isDark ? "bg-[#15151F] border-white/[0.07]" : "bg-white border-black/[0.07] shadow-sm"}`}>
-          <div className="flex justify-between items-start gap-2">
-            <div><p className="font-extrabold text-[16px]">LOREM PRO TOOL — 15+ Tools Suite</p><p className={`text-[11px] mt-1 ${isDark ? "text-white/50" : "text-black/50"}`}>All-in-one toolkit for creators & developers</p></div>
-            <span className="animate-small-live bg-[#FF7A1A] text-black text-[10px] font-black px-3 py-1 rounded-full">OPEN LIVE</span>
-          </div>
-          <div className="grid grid-cols-2 gap-2.5 mt-5">
-            {toolsList.map((t) => {
-              const isSelected = selectedTool === t.name;
-              return (
-                <a key={t.name} href={t.url} target="_blank" onClick={() => setSelectedTool(t.name)}
-                  className={`border rounded-xl px-3 py-3 text-[11px] font-medium transition-all ${isSelected ? "bg-[#FF7A1A] border-[#FF7A1A] text-white" : isDark ? "bg-[#1E1E2A] border-white/5 text-white/70 hover:bg-[#FF7A1A]/10 hover:text-[#FF7A1A]" : "bg-[#F2F2F6] border-black/5 text-black/70 hover:bg-[#FF7A1A]/10 hover:text-[#FF7A1A]"}`}>
-                  {t.name}
-                </a>
-              )
-            })}
-          </div>
-          <a href="https://lorem-pro-tool.run4ravish.workers.dev" target="_blank" className="animate-big-live mt-5 block w-full text-center py-3.5 rounded-xl font-bold text-white hover:scale-[1.02] transition-transform">Open Live →</a>
+        <p className={`text-[10px] tracking-[0.3em] mb-5 ${isDark ? "text-white/40" : "text-black/40"}`}>— 21 TOOLS BY VELORA (CATEGORY WISE)</p>
+        
+        <div className="space-y-6">
+          {toolCategories.map((cat, catIdx) => (
+            <div key={catIdx} className={`border rounded-2xl p-5 md:p-6 ${isDark ? "bg-[#15151F] border-white/[0.07]" : "bg-white border-black/[0.07] shadow-sm"}`}>
+              <div className="flex items-center gap-3 mb-4">
+                <div className={`w-1.5 h-8 rounded-full bg-gradient-to-b ${cat.color}`} />
+                <div>
+                  <h3 className="font-extrabold text-[14px] md:text-[16px]">{cat.title}</h3>
+                  <p className={`text-[10px] md:text-[11px] ${isDark ? "text-white/40" : "text-black/40"}`}>{cat.desc}</p>
+                </div>
+                <div className="ml-auto">
+                  <span className={`text-[10px] font-black px-2.5 py-1 rounded-full bg-gradient-to-r ${cat.color} text-white`}>{cat.tools.length} Tools</span>
+                </div>
+              </div>
+              
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                {cat.tools.map((t) => {
+                  const isSelected = selectedTool === t.name;
+                  return (
+                    <a 
+                      key={t.name} 
+                      href={t.url} 
+                      target="_blank" 
+                      onMouseEnter={() => playSound("hover")}
+                      onClick={() => { playSound("click"); setSelectedTool(t.name); }}
+                      className={`tool-card group relative border rounded-xl px-3.5 py-3.5 text-[12px] font-bold flex items-center gap-2.5 overflow-hidden
+                        ${isSelected ? "bg-[#FF7A1A] border-[#FF7A1A] text-white scale-[1.02]" : 
+                          t.hot ? `bg-gradient-to-br from-emerald-500/10 to-green-600/10 border-emerald-500/30 hover:border-emerald-500 hover:bg-emerald-500/20 ${isDark ? "text-white" : "text-black"} hot-glow` :
+                          isDark ? "bg-[#1E1E2A] border-white/5 text-white/70 hover:bg-[#FF7A1A]/10 hover:text-[#FF7A1A] hover:border-[#FF7A1A]/30" : "bg-[#F2F2F6] border-black/5 text-black/70 hover:bg-[#FF7A1A]/10 hover:text-[#FF7A1A] hover:border-[#FF7A1A]/30"
+                        }`}
+                    >
+                      {/* Shine effect */}
+                      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
+                      
+                      <span className="text-[16px] group-hover:scale-125 transition-transform duration-300">{t.icon}</span>
+                      <span className="flex-1 relative z-10">{t.name}</span>
+                      {t.hot && <span className="bg-[#10B981] text-black text-[8px] font-black px-1.5 py-0.5 rounded-full animate-pulse">HOT</span>}
+                      <span className="opacity-30 group-hover:opacity-100 group-hover:translate-x-1 transition-all">↗</span>
+                    </a>
+                  )
+                })}
+              </div>
+            </div>
+          ))}
         </div>
+        
+        <a href="https://lorem-pro-tool.run4ravish.workers.dev" target="_blank" onMouseEnter={() => playSound("hover")} onClick={() => playSound("click")} className="animate-big-live mt-6 block w-full text-center py-3.5 rounded-xl font-bold text-white hover:scale-[1.02] transition-transform tool-card">
+          Open All 21 Tools Live →
+        </a>
       </section>
 
       <section id="products-2" className="max-w-[700px] mx-auto px-4 pb-10">
@@ -278,8 +372,8 @@ export default function Home() {
             {favouriteTools.map((t) => {
               const isSelected = selectedTool === t.name;
               return (
-                <a key={t.name} href={t.url} target="_blank" onClick={() => setSelectedTool(t.name)}
-                  className={`border rounded-xl px-4 py-3.5 text-[12px] font-bold transition-all flex justify-between items-center ${isSelected ? "bg-[#FF7A1A] border-[#FF7A1A] text-white" : isDark ? "bg-[#1E1E2A] border-white/5 text-white/70 hover:bg-[#FF7A1A]/10 hover:text-[#FF7A1A]" : "bg-[#F2F2F6] border-black/5 text-black/70 hover:bg-[#FF7A1A]/10 hover:text-[#FF7A1A]"}`}>
+                <a key={t.name} href={t.url} target="_blank" onMouseEnter={() => playSound("hover")} onClick={() => { playSound("click"); setSelectedTool(t.name); }}
+                  className={`tool-card border rounded-xl px-4 py-3.5 text-[12px] font-bold transition-all flex justify-between items-center ${isSelected ? "bg-[#FF7A1A] border-[#FF7A1A] text-white" : isDark ? "bg-[#1E1E2A] border-white/5 text-white/70 hover:bg-[#FF7A1A]/10 hover:text-[#FF7A1A]" : "bg-[#F2F2F6] border-black/5 text-black/70 hover:bg-[#FF7A1A]/10 hover:text-[#FF7A1A]"}`}>
                   {t.name} <span>↗</span>
                 </a>
               )
