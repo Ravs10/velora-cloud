@@ -1,8 +1,6 @@
 "use client";
 import { useState, useRef } from "react";
 
-const BASE = ""; // relative links - fast + SEO friendly
-
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeModal, setActiveModal] = useState<string | null>(null);
@@ -33,7 +31,7 @@ export default function Home() {
     } catch {}
   };
 
-  // ✅ CATEGORY WISE - URL LIST SAHI KI, RELATIVE LINKS
+  // ✅ SITEMAP + SAARE URL - 23 TOOLS - SAHI CATEGORY ME
   const toolCategories = [
     {
       title: "💰 HIGH CPC - Finance Calculators",
@@ -45,16 +43,18 @@ export default function Home() {
         { name: "SIP Calculator", url: "/sip-calculator", hot: true, icon: "📈" },
         { name: "Mortgage Calculator", url: "/mortgage-calculator", hot: true, icon: "🏠" },
         { name: "YouTube Earnings Calculator", url: "/youtube-earnings-calculator", hot: true, icon: "💵" },
+        { name: "Resume Builder", url: "/resume-builder", hot: true, icon: "📄" },
       ]
     },
     {
-      title: "▶️ YouTube & Creator Tools",
-      desc: "For YouTubers & Bloggers",
+      title: "🔥 VIRAL / AI Tools",
+      desc: "Viral + AI powered - High traffic",
       color: "from-red-500 to-orange-500",
       tools: [
+        { name: "AI Detector", url: "/ai-detector", icon: "🤖" },
+        { name: "Hashtag Generator", url: "/hashtag-generator", icon: "#️⃣" },
         { name: "YouTube Title/Tag Generator", url: "/youtube-title-generator", icon: "🎬" },
         { name: "YouTube Thumbnail Downloader", url: "/youtube-thumbnail-downloader", icon: "🖼️" },
-        { name: "Hashtag Generator", url: "/hashtag-generator", icon: "#️⃣" },
       ]
     },
     {
@@ -81,18 +81,9 @@ export default function Home() {
         { name: "Password Generator", url: "/password-generator", icon: "🔐" },
         { name: "QR Generator", url: "/placeholder-qr-generator", icon: "📱" },
         { name: "Color Palette Generator", url: "/color-palette", icon: "🎨" },
+        { name: "Image to Text - OCR", url: "/image-to-text", icon: "📷" },
       ]
     },
-    {
-      title: "🤖 AI Tools",
-      desc: "AI powered",
-      color: "from-orange-500 to-yellow-500",
-      tools: [
-        { name: "AI Detector", url: "/ai-detector", icon: "🤖" },
-        { name: "Image to Text - OCR", url: "/image-to-text", icon: "📷" },
-        { name: "Resume Builder", url: "/resume-builder", icon: "📄" },
-      ]
-    }
   ];
 
   const favouriteTools = [
@@ -120,7 +111,6 @@ export default function Home() {
         @keyframes veloraFloat { 0%,100%{transform:translateY(0) scale(1)} 50%{transform:translateY(-8px) scale(1.03)} }
         @keyframes veloraBlinkDot { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.3;transform:scale(.8)} }
         @keyframes hotPulse { 0%,100%{box-shadow:0 0 10px rgba(16,185,129,0.5)} 50%{box-shadow:0 0 20px rgba(16,185,129,0.9)} }
-        @keyframes borderGlow { 0%,100%{border-color:rgba(255,122,26,0.25)} 50%{border-color:rgba(255,122,26,0.9)} }
         .animate-small-live{animation:smallPulse 2s infinite}
         .velora-glow{animation:veloraGlow 1.8s ease-in-out infinite}
         .velora-float{animation:veloraFloat 2.5s ease-in-out infinite}
@@ -129,7 +119,6 @@ export default function Home() {
         .animate-big-live{background:linear-gradient(100deg,#FF7A1A 20%,#ffad66 50%,#FF7A1A 80%);background-size:200% auto;animation:shimmer 2.5s linear infinite;position:relative;overflow:hidden}
         .animate-big-live::after{content:'';position:absolute;top:0;left:-100%;width:50%;height:100%;background:linear-gradient(120deg,transparent,rgba(255,255,255,0.4),transparent);animation:shimmerSlide 2.2s infinite}
         @keyframes shimmerSlide{0%{left:-100%}100%{left:200%}}
-        /* ✅ ADVANCE TOOL CARD - 2 PER ROW + HOVER GLOW */
         .tool-card{transition:all .35s cubic-bezier(.4,0,.2,1);position:relative;isolation:isolate}
         .tool-card::before{content:'';position:absolute;inset:0;border-radius:inherit;padding:1px;background:linear-gradient(135deg,rgba(255,122,26,0),rgba(255,122,26,.7),rgba(255,255,255,.2));-webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);-webkit-mask-composite:xor;mask-composite:exclude;opacity:0;transition:opacity .35s;z-index:1}
         .tool-card:hover{transform:translateY(-4px) scale(1.03);box-shadow:0 12px 30px rgba(255,122,26,.25),0 4px 12px rgba(0,0,0,.3)}
@@ -180,7 +169,6 @@ export default function Home() {
         </div>
       </section>
     
-      {/* ✅ HIRE ME - WIDTH KAM KI, LEFT/RIGHT ME PATLI LINE DIKHEGI */}
       <div className="px-4 md:px-6">
         <section id="contact" className="w-full bg-gradient-to-br from-orange-500 via-[#ff6b00] to-[#ff3c00] relative overflow-hidden py-10 px-4 rounded-[32px] max-w-[1020px] mx-auto mt-4 shadow-[0_0_0_1px_rgba(255,122,26,0.2)]">
           <div className="relative max-w-6xl mx-auto px-2 md:px-6">
@@ -238,7 +226,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ✅ TOOLS - EK ROW ME 2 URL, ADVANCE STYLE */}
       <section id="products" className="max-w-[800px] mx-auto px-4 pb-10">
         <p className="text-[#FF7A1A] font-bold tracking-[0.15em] text-[12px]">OUR PRODUCTS</p>
         <p className={`text-[10px] tracking-[0.3em] mb-5 ${isDark ? "text-white/40" : "text-black/40"}`}>— 23 TOOLS BY VELORA (CATEGORY WISE)</p>
@@ -250,7 +237,6 @@ export default function Home() {
                 <div><h3 className="font-extrabold text-[14px] md:text-[16px]">{cat.title}</h3><p className={`text-[10px] md:text-[11px] ${isDark ? "text-white/40" : "text-black/40"}`}>{cat.desc}</p></div>
                 <div className="ml-auto"><span className={`text-[10px] font-black px-2.5 py-1 rounded-full bg-gradient-to-r ${cat.color} text-white`}>{cat.tools.length} Tools</span></div>
               </div>
-              {/* ✅ grid-cols-2 = Hamesha 1 row me 2 */}
               <div className="grid grid-cols-2 gap-2.5">
                 {cat.tools.map((t) => {
                   const isSelected = selectedTool === t.name;
@@ -278,7 +264,6 @@ export default function Home() {
         <p className={`text-[10px] tracking-[0.3em] mb-5 ${isDark ? "text-white/40" : "text-black/40"}`}>— MORE FAVOURITE TOOLS</p>
         <div className={`border rounded-2xl p-5 md:p-6 mb-5 ${isDark ? "bg-[#15151F] border-white/[0.07]" : "bg-white border-black/[0.07] shadow-sm"}`}>
           <div className="flex justify-between items-start gap-2"><div><p className="font-extrabold text-[16px]">MORE FAVOURITE TOOLS — Blogger Collection</p><p className={`text-[11px] mt-1 ${isDark ? "text-white/50" : "text-black/50"}`}>My most used tools - Live on Blogger</p></div><span className="animate-small-live bg-[#FF7A1A] text-black text-[10px] font-black px-3 py-1 rounded-full shrink-0">OPEN LIVE</span></div>
-          {/* ✅ Favourite bhi 2 per row */}
           <div className="grid grid-cols-2 gap-2.5 mt-5">
             {favouriteTools.map((t) => {
               const isSelected = selectedTool === t.name;
