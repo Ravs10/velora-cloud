@@ -55,7 +55,7 @@ export default function Home() {
         { name: "Hashtag Generator", url: `${TOOLS_BASE}/hashtag-generator`, icon: "#️⃣" },
         { name: "YouTube Title Generator", url: `${TOOLS_BASE}/youtube-title-generator`, icon: "🎬" },
         { name: "YouTube Thumbnail Downloader", url: `${TOOLS_BASE}/youtube-thumbnail-generator`, icon: "🖼️" },
-        { name: "YouTube Earnings Calculator", url: "/youtube-earnings-calculator", hot: true, icon: "💰" },
+        
       ]
     },
     {
