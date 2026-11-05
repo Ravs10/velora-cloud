@@ -54,7 +54,7 @@ export default function Home() {
         { name: "AI Detector", url: `${TOOLS_BASE}/ai-detector`, icon: "🤖" },
         { name: "Hashtag Generator", url: `${TOOLS_BASE}/hashtag-generator`, icon: "#️⃣" },
         { name: "YouTube Title Generator", url: `${TOOLS_BASE}/youtube-title-generator`, icon: "🎬" },
-        { name: "YouTube Thumbnail Downloader", url: `${TOOLS_BASE}/youtube-thumbnail-downloader`, icon: "🖼️" },
+        { name: "YouTube Thumbnail Downlodar", url: `${TOOLS_BASE}/youtube-thumbnail-downlodar`, icon: "🖼️" },
         
       ]
     },
