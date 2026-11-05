@@ -44,6 +44,7 @@ export default function Home() {
         { name: "YouTube Earnings Calculator", url: `${TOOLS_BASE}/youtube-earnings-calculator`, hot: true, icon: "▶️" },
 { name: "Income Tax Calculator Pro", url: `${TOOLS_BASE}/income-tax-calculator`, hot: true, icon: "🧾" },
 { name: "Resume Builder", url: `${TOOLS_BASE}/resume-builder`, hot: true, icon: "📄" },
+        { name: "FD + RD + Compound Calculator", url: `${TOOLS_BASE}/fd-rd-calculator`, hot: true, icon: "🏦" },
       ]
     },
     {
