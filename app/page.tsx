@@ -42,7 +42,7 @@ export default function Home() {
         { name: "SIP Calculator", url: `${TOOLS_BASE}/sip-calculator`, hot: true, icon: "📈" },
         { name: "Mortgage Calculator", url: `${TOOLS_BASE}/mortgage-calculator`, hot: true, icon: "🏠" },
         { name: "YouTube Earnings Calculator", url: `${TOOLS_BASE}/youtube-earnings-calculator`, hot: true, icon: "💵" },
-        { name: "Income Tax Calculator Pro", url: "/income-tax-calculator", hot: true, icon: "🧾" },
+        { name: "Income Tax Calculator Pro", url: `${TOOLS_BASE}/income-tax-calculator", hot: true, icon: "🧾" },
         { name: "Resume Builder", url: `${TOOLS_BASE}/resume-builder`, hot: true, icon: "📄" },
       ]
     },
