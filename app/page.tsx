@@ -1,6 +1,9 @@
 "use client";
 import { useState, useRef } from "react";
 
+// ✅ FIX - Tools dusre domain pe hai, isliye FULL URL chahiye, relative nahi
+const TOOLS_BASE = "https://lorem-pro-tool.run4ravish.workers.dev";
+
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeModal, setActiveModal] = useState<string | null>(null);
@@ -13,7 +16,8 @@ export default function Home() {
   const isDark = theme === "dark";
   const toggleTheme = () => setTheme(theme === "dark" ? "light" : "dark");
 
-  const playSound = (type: "hover" | "click") => {
+  // ✅ SIRF CLICK SOUND - HOVER SOUND NAHI HAI
+  const playSound = () => {
     try {
       if (!audioCtxRef.current) audioCtxRef.current = new (window.AudioContext || (window as any).webkitAudioContext)();
       const ctx = audioCtxRef.current;
@@ -21,40 +25,35 @@ export default function Home() {
       const osc = ctx.createOscillator();
       const gain = ctx.createGain();
       osc.connect(gain); gain.connect(ctx.destination);
-      if (type === "hover") {
-        osc.frequency.value = 800; gain.gain.setValueAtTime(0.05, ctx.currentTime);
-        osc.start(); gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.15); osc.stop(ctx.currentTime + 0.15);
-      } else {
-        osc.frequency.value = 1200; gain.gain.setValueAtTime(0.15, ctx.currentTime);
-        osc.start(); gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.3); osc.stop(ctx.currentTime + 0.3);
-      }
+      osc.frequency.value = 1200; gain.gain.setValueAtTime(0.15, ctx.currentTime);
+      osc.start(); gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.3); osc.stop(ctx.currentTime + 0.3);
     } catch {}
   };
 
-  // ✅ SITEMAP + SAARE URL - 23 TOOLS - SAHI CATEGORY ME
+  // ✅ TUMHARI DI HUI 23 URL - FULL ABSOLUTE LINKS - SAHI CATEGORY - NO AI CATEGORY
   const toolCategories = [
     {
       title: "💰 HIGH CPC - Finance Calculators",
       desc: "Most profitable tools - $10+ CPC",
       color: "from-emerald-500 to-green-600",
       tools: [
-        { name: "Personal Loan EMI Calculator", url: "/personal-loan-emi-calculator", hot: true, icon: "💰" },
-        { name: "FIRE Calculator", url: "/fire-calculator", hot: true, icon: "🔥" },
-        { name: "SIP Calculator", url: "/sip-calculator", hot: true, icon: "📈" },
-        { name: "Mortgage Calculator", url: "/mortgage-calculator", hot: true, icon: "🏠" },
-        { name: "YouTube Earnings Calculator", url: "/youtube-earnings-calculator", hot: true, icon: "💵" },
-        { name: "Resume Builder", url: "/resume-builder", hot: true, icon: "📄" },
+        { name: "Personal Loan EMI Calculator", url: `${TOOLS_BASE}/personal-loan-emi-calculator`, hot: true, icon: "💰" },
+        { name: "FIRE Calculator", url: `${TOOLS_BASE}/fire-calculator`, hot: true, icon: "🔥" },
+        { name: "SIP Calculator", url: `${TOOLS_BASE}/sip-calculator`, hot: true, icon: "📈" },
+        { name: "Mortgage Calculator", url: `${TOOLS_BASE}/mortgage-calculator`, hot: true, icon: "🏠" },
+        { name: "YouTube Earnings Calculator", url: `${TOOLS_BASE}/youtube-earnings-calculator`, hot: true, icon: "💵" },
+        { name: "Resume Builder", url: `${TOOLS_BASE}/resume-builder`, hot: true, icon: "📄" },
       ]
     },
     {
-      title: "🔥 VIRAL / AI Tools",
-      desc: "Viral + AI powered - High traffic",
+      title: "🚀 Smart Creator Tools",
+      desc: "Smart + Viral - High traffic",
       color: "from-red-500 to-orange-500",
       tools: [
-        { name: "AI Detector", url: "/ai-detector", icon: "🤖" },
-        { name: "Hashtag Generator", url: "/hashtag-generator", icon: "#️⃣" },
-        { name: "YouTube Title/Tag Generator", url: "/youtube-title-generator", icon: "🎬" },
-        { name: "YouTube Thumbnail Downloader", url: "/youtube-thumbnail-downloader", icon: "🖼️" },
+        { name: "AI Detector", url: `${TOOLS_BASE}/ai-detector`, icon: "🤖" },
+        { name: "Hashtag Generator", url: `${TOOLS_BASE}/hashtag-generator`, icon: "#️⃣" },
+        { name: "YouTube Title Generator", url: `${TOOLS_BASE}/youtube-title-generator`, icon: "🎬" },
+        { name: "YouTube Thumbnail Generator", url: `${TOOLS_BASE}/youtube-thumbnail-generator`, icon: "🖼️" },
       ]
     },
     {
@@ -62,13 +61,13 @@ export default function Home() {
       desc: "Content writers ke liye",
       color: "from-blue-500 to-cyan-500",
       tools: [
-        { name: "Word Counter", url: "/word-counter", icon: "📝" },
-        { name: "Character Counter", url: "/character-counter", icon: "🔤" },
-        { name: "Case Converter", url: "/case-converter", icon: "🔠" },
-        { name: "Fancy Text", url: "/fancy-text", icon: "✨" },
-        { name: "Remove Duplicates", url: "/remove-duplicates", icon: "🧹" },
-        { name: "Slug Generator", url: "/slug-generator", icon: "🔗" },
-        { name: "Text to Handwriting", url: "/text-to-handwriting", icon: "✍️" },
+        { name: "Word Counter", url: `${TOOLS_BASE}/word-counter`, icon: "📝" },
+        { name: "Character Counter", url: `${TOOLS_BASE}/character-counter`, icon: "🔤" },
+        { name: "Case Converter", url: `${TOOLS_BASE}/case-converter`, icon: "🔠" },
+        { name: "Fancy Text", url: `${TOOLS_BASE}/fancy-text`, icon: "✨" },
+        { name: "Remove Duplicates", url: `${TOOLS_BASE}/remove-duplicates`, icon: "🧹" },
+        { name: "Slug Generator", url: `${TOOLS_BASE}/slug-generator`, icon: "🔗" },
+        { name: "Text to Handwriting", url: `${TOOLS_BASE}/text-to-handwriting`, icon: "✍️" },
       ]
     },
     {
@@ -76,12 +75,12 @@ export default function Home() {
       desc: "Daily use tools",
       color: "from-purple-500 to-pink-500",
       tools: [
-        { name: "Avatar Generator", url: "/avatar", icon: "👤" },
-        { name: "Fake Data Generator", url: "/fake-data-generator", icon: "🧪" },
-        { name: "Password Generator", url: "/password-generator", icon: "🔐" },
-        { name: "QR Generator", url: "/placeholder-qr-generator", icon: "📱" },
-        { name: "Color Palette Generator", url: "/color-palette", icon: "🎨" },
-        { name: "Image to Text - OCR", url: "/image-to-text", icon: "📷" },
+        { name: "Avatar Generator", url: `${TOOLS_BASE}/avatar`, icon: "👤" },
+        { name: "Fake Data Generator", url: `${TOOLS_BASE}/fake-data-generator`, icon: "🧪" },
+        { name: "Password Generator", url: `${TOOLS_BASE}/password-generator`, icon: "🔐" },
+        { name: "QR Generator", url: `${TOOLS_BASE}/placeholder-qr-generator`, icon: "📱" },
+        { name: "Color Palette Generator", url: `${TOOLS_BASE}/color-palette`, icon: "🎨" },
+        { name: "Image to Text - OCR", url: `${TOOLS_BASE}/image-to-text`, icon: "📷" },
       ]
     },
   ];
@@ -190,11 +189,11 @@ export default function Home() {
                   <li className="flex gap-3"><span className="text-orange-500">✓</span><span><b className="text-white">SaaS Boilerplate Kits</b> — Auth + Payments + Dashboard, Launch in 48H</span></li>
                 </ul>
                 <div className="grid grid-cols-2 gap-3 mt-6">
-                  <a href="https://wa.me/919999999999?text=Hi%20Ravish,%20I%20want%20to%20build%20a%20project!" target="_blank" className="bg-[#25D366] text-black text-center py-3 rounded-full font-black text-sm hover:scale-105 transition">WhatsApp</a>
+                  <a href="https://wa.me/919999999999?text=Hi%20Ravish,%20I%20want%20to%20build%20a%20project!" target="_blank" rel="noopener noreferrer" className="bg-[#25D366] text-black text-center py-3 rounded-full font-black text-sm hover:scale-105 transition">WhatsApp</a>
                   <a href="mailto:hello@velora.dev" className="bg-white text-black text-center py-3 rounded-full font-black text-sm hover:bg-zinc-200 transition">Email</a>
                 </div>
                 <p className="text-center text-[11px] text-zinc-500 mt-3">⚡ REPLY IN 2 HOURS • 100% CONFIDENTIAL</p>
-                <a href="https://velora-cloud.pages.dev/" target="_blank" className="group relative mt-5 block">
+                <a href="https://velora-cloud.pages.dev/" target="_blank" rel="noopener noreferrer" className="group relative mt-5 block">
                   <div className="absolute -top-3 -right-2 z-10 flex items-center gap-1.5 bg-red-600 text-white px-3 py-1 rounded-full text-[10px] font-black tracking-widest"><span className="w-2 h-2 bg-white rounded-full velora-blink-dot"></span>LIVE</div>
                   <div className="velora-glow bg-[#111] border-2 border-orange-500 rounded-[18px] p-4 relative overflow-hidden">
                     <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
@@ -228,7 +227,7 @@ export default function Home() {
 
       <section id="products" className="max-w-[800px] mx-auto px-4 pb-10">
         <p className="text-[#FF7A1A] font-bold tracking-[0.15em] text-[12px]">OUR PRODUCTS</p>
-        <p className={`text-[10px] tracking-[0.3em] mb-5 ${isDark ? "text-white/40" : "text-black/40"}`}>— 23 TOOLS BY VELORA (CATEGORY WISE)</p>
+        <p className={`text-[10px] tracking-[0.3em] mb-5 ${isDark ? "text-white/40" : "text-black/40"}`}>— 25+ TOOLS BY VELORA (CATEGORY WISE)</p>
         <div className="space-y-6">
           {toolCategories.map((cat, catIdx) => (
             <div key={catIdx} className={`border rounded-2xl p-4 md:p-6 ${isDark ? "bg-[#15151F] border-white/[0.07]" : "bg-white border-black/[0.07] shadow-sm"}`}>
@@ -241,7 +240,7 @@ export default function Home() {
                 {cat.tools.map((t) => {
                   const isSelected = selectedTool === t.name;
                   return (
-                    <a key={t.name} href={t.url} onMouseEnter={() => playSound("hover")} onClick={() => { playSound("click"); setSelectedTool(t.name); }}
+                    <a key={t.name} href={t.url} target="_blank" rel="noopener noreferrer" onClick={() => { playSound(); setSelectedTool(t.name); }}
                       className={`tool-card group relative border rounded-xl px-2.5 sm:px-3.5 py-3.5 text-[11px] sm:text-[12px] font-bold flex items-center gap-2 overflow-hidden
                         ${isSelected ? "bg-[#FF7A1A] border-[#FF7A1A] text-white scale-[1.02]" : t.hot ? `bg-gradient-to-br from-emerald-500/10 to-green-600/10 border-emerald-500/30 hover:border-emerald-500 hover:bg-emerald-500/20 ${isDark ? "text-white" : "text-black"} hot-glow` : isDark ? "bg-[#1E1E2A] border-white/5 text-white/70 hover:bg-[#FF7A1A]/10 hover:text-[#FF7A1A] hover:border-[#FF7A1A]/30" : "bg-[#F2F2F6] border-black/5 text-black/70 hover:bg-[#FF7A1A]/10 hover:text-[#FF7A1A] hover:border-[#FF7A1A]/30"}`}>
                       <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
@@ -256,7 +255,7 @@ export default function Home() {
             </div>
           ))}
         </div>
-        <a href="/" onMouseEnter={() => playSound("hover")} onClick={() => playSound("click")} className="animate-big-live mt-6 block w-full text-center py-3.5 rounded-xl font-bold text-white hover:scale-[1.02] transition-transform tool-card">Open All 23 Tools Live →</a>
+        <a href={TOOLS_BASE} target="_blank" rel="noopener noreferrer" onClick={() => playSound()} className="animate-big-live mt-6 block w-full text-center py-3.5 rounded-xl font-bold text-white hover:scale-[1.02] transition-transform tool-card">Open All 25+ Tools Live →</a>
       </section>
 
       <section id="products-2" className="max-w-[700px] mx-auto px-4 pb-10">
@@ -268,14 +267,14 @@ export default function Home() {
             {favouriteTools.map((t) => {
               const isSelected = selectedTool === t.name;
               return (
-                <a key={t.name} href={t.url} target="_blank" onMouseEnter={() => playSound("hover")} onClick={() => { playSound("click"); setSelectedTool(t.name); }}
+                <a key={t.name} href={t.url} target="_blank" rel="noopener noreferrer" onClick={() => { playSound(); setSelectedTool(t.name); }}
                   className={`tool-card border rounded-xl px-3 py-3.5 text-[11px] sm:text-[12px] font-bold transition-all flex justify-between items-center gap-1 ${isSelected ? "bg-[#FF7A1A] border-[#FF7A1A] text-white" : isDark ? "bg-[#1E1E2A] border-white/5 text-white/70 hover:bg-[#FF7A1A]/10 hover:text-[#FF7A1A]" : "bg-[#F2F2F6] border-black/5 text-black/70 hover:bg-[#FF7A1A]/10 hover:text-[#FF7A1A]"}`}>
                   <span className="leading-tight">{t.name}</span><span className="shrink-0">↗</span>
                 </a>
               )
             })}
           </div>
-          <a href="https://loremipsumpro.blogspot.com/" target="_blank" className="animate-big-live mt-5 block w-full text-center py-3.5 rounded-xl font-bold text-white hover:scale-[1.02] transition-transform">Open All Favourite Tools →</a>
+          <a href="https://loremipsumpro.blogspot.com/" target="_blank" rel="noopener noreferrer" className="animate-big-live mt-5 block w-full text-center py-3.5 rounded-xl font-bold text-white hover:scale-[1.02] transition-transform">Open All Favourite Tools →</a>
         </div>
       </section>
 
