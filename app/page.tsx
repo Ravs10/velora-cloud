@@ -129,25 +129,25 @@ export default function Home() {
 
       <div className="w-full pt-4 px-3 md:px-0">
         <header className={`relative z-50 max-w-[1100px] mx-auto backdrop-blur-xl border rounded-[14px] px-4 py-[10px] flex justify-between items-center transition-colors ${isDark ? "bg-[#14141F]/90 border-white/[0.07]" : "bg-white/90 border-black/[0.07] shadow-sm"}`}>
-  <div className="flex items-center gap-3">
-    <div className={`w-12 h-12 rounded-lg flex items-center justify-center border overflow-hidden ${isDark ? "bg-[#0A0A14] border-white/10" : "bg-white border-black/10"}`}>
-      <img src={isDark ? "/logo.png" : "/logo-dark.png"} alt="VR" className="w-10 h-10 object-contain" />
-    </div>
-    <img src={isDark ? "/velora-white-text-logo.png" : "/velora-text.png"} alt="VELORA" className="h-[32px] md:h-[40px] object-contain" />
-  </div>
-  <nav className="hidden md:flex items-center gap-6 text-[13px] font-medium">
-    <a href="/boilerplates" className="text-[#FF7A1A] font-black">Boilerplates</a>
-    {["About","Contact","Disclaimer","Privacy"].map(l=>(
-      <button key={l} onClick={()=>setActiveModal(l)} className={`${isDark ? "text-white/60 hover:text-[#FF7A1A]" : "text-black/60 hover:text-[#FF7A1A]"}`}>{l}</button>
-    ))}
-    <button onClick={toggleTheme} className={`w-9 h-9 rounded-full flex items-center justify-center border transition-all ${isDark ? "bg-white/5 border-white/10" : "bg-black/5 border-black/10"}`}>{isDark ? "🌙" : "☀️"}</button>
-    <a href="#contact" className="bg-[#FF7A1A] px-4 py-2 rounded-full font-bold text-white">Hire Me</a>
-  </nav>
-  <div className="flex items-center gap-2 md:hidden">
-    <button onClick={toggleTheme} className={`w-8 h-8 rounded-full flex items-center justify-center ${isDark ? "bg-white/10" : "bg-black/10"}`}>{isDark ? "🌙" : "☀️"}</button>
-    <button onClick={()=>setMenuOpen(!menuOpen)} className="text-[#FF7A1A] text-2xl">☰</button>
-  </div>
-</header>
+          <div className="flex items-center gap-3">
+            <div className={`w-12 h-12 rounded-lg flex items-center justify-center border overflow-hidden ${isDark ? "bg-[#0A0A14] border-white/10" : "bg-white border-black/10"}`}>
+              <img src={isDark ? "/logo-dark.png" : "/logo.png"} alt="VR" className="w-10 h-10 object-contain" />
+            </div>
+            <img src={isDark ? "/velora-white-text-logo.png" : "/velora-text.png"} alt="VELORA" className="h-[32px] md:h-[40px] object-contain" />
+          </div>
+          <nav className="hidden md:flex items-center gap-6 text-[13px] font-medium">
+            <a href="/boilerplates" className="text-[#FF7A1A] font-black">Boilerplates</a>
+            {["About","Contact","Disclaimer","Privacy"].map(l=>(
+              <button key={l} onClick={()=>setActiveModal(l)} className={`${isDark ? "text-white/60 hover:text-[#FF7A1A]" : "text-black/60 hover:text-[#FF7A1A]"}`}>{l}</button>
+            ))}
+            <button onClick={toggleTheme} className={`w-9 h-9 rounded-full flex items-center justify-center border transition-all ${isDark ? "bg-white/5 border-white/10" : "bg-black/5 border-black/10"}`}>{isDark ? "🌙" : "☀️"}</button>
+            <a href="#contact" className="bg-[#FF7A1A] px-4 py-2 rounded-full font-bold text-white">Hire Me</a>
+          </nav>
+          <div className="flex items-center gap-2 md:hidden">
+            <button onClick={toggleTheme} className={`w-8 h-8 rounded-full flex items-center justify-center ${isDark ? "bg-white/10" : "bg-black/10"}`}>{isDark ? "🌙" : "☀️"}</button>
+            <button onClick={()=>setMenuOpen(!menuOpen)} className="text-[#FF7A1A] text-2xl">☰</button>
+          </div>
+        </header>
         {menuOpen && (
           <div className={`md:hidden max-w-[1100px] mx-auto mt-3 border rounded-xl p-4 flex flex-col gap-3 ${isDark ? "bg-[#14141F] border-white/10" : "bg-white border-black/10"}`}>
             <a href="/boilerplates" className="text-left py-2.5 text-[14px] font-black text-[#FF7A1A]">Boilerplates</a>
@@ -196,7 +196,7 @@ export default function Home() {
                   <div className="absolute -top-3 -right-2 z-10 flex items-center gap-1.5 bg-red-600 text-white px-3 py-1 rounded-full text-[10px] font-black tracking-widest"><span className="w-2 h-2 bg-white rounded-full velora-blink-dot"></span>LIVE</div>
                   <div className="velora-glow bg-[#111] border-2 border-orange-500 rounded-[18px] p-4 relative overflow-hidden">
                     <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
-                    <div className="flex items-center justify-center relative"><img src="/logo-dark.png" alt="VELORA" className="velora-float w-full max-w-[280px] h-auto object-contain group-hover:scale-110 transition-all duration-500" /></div>
+                    <div className="flex items-center justify-center relative"><img src="/logo-dark.png" alt="VELORA" className="velora-float w-full max-w-[300px] h-auto object-contain group-hover:scale-110 transition-all duration-500" /></div>
                     <div className="flex items-center justify-center gap-2 mt-3"><span className="w-2 h-2 bg-green-400 rounded-full animate-ping"></span><p className="text-center text-[11px] font-black tracking-[0.2em] text-orange-400 group-hover:text-white transition">CLICK TO VISIT VELORA CLOUD →</p></div>
                   </div>
                 </a>
@@ -212,7 +212,7 @@ export default function Home() {
         <div className={`border rounded-2xl p-5 md:p-6 relative overflow-hidden ${isDark ? "bg-[#15151F] border-white/[0.07]" : "bg-white border-black/[0.07] shadow-sm"}`}>
           <div className="absolute left-0 top-0 bottom-0 w-[3px] bg-[#FF7A1A]" />
           <div className="flex items-center gap-4 mb-5">
-            <div className={`w-[60px] h-[60px] rounded-xl border flex items-center justify-center overflow-hidden shrink-0 ${isDark ? "bg-[#0A0A14] border-white/10" : "bg-white border-black/10"}`}><img src="/logo.png" className="w-11 h-11 object-contain" alt="VR" /></div>
+            <div className={`w-[68px] h-[68px] rounded-xl border flex items-center justify-center overflow-hidden shrink-0 ${isDark ? "bg-[#0A0A14] border-white/10" : "bg-white border-black/10"}`}><img src={isDark ? "/logo-dark.png" : "/logo.png"} className="w-12 h-12 object-contain" alt="VR" /></div>
             <div><h2 className="font-extrabold text-[17px] md:text-[20px]">Ravish Chandra Yadav</h2><p className="text-[#FF7A1A] text-[10px] font-bold tracking-[0.15em]">Portfolio - FOUNDER @ VELORA</p></div>
           </div>
           <div className={`space-y-3 text-[12px] md:text-[13px] ${isDark ? "text-white/65" : "text-black/65"}`}>
@@ -293,7 +293,7 @@ export default function Home() {
 
       <footer className={`max-w-[1100px] mx-auto mt-8 border-t mx-3 md:mx-auto pt-8 pb-8 ${isDark ? "border-white/[0.06]" : "border-black/[0.06]"}`}>
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 px-6 md:px-2">
-          <div className="pl-1"><div className="flex items-center gap-2"><img src="/logo.png" className="w-8 h-8 object-contain" alt="" /><img src="/velora-text.png" className="h-6 object-contain" alt="" /></div><p className={`text-[12px] mt-3 ${isDark ? "text-white/40" : "text-black/40"}`}>We build fast, modern products for founders.</p></div>
+          <div className="pl-1"><div className="flex items-center gap-2"><img src={isDark ? "/logo-dark.png" : "/logo.png"} className="w-10 h-10 object-contain" alt="" /><img src={isDark ? "/velora-white-text-logo.png" : "/velora-text.png"} className="h-7 object-contain" alt="" /></div><p className={`text-[12px] mt-3 ${isDark ? "text-white/40" : "text-black/40"}`}>We build fast, modern products for founders.</p></div>
           <div className="pl-2 md:pl-4"><p className="font-bold text-[13px] mb-3">Quick Links</p><div className={`flex flex-col gap-2.5 text-[13px] ${isDark ? "text-white/50" : "text-black/50"}`}><a href="#products" className="hover:text-[#FF7A1A]">Our Products</a><a href="#contact" className="hover:text-[#FF7A1A]">Start a Project</a></div></div>
           <div className="pl-2 md:pl-4"><p className="font-bold text-[13px] mb-3">Legal</p><div className={`flex flex-col gap-2.5 text-[13px] ${isDark ? "text-white/50" : "text-black/50"}`}><button onClick={()=>setActiveModal("Disclaimer")} className="text-left hover:text-[#FF7A1A]">Disclaimer</button><button onClick={()=>setActiveModal("Privacy")} className="text-left hover:text-[#FF7A1A]">Privacy Policy</button><button onClick={()=>setActiveModal("About")} className="text-left hover:text-[#FF7A1A]">About Us</button><button onClick={()=>setActiveModal("Terms")} className="text-left hover:text-[#FF7A1A]">Terms & Conditions</button></div></div>
           <div className="pl-2 md:pl-4"><p className="font-bold text-[13px] mb-3">Contact</p><p className={`text-[13px] ${isDark ? "text-white/50" : "text-black/50"}`}>hello@velora.dev</p><p className={`text-[11px] mt-2 ${isDark ? "text-white/30" : "text-black/30"}`}>Founded by Yadav Ravish</p></div>
@@ -310,7 +310,7 @@ export default function Home() {
             </div>
             <div className="text-center mb-4">
               <a href="https://velora-cloud.run4ravish.workers.dev/" target="_blank" rel="noopener noreferrer" title="Visit Velora - Developed by Yadav Ravish">
-                <img src={isDark ? "/logo-dark.png" : "/logo.png"} alt="Velora Logo - Online Startup by Yadav Ravish" className="w-[100px] h-auto rounded-xl mx-auto cursor-pointer" />
+                <img src={isDark ? "/logo-dark.png" : "/logo.png"} alt="Velora Logo - Online Startup by Yadav Ravish" className="w-[120px] h-auto rounded-xl mx-auto cursor-pointer" />
               </a>
               <p className="text-[12px] text-[#FF7A1A] font-bold mt-1">Developed By Velora - Click Logo To Visit Developer Website</p>
             </div>
