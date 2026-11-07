@@ -1,7 +1,6 @@
 "use client";
 import { useState, useRef } from "react";
 
-// ✅ FIX - Tools dusre domain pe hai, isliye FULL URL chahiye, relative nahi
 const TOOLS_BASE = "https://lorem-pro-tool.run4ravish.workers.dev";
 
 export default function Home() {
@@ -16,7 +15,6 @@ export default function Home() {
   const isDark = theme === "dark";
   const toggleTheme = () => setTheme(theme === "dark" ? "light" : "dark");
 
-  // ✅ SIRF CLICK SOUND - HOVER SOUND NAHI HAI
   const playSound = () => {
     try {
       if (!audioCtxRef.current) audioCtxRef.current = new (window.AudioContext || (window as any).webkitAudioContext)();
@@ -30,7 +28,6 @@ export default function Home() {
     } catch {}
   };
 
-  // ✅ TUMHARI DI HUI 23 URL - FULL ABSOLUTE LINKS - SAHI CATEGORY - NO AI CATEGORY
   const toolCategories = [
     {
       title: "💰 HIGH CPC - Finance Calculators",
@@ -42,8 +39,8 @@ export default function Home() {
         { name: "SIP Calculator", url: `${TOOLS_BASE}/sip-calculator`, hot: true, icon: "📈" },
         { name: "Mortgage Calculator", url: `${TOOLS_BASE}/mortgage-calculator`, hot: true, icon: "🏠" },
         { name: "YouTube Earnings Calculator", url: `${TOOLS_BASE}/youtube-earnings-calculator`, hot: true, icon: "▶️" },
-{ name: "Income Tax Calculator Pro", url: `${TOOLS_BASE}/income-tax-calculator`, hot: true, icon: "🧾" },
-{ name: "Resume Builder", url: `${TOOLS_BASE}/resume-builder`, hot: true, icon: "📄" },
+        { name: "Income Tax Calculator Pro", url: `${TOOLS_BASE}/income-tax-calculator`, hot: true, icon: "🧾" },
+        { name: "Resume Builder", url: `${TOOLS_BASE}/resume-builder`, hot: true, icon: "📄" },
         { name: "FD + RD + Compound Calculator", url: `${TOOLS_BASE}/fd-rd-calculator`, hot: true, icon: "🏦" },
       ]
     },
@@ -56,7 +53,6 @@ export default function Home() {
         { name: "Hashtag Generator", url: `${TOOLS_BASE}/hashtag-generator`, icon: "#️⃣" },
         { name: "YouTube Title Generator", url: `${TOOLS_BASE}/youtube-title-generator`, icon: "🎬" },
         { name: "YouTube Thumbnail Downlodar", url: `${TOOLS_BASE}/youtube-thumbnail-downlodar`, icon: "🖼️" },
-        
       ]
     },
     {
@@ -163,22 +159,22 @@ export default function Home() {
       </div>
 
       <section className="relative max-w-[1100px] mx-auto text-center pt-12 md:pt-20 pb-8 px-4">
-        <h1 className="text-[36px] sm:text-[42px] md:text-[68px] font-extrabold leading-[0.95]">Got an Idea?<br/><span className="text-[#FF7A1A]">Let's Build It.</span></h1>
+        <h1 className="text-[36px] sm:text-[42px] md:text-[68px] font-extrabold leading-[0.95]">Got an Idea?<br/><span className="text-[#FF7A1A]">Let&apos;s Build It.</span></h1>
         <p className={`mt-5 max-w-[520px] mx-auto text-[14px] md:text-[15px] px-2 ${isDark ? "text-white/60" : "text-black/60"}`}>We design & develop products that launch fast. From tools to SaaS, we build what founders need.</p>
         <div className="mt-8 flex flex-col items-center gap-3">
           <a href="#contact" className="w-[280px] max-w-[90vw] px-8 py-3.5 bg-[#FF7A1A] text-white font-bold rounded-xl">Start a Project →</a>
           <a href="#products" className={`w-[280px] max-w-[90vw] px-8 py-3 border rounded-xl ${isDark ? "border-[#FF7A1A]/40 text-[#FF7A1A]" : "border-[#FF7A1A]/40 text-[#FF7A1A] bg-white"}`}>View Our Work</a>
         </div>
       </section>
-    
+
       <div className="px-4 md:px-6">
         <section id="contact" className="w-full bg-gradient-to-br from-orange-500 via-[#ff6b00] to-[#ff3c00] relative overflow-hidden py-10 px-4 rounded-[32px] max-w-[1020px] mx-auto mt-4 shadow-[0_0_0_1px_rgba(255,122,26,0.2)]">
           <div className="relative max-w-6xl mx-auto px-2 md:px-6">
             <div className="grid md:grid-cols-2 gap-10 items-center">
               <div className="text-center md:text-left">
                 <div className="inline-flex items-center justify-center gap-2 bg-black text-white px-4 py-1.5 rounded-full text-xs font-black tracking-widest mb-4"><span className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>AVAILABLE FOR NEW PROJECTS</div>
-                <h2 className="text-4xl md:text-5xl font-black leading-[0.9] text-black">Got an Idea? <br /><span className="text-white">Let's Build It.</span></h2>
-                <p className="text-black/90 font-medium mt-4 text-[15px] leading-relaxed"><b>VELORA</b> doesn't just build apps. <b>VELORA</b> builds <b>money-making tools, high-converting websites, SaaS & automation systems</b> that save time & make you money.</p>
+                <h2 className="text-4xl md:text-5xl font-black leading-[0.9] text-black">Got an Idea? <br /><span className="text-white">Let&apos;s Build It.</span></h2>
+                <p className="text-black/90 font-medium mt-4 text-[15px] leading-relaxed"><b>VELORA</b> doesn&apos;t just build apps. <b>VELORA</b> builds <b>money-making tools, high-converting websites, SaaS & automation systems</b> that save time & make you money.</p>
                 <div className="flex flex-wrap gap-2 mt-5 justify-center md:justify-start">
                   {['Custom Tools', 'Websites', 'Web Apps', 'Mobile Apps', 'SaaS', 'AI Tools', 'SaaS Boilerplate'].map((t) => (<span key={t} className="bg-black text-white px-3 py-1 rounded-full text-xs font-bold border border-white/10 hover:bg-white hover:text-black hover:scale-105 transition-all cursor-default">{t}</span>))}
                 </div>
@@ -244,8 +240,7 @@ export default function Home() {
                   const isSelected = selectedTool === t.name;
                   return (
                     <a key={t.name} href={t.url} target="_blank" rel="noopener noreferrer" onClick={() => { playSound(); setSelectedTool(t.name); }}
-                      className={`tool-card group relative border rounded-xl px-2.5 sm:px-3.5 py-3.5 text-[11px] sm:text-[12px] font-bold flex items-center gap-2 overflow-hidden
-                        ${isSelected ? "bg-[#FF7A1A] border-[#FF7A1A] text-white scale-[1.02]" : t.hot ? `bg-gradient-to-br from-emerald-500/10 to-green-600/10 border-emerald-500/30 hover:border-emerald-500 hover:bg-emerald-500/20 ${isDark ? "text-white" : "text-black"} hot-glow` : isDark ? "bg-[#1E1E2A] border-white/5 text-white/70 hover:bg-[#FF7A1A]/10 hover:text-[#FF7A1A] hover:border-[#FF7A1A]/30" : "bg-[#F2F2F6] border-black/5 text-black/70 hover:bg-[#FF7A1A]/10 hover:text-[#FF7A1A] hover:border-[#FF7A1A]/30"}`}>
+                      className={`tool-card group relative border rounded-xl px-2.5 sm:px-3.5 py-3.5 text-[11px] sm:text-[12px] font-bold flex items-center gap-2 overflow-hidden ${isSelected ? "bg-[#FF7A1A] border-[#FF7A1A] text-white scale-[1.02]" : t.hot ? `bg-gradient-to-br from-emerald-500/10 to-green-600/10 border-emerald-500/30 hover:border-emerald-500 hover:bg-emerald-500/20 ${isDark ? "text-white" : "text-black"} hot-glow` : isDark ? "bg-[#1E1E2A] border-white/5 text-white/70 hover:bg-[#FF7A1A]/10 hover:text-[#FF7A1A] hover:border-[#FF7A1A]/30" : "bg-[#F2F2F6] border-black/5 text-black/70 hover:bg-[#FF7A1A]/10 hover:text-[#FF7A1A] hover:border-[#FF7A1A]/30"}`}>
                       <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
                       <span className="text-[16px] group-hover:scale-125 group-hover:-rotate-6 transition-transform duration-300 shrink-0">{t.icon}</span>
                       <span className="flex-1 relative z-10 leading-tight">{t.name}</span>
@@ -300,228 +295,25 @@ export default function Home() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 px-6 md:px-2">
           <div className="pl-1"><div className="flex items-center gap-2"><img src="/logo.png" className="w-8 h-8 object-contain" alt="" /><img src="/velora-text.png" className="h-6 object-contain" alt="" /></div><p className={`text-[12px] mt-3 ${isDark ? "text-white/40" : "text-black/40"}`}>We build fast, modern products for founders.</p></div>
           <div className="pl-2 md:pl-4"><p className="font-bold text-[13px] mb-3">Quick Links</p><div className={`flex flex-col gap-2.5 text-[13px] ${isDark ? "text-white/50" : "text-black/50"}`}><a href="#products" className="hover:text-[#FF7A1A]">Our Products</a><a href="#contact" className="hover:text-[#FF7A1A]">Start a Project</a></div></div>
-          <div className="pl-2 md:pl-4"><p className="font-bold text-[13px] mb-3">Legal</p><div className={`flex flex-col gap-2.5 text-[13px] ${isDark ? "text-white/50" : "text-black/50"}`}><button onClick={()=>setActiveModal("Disclaimer")} className="text-left hover:text-[#FF7A1A]">Disclaimer</button><button onClick={()=>setActiveModal("Privacy")} className="text-left hover:text-[#FF7A1A]">Privacy Policy</button><button onClick={()=>setActiveModal("About")} className="text-left hover:text-[#FF7A1A]">About Us</button></div></div>
+          <div className="pl-2 md:pl-4"><p className="font-bold text-[13px] mb-3">Legal</p><div className={`flex flex-col gap-2.5 text-[13px] ${isDark ? "text-white/50" : "text-black/50"}`}><button onClick={()=>setActiveModal("Disclaimer")} className="text-left hover:text-[#FF7A1A]">Disclaimer</button><button onClick={()=>setActiveModal("Privacy")} className="text-left hover:text-[#FF7A1A]">Privacy Policy</button><button onClick={()=>setActiveModal("About")} className="text-left hover:text-[#FF7A1A]">About Us</button><button onClick={()=>setActiveModal("Terms")} className="text-left hover:text-[#FF7A1A]">Terms & Conditions</button></div></div>
           <div className="pl-2 md:pl-4"><p className="font-bold text-[13px] mb-3">Contact</p><p className={`text-[13px] ${isDark ? "text-white/50" : "text-black/50"}`}>hello@velora.dev</p><p className={`text-[11px] mt-2 ${isDark ? "text-white/30" : "text-black/30"}`}>Founded by Yadav Ravish</p></div>
         </div>
         <p className={`text-center text-[10px] mt-8 tracking-[0.2em] ${isDark ? "text-white/20" : "text-black/20"}`}>© 2024 VELORA • hello@velora.dev • All rights reserved</p>
       </footer>
 
       {activeModal && (
-  <div className="fixed inset-0 z-[100] bg-black/70 backdrop-blur flex items-center justify-center p-4" onClick={()=>setActiveModal(null)}>
-    <div className={`border rounded-2xl p-6 max-w-[600px] w-full max-h-[85vh] overflow-y-auto ${isDark ? "bg-[#15151F] border-white/10" : "bg-white border-black/10"}`} onClick={e=>e.stopPropagation()}>
-      <div className="flex justify-between items-center mb-4">
-        <h3 className="font-bold text-[18px]">{activeModal}</h3>
-        <button onClick={()=>setActiveModal(null)} className={isDark ? "text-white/50" : "text-black/50"}>✕</button>
-      </div>
-
-      {/* Velora Logo - Clickable */}
-      <div className="text-center mb-4">
-        <a href="https://velora-cloud.run4ravish.workers.dev/" target="_blank" rel="noopener noreferrer" title="Visit Velora - Developed by Yadav Ravish">
-          <img src="/velora-logo.png" alt="Velora Logo - Online Startup by Yadav Ravish" className="w-[100px] h-auto rounded-xl mx-auto cursor-pointer" />
-        </a>
-        <p className="text-[12px] text-[#FF7A1A] font-bold mt-1">Developed By Velora - Click Logo To Visit Developer Website</p>
-      </div>
-
-      <div className={`text-[13px] leading-relaxed ${isDark ? "text-white/70" : "text-black/70"}`}>
-
-        {activeModal==="About" && (
-          <div>
-            <h1 className="text-[20px] font-bold text-black dark:text-white mb-2">About Velora - Online Startup & Digital Product Company</h1>
-            <p className="mb-3">
-              <strong>Velora is an online startup and digital product company</strong> founded by <strong>Yadav Ravish</strong>. 
-              Velora is a modern platform that develops <strong>websites, web apps, mobile apps, SaaS products, boilerplates, AI tools, and free online tools</strong> for students, creators, startups, and small businesses in India and worldwide.
-            </p>
-            <h2 className="text-[16px] font-bold text-black dark:text-white mt-4 mb-1">What Does Velora Build?</h2>
-            <ul className="list-disc pl-5 mb-3 space-y-1">
-              <li><strong>Websites & Web Apps:</strong> Fast, SEO-friendly business websites, portfolio websites, and e-commerce websites.</li>
-              <li><strong>SaaS Tools & Platforms:</strong> Complete SaaS products like Lorem Pro Tool - 25+ free online tools in one place.</li>
-              <li><strong>AI Tools & Automation:</strong> AI Detector, AI content tools, YouTube tools, and AI automation workflows.</li>
-              <li><strong>Boilerplates & Starters:</strong> Ready-to-launch Next.js, React, and Cloudflare boilerplates for developers.</li>
-              <li><strong>Creator Utilities:</strong> Word Counter, SIP Calculator, FD Calculator, YouTube Thumbnail Downloader, and more.</li>
-            </ul>
-            <h2 className="text-[16px] font-bold text-black dark:text-white mt-4 mb-1">Our Projects</h2>
-            <p className="mb-3">
-              We have already developed many projects like <strong>Lorem Pro Tool</strong> - a free all-in-one tools website with 25+ tools like Lorem Ipsum Generator, Word Counter, SIP Calculator, Income Tax Calculator, and YouTube Tools. 
-              And many more upcoming SaaS, AI tools, and boilerplates are coming soon under Velora.
-            </p>
-            <h2 className="text-[16px] font-bold text-black dark:text-white mt-4 mb-1">Our Vision</h2>
-            <p>
-              Our vision at Velora is simple - Build fast, beautiful, and useful digital products that anyone can use for free or at low cost. 
-              Founded by Yadav Ravish, Velora believes every creator should have premium tools without paying heavy prices.
-            </p>
-            <p className="mt-3">Want your own website, SaaS, or tool? Visit <a href="https://velora-cloud.run4ravish.workers.dev/" target="_blank" rel="noopener noreferrer" className="text-[#FF7A1A] font-bold">velora-cloud.run4ravish.workers.dev</a></p>
-          </div>
-        )}
-
-        {activeModal==="Contact" && (
-          <div>
-            <h1 className="text-[20px] font-bold text-black dark:text-white mb-2">Contact Velora - Get Your Website, App & SaaS Built</h1>
-            <p className="mb-3">
-              Have a project in mind? <strong>Contact Velora</strong> for <strong>website development, web app development, SaaS development, AI tools, boilerplates, and custom online tools</strong>. 
-              Velora is founded by <strong>Yadav Ravish</strong> and we reply within 24-48 hours.
-            </p>
-            <h2 className="text-[16px] font-bold text-black dark:text-white mt-4 mb-1">Contact Details</h2>
-            <div className="bg-black/5 dark:bg-white/5 p-3 rounded-xl mb-3">
-              <p><strong>Email:</strong> hello@velora.dev</p>
-              <p><strong>Website:</strong> <a href="https://velora-cloud.run4ravish.workers.dev/" target="_blank" rel="noopener noreferrer" className="text-[#FF7A1A] font-bold">velora-cloud.run4ravish.workers.dev</a></p>
-              <p><strong>Our Product:</strong> Lorem Pro Tool - 25+ Free Online Tools</p>
-              <p><strong>Founder:</strong> Yadav Ravish</p>
-            </div>
-            <h2 className="text-[16px] font-bold text-black dark:text-white mt-4 mb-1">What Can We Build For You?</h2>
-            <ul className="list-disc pl-5 space-y-1">
-              <li>Business Website, Portfolio Website, Blog Website</li>
-              <li>SaaS Product, AI Tool Website, Tools Website like Lorem Pro Tool</li>
-              <li>Next.js Boilerplate, React App, Landing Page</li>
-              <li>YouTube Tools, Finance Calculators, SEO Tools</li>
-            </ul>
-            <p className="mt-3">Email us at <strong>hello@velora.dev</strong> for projects, collaborations, and inquiries. Or click on Velora logo above to visit our developer website.</p>
-          </div>
-        )}
-
-        {activeModal==="Disclaimer" && (
-          <div>
-            <h1 className="text-[20px] font-bold text-black dark:text-white mb-2">Disclaimer - Velora & Lorem Pro Tool</h1>
-            <p className="mb-3">
-              The information and tools provided by <strong>Velora</strong> and <strong>Lorem Pro Tool</strong> are for general, educational, and informational purposes only. 
-              <strong>Velora is an online startup founded by Yadav Ravish</strong> that develops websites, SaaS products, AI tools, boilerplates, and free online tools.
-            </p>
-            <h2 className="text-[16px] font-bold text-black dark:text-white mt-4 mb-1">1. General Information</h2>
-            <p className="mb-3">While we try to keep all tools like SIP Calculator, FD Calculator, Income Tax Calculator, Word Counter, and YouTube Tools accurate, we make no warranties about completeness, reliability, or accuracy. Any reliance you place on such information is at your own risk.</p>
-            <h2 className="text-[16px] font-bold text-black dark:text-white mt-4 mb-1">2. Financial Tools</h2>
-            <p className="mb-3">Our finance calculators provide only estimates. Velora is not a financial advisor, bank, or CA. Please consult a professional before taking financial decisions.</p>
-            <h2 className="text-[16px] font-bold text-black dark:text-white mt-4 mb-1">3. Generated Content</h2>
-            <p className="mb-3">Fake data, lorem ipsum, fancy text, and other generated content should not be used for illegal or fraudulent purposes. It is only for testing, designing, and demo purposes.</p>
-            <h2 className="text-[16px] font-bold text-black dark:text-white mt-4 mb-1">4. Liability</h2>
-            <p>Velora, Lorem Pro Tool, and founder Yadav Ravish shall not be liable for any loss or damage arising from use of this website. For questions, contact us at hello@velora.dev or visit <a href="https://velora-cloud.run4ravish.workers.dev/" target="_blank" rel="noopener noreferrer" className="text-[#FF7A1A] font-bold">Velora Website</a>.</p>
-          </div>
-        )}
-
-        {(activeModal==="Privacy" || activeModal==="Privacy Policy") && (
-          <div>
-            <h1 className="text-[20px] font-bold text-black dark:text-white mb-2">Privacy Policy - Velora</h1>
-            <p className="text-[12px] opacity-60 mb-3">Last Updated: November 06, 2026</p>
-            <p className="mb-3">
-              At <strong>Velora</strong>, we respect your privacy. This policy explains how we handle information on Velora website and our products like <strong>Lorem Pro Tool</strong> - 25+ free online tools. 
-              <strong>Velora is an online startup founded by Yadav Ravish</strong> that builds websites, SaaS, AI tools, boilerplates, and creator utilities.
-            </p>
-            <h2 className="text-[16px] font-bold text-black dark:text-white mt-4 mb-1">1. Data Collection</h2>
-            <p className="mb-3">We do not collect, store, or ask for any personal data. No login, no signup, no email required. You can use all our tools directly. Your input stays in your browser only.</p>
-            <h2 className="text-[16px] font-bold text-black dark:text-white mt-4 mb-1">2. Processing</h2>
-            <p className="mb-3">All text generation, calculations, and tool processing happens 100% inside your browser. It is not sent to or saved on our servers.</p>
-            <h2 className="text-[16px] font-bold text-black dark:text-white mt-4 mb-1">3. Cookies & Analytics</h2>
-            <p className="mb-3">We use privacy-friendly analytics like Google Analytics to understand total visitors and improve our products. We do not track personal identity.</p>
-            <h2 className="text-[16px] font-bold text-black dark:text-white mt-4 mb-1">4. AdSense & Third Parties</h2>
-            <p className="mb-3">Google AdSense may use cookies to show relevant ads. You can manage ad personalization in your Google Ad Settings. Google's DART cookie may be used to serve ads based on your visit.</p>
-            <h2 className="text-[16px] font-bold text-black dark:text-white mt-4 mb-1">5. Contact Us</h2>
-            <p>If you have any questions about this Privacy Policy, contact us at <strong>hello@velora.dev</strong> or visit <a href="https://velora-cloud.run4ravish.workers.dev/" target="_blank" rel="noopener noreferrer" className="text-[#FF7A1A] font-bold">velora-cloud.run4ravish.workers.dev</a></p>
-          </div>
-        )}
-
-        {activeModal && (
-  <div className="fixed inset-0 z-[100] bg-black/70 backdrop-blur flex items-center justify-center p-4" onClick={()=>setActiveModal(null)}>
-    <div className={`border rounded-2xl p-6 max-w-[600px] w-full max-h-[85vh] overflow-y-auto ${isDark ? "bg-[#15151F] border-white/10" : "bg-white border-black/10"}`} onClick={e=>e.stopPropagation()}>
-      <div className="flex justify-between items-center mb-4">
-        <h3 className="font-bold text-[18px]">{activeModal}</h3>
-        <button onClick={()=>setActiveModal(null)} className={isDark ? "text-white/50" : "text-black/50"}>✕</button>
-      </div>
-
-      {/* Velora Logo - Updated Link - Dark/Light Auto */}
-      <div className="text-center mb-4">
-        <a href="https://velora-cloud.run4ravish.workers.dev/" target="_blank" rel="noopener noreferrer" title="Visit Velora - Developed by Yadav Ravish">
-          <img src={isDark ? "/logo-dark.png" : "/logo.png"} alt="Velora Logo - Online Startup by Yadav Ravish" className="w-[100px] h-auto rounded-xl mx-auto cursor-pointer" />
-        </a>
-        <p className="text-[12px] text-[#FF7A1A] font-bold mt-1">Developed By Velora - Click Logo To Visit Developer Website</p>
-      </div>
-
-      <div className={`text-[13px] leading-relaxed ${isDark ? "text-white/70" : "text-black/70"}`}>
-
-        {activeModal==="About" && (
-          <div>
-            <h1 className="text-[20px] font-bold text-black dark:text-white mb-2">About Velora - Online Startup & Digital Product Company</h1>
-            <p className="mb-3">
-              <strong>Velora is an online startup and digital product company</strong> founded by <strong>Yadav Ravish</strong>. 
-              Velora is a modern platform that develops <strong>websites, web apps, mobile apps, SaaS products, boilerplates, AI tools, and free online tools</strong> for students, creators, startups, and small businesses in India and worldwide.
-            </p>
-            <h2 className="text-[16px] font-bold text-black dark:text-white mt-4 mb-1">What Does Velora Build?</h2>
-            <ul className="list-disc pl-5 mb-3 space-y-1">
-              <li><strong>Websites & Web Apps:</strong> Fast, SEO-friendly business websites, portfolio websites, and e-commerce websites.</li>
-              <li><strong>SaaS Tools & Platforms:</strong> Complete SaaS products like Lorem Pro Tool - 25+ free online tools in one place.</li>
-              <li><strong>AI Tools & Automation:</strong> AI Detector, AI content tools, YouTube tools, and AI automation workflows.</li>
-              <li><strong>Boilerplates & Starters:</strong> Ready-to-launch Next.js, React, and Cloudflare boilerplates for developers.</li>
-              <li><strong>Creator Utilities:</strong> Word Counter, SIP Calculator, FD Calculator, YouTube Thumbnail Downloader, and more.</li>
-            </ul>
-            <h2 className="text-[16px] font-bold text-black dark:text-white mt-4 mb-1">Our Projects</h2>
-            <p className="mb-3">
-              We have already developed many projects like <strong>Lorem Pro Tool</strong> - a free all-in-one tools website with 25+ tools like Lorem Ipsum Generator, Word Counter, SIP Calculator, Income Tax Calculator, and YouTube Tools. 
-              And many more upcoming SaaS, AI tools, and boilerplates are coming soon under Velora.
-            </p>
-            <h2 className="text-[16px] font-bold text-black dark:text-white mt-4 mb-1">Our Vision</h2>
-            <p>
-              Our vision at Velora is simple - Build fast, beautiful, and useful digital products that anyone can use for free or at low cost. 
-              Founded by Yadav Ravish, Velora believes every creator should have premium tools without paying heavy prices.
-            </p>
-            <p className="mt-3">Want your own website, SaaS, or tool? Visit <a href="https://velora-cloud.run4ravish.workers.dev/" target="_blank" rel="noopener noreferrer" className="text-[#FF7A1A] font-bold">velora-cloud.run4ravish.workers.dev</a></p>
-          </div>
-        )}
-
-        {activeModal==="Contact" && (
-          <div>
-            <h1 className="text-[20px] font-bold text-black dark:text-white mb-2">Contact Velora - Get Your Website, App & SaaS Built</h1>
-            <p className="mb-3">
-              Have a project in mind? <strong>Contact Velora</strong> for <strong>website development, web app development, SaaS development, AI tools, boilerplates, and custom online tools</strong>. 
-              Velora is founded by <strong>Yadav Ravish</strong> and we reply within 24-48 hours.
-            </p>
-            <h2 className="text-[16px] font-bold text-black dark:text-white mt-4 mb-1">Contact Details</h2>
-            <div className="bg-black/5 dark:bg-white/5 p-3 rounded-xl mb-3">
-              <p><strong>Email:</strong> hello@velora.dev</p>
-              <p><strong>Website:</strong> <a href="https://velora-cloud.run4ravish.workers.dev/" target="_blank" rel="noopener noreferrer" className="text-[#FF7A1A] font-bold">velora-cloud.run4ravish.workers.dev</a></p>
-              <p><strong>Our Product:</strong> Lorem Pro Tool - 25+ Free Online Tools</p>
-              <p><strong>Founder:</strong> Yadav Ravish</p>
-            </div>
-            <h2 className="text-[16px] font-bold text-black dark:text-white mt-4 mb-1">What Can We Build For You?</h2>
-            <ul className="list-disc pl-5 space-y-1">
-              <li>Business Website, Portfolio Website, Blog Website</li>
-              <li>SaaS Product, AI Tool Website, Tools Website like Lorem Pro Tool</li>
-              <li>Next.js Boilerplate, React App, Landing Page</li>
-              <li>YouTube Tools, Finance Calculators, SEO Tools</li>
-            </ul>
-            <p className="mt-3">Email us at <strong>hello@velora.dev</strong> for projects, collaborations, and inquiries. Or click on Velora logo above to visit our developer website.</p>
-          </div>
-        )}
-
-        {activeModal==="Disclaimer" && (
-          <div>
-            <h1 className="text-[20px] font-bold text-black dark:text-white mb-2">Disclaimer - Velora & Lorem Pro Tool</h1>
-            <p className="mb-3">
-              The information and tools provided by <strong>Velora</strong> and <strong>Lorem Pro Tool</strong> are for general, educational, and informational purposes only. 
-              <strong>Velora is an online startup founded by Yadav Ravish</strong> that develops websites, SaaS products, AI tools, boilerplates, and free online tools.
-            </p>
-            <h2 className="text-[16px] font-bold text-black dark:text-white mt-4 mb-1">1. General Information</h2>
-            <p className="mb-3">While we try to keep all tools like SIP Calculator, FD Calculator, Income Tax Calculator, Word Counter, and YouTube Tools accurate, we make no warranties about completeness, reliability, or accuracy. Any reliance you place on such information is at your own risk.</p>
-            <h2 className="text-[16px] font-bold text-black dark:text-white mt-4 mb-1">2. Financial Tools</h2>
-            <p className="mb-3">Our finance calculators provide only estimates. Velora is not a financial advisor, bank, or CA. Please consult a professional before taking financial decisions.</p>
-            <h2 className="text-[16px] font-bold text-black dark:text-white mt-4 mb-1">3. Generated Content</h2>
-            <p className="mb-3">Fake data, lorem ipsum, fancy text, and other generated content should not be used for illegal or fraudulent purposes. It is only for testing, designing, and demo purposes.</p>
-            <h2 className="text-[16px] font-bold text-black dark:text-white mt-4 mb-1">4. Liability</h2>
-            <p>Velora, Lorem Pro Tool, and founder Yadav Ravish shall not be liable for any loss or damage arising from use of this website. For questions, contact us at hello@velora.dev or visit <a href="https://velora-cloud.run4ravish.workers.dev/" target="_blank" rel="noopener noreferrer" className="text-[#FF7A1A] font-bold">Velora Website</a>.</p>
-          </div>
-        )}
-
-              {activeModal && (
         <div className="fixed inset-0 z-[100] bg-black/70 backdrop-blur flex items-center justify-center p-4" onClick={()=>setActiveModal(null)}>
           <div className={`border rounded-2xl p-6 max-w-[600px] w-full max-h-[85vh] overflow-y-auto ${isDark ? "bg-[#15151F] border-white/10" : "bg-white border-black/10"}`} onClick={e=>e.stopPropagation()}>
             <div className="flex justify-between items-center mb-4">
               <h3 className="font-bold text-[18px]">{activeModal}</h3>
               <button onClick={()=>setActiveModal(null)} className={isDark ? "text-white/50" : "text-black/50"}>✕</button>
             </div>
-
             <div className="text-center mb-4">
               <a href="https://velora-cloud.run4ravish.workers.dev/" target="_blank" rel="noopener noreferrer" title="Visit Velora - Developed by Yadav Ravish">
                 <img src={isDark ? "/logo-dark.png" : "/logo.png"} alt="Velora Logo - Online Startup by Yadav Ravish" className="w-[100px] h-auto rounded-xl mx-auto cursor-pointer" />
               </a>
               <p className="text-[12px] text-[#FF7A1A] font-bold mt-1">Developed By Velora - Click Logo To Visit Developer Website</p>
             </div>
-
             <div className={`text-[13px] leading-relaxed ${isDark ? "text-white/70" : "text-black/70"}`}>
               {activeModal==="About" && (
                 <div>
