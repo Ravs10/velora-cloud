@@ -129,25 +129,25 @@ export default function Home() {
 
       <div className="w-full pt-4 px-3 md:px-0">
         <header className={`relative z-50 max-w-[1100px] mx-auto backdrop-blur-xl border rounded-[14px] px-4 py-[10px] flex justify-between items-center transition-colors ${isDark ? "bg-[#14141F]/90 border-white/[0.07]" : "bg-white/90 border-black/[0.07] shadow-sm"}`}>
-          <div className="flex items-center gap-3">
-            <div className={`w-11 h-11 rounded-lg flex items-center justify-center border overflow-hidden ${isDark ? "bg-[#0A0A14] border-white/10" : "bg-white border-black/10"}`}>
-              <img src="/logo.png" alt="VR" className="w-9 h-9 object-contain" />
-            </div>
-            <img src="/velora-text.png" alt="VELORA" className="h-[28px] md:h-[36px] object-contain" />
-          </div>
-          <nav className="hidden md:flex items-center gap-6 text-[13px] font-medium">
-            <a href="/boilerplates" className="text-[#FF7A1A] font-black">Boilerplates</a>
-            {["About","Contact","Disclaimer","Privacy"].map(l=>(
-              <button key={l} onClick={()=>setActiveModal(l)} className={`${isDark ? "text-white/60 hover:text-[#FF7A1A]" : "text-black/60 hover:text-[#FF7A1A]"}`}>{l}</button>
-            ))}
-            <button onClick={toggleTheme} className={`w-9 h-9 rounded-full flex items-center justify-center border transition-all ${isDark ? "bg-white/5 border-white/10" : "bg-black/5 border-black/10"}`}>{isDark ? "🌙" : "☀️"}</button>
-            <a href="#contact" className="bg-[#FF7A1A] px-4 py-2 rounded-full font-bold text-white">Hire Me</a>
-          </nav>
-          <div className="flex items-center gap-2 md:hidden">
-            <button onClick={toggleTheme} className={`w-8 h-8 rounded-full flex items-center justify-center ${isDark ? "bg-white/10" : "bg-black/10"}`}>{isDark ? "🌙" : "☀️"}</button>
-            <button onClick={()=>setMenuOpen(!menuOpen)} className="text-[#FF7A1A] text-2xl">☰</button>
-          </div>
-        </header>
+  <div className="flex items-center gap-3">
+    <div className={`w-12 h-12 rounded-lg flex items-center justify-center border overflow-hidden ${isDark ? "bg-[#0A0A14] border-white/10" : "bg-white border-black/10"}`}>
+      <img src={isDark ? "/logo.png" : "/logo-dark.png"} alt="VR" className="w-10 h-10 object-contain" />
+    </div>
+    <img src={isDark ? "/velora-white-text-logo.png" : "/velora-text.png"} alt="VELORA" className="h-[32px] md:h-[40px] object-contain" />
+  </div>
+  <nav className="hidden md:flex items-center gap-6 text-[13px] font-medium">
+    <a href="/boilerplates" className="text-[#FF7A1A] font-black">Boilerplates</a>
+    {["About","Contact","Disclaimer","Privacy"].map(l=>(
+      <button key={l} onClick={()=>setActiveModal(l)} className={`${isDark ? "text-white/60 hover:text-[#FF7A1A]" : "text-black/60 hover:text-[#FF7A1A]"}`}>{l}</button>
+    ))}
+    <button onClick={toggleTheme} className={`w-9 h-9 rounded-full flex items-center justify-center border transition-all ${isDark ? "bg-white/5 border-white/10" : "bg-black/5 border-black/10"}`}>{isDark ? "🌙" : "☀️"}</button>
+    <a href="#contact" className="bg-[#FF7A1A] px-4 py-2 rounded-full font-bold text-white">Hire Me</a>
+  </nav>
+  <div className="flex items-center gap-2 md:hidden">
+    <button onClick={toggleTheme} className={`w-8 h-8 rounded-full flex items-center justify-center ${isDark ? "bg-white/10" : "bg-black/10"}`}>{isDark ? "🌙" : "☀️"}</button>
+    <button onClick={()=>setMenuOpen(!menuOpen)} className="text-[#FF7A1A] text-2xl">☰</button>
+  </div>
+</header>
         {menuOpen && (
           <div className={`md:hidden max-w-[1100px] mx-auto mt-3 border rounded-xl p-4 flex flex-col gap-3 ${isDark ? "bg-[#14141F] border-white/10" : "bg-white border-black/10"}`}>
             <a href="/boilerplates" className="text-left py-2.5 text-[14px] font-black text-[#FF7A1A]">Boilerplates</a>
