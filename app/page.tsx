@@ -556,8 +556,10 @@ export default function Home() {
         )}
 
       </div>
-      <button onClick={()=>setActiveModal(null)} className="mt-5 w-full py-2.5 bg-[#FF7A1A] rounded-lg font-bold text-white">Close</button>
-    </div>
-  </div>
-);
-        }
+            <button onClick={()=>setActiveModal(null)} className="mt-5 w-full py-2.5 bg-[#FF7A1A] rounded-lg font-bold text-white">Close</button>
+    </div>      // 1. Modal ka andar wala box band
+  </div>        // 2. Modal ka black background band
+)}              // 3. {activeModal && ( ... )} band - YE WALI LINE TUMHARI MISSING THI
+    </div>      // 4. Poore page wala main div band
+  );            // 5. return() band
+}               // 6. Function band
