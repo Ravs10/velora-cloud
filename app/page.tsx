@@ -559,4 +559,5 @@ export default function Home() {
       <button onClick={()=>setActiveModal(null)} className="mt-5 w-full py-2.5 bg-[#FF7A1A] rounded-lg font-bold text-white">Close</button>
     </div>
   </div>
-)}
+);
+        }
