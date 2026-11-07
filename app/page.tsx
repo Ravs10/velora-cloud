@@ -507,59 +507,121 @@ export default function Home() {
           </div>
         )}
 
-        {(activeModal==="Privacy" || activeModal==="Privacy Policy") && (
-          <div>
-            <h1 className="text-[20px] font-bold text-black dark:text-white mb-2">Privacy Policy - Velora</h1>
-            <p className="text-[12px] opacity-60 mb-3">Last Updated: November 06, 2026</p>
-            <p className="mb-3">
-              At <strong>Velora</strong>, we respect your privacy. This policy explains how we handle information on Velora website and our products like <strong>Lorem Pro Tool</strong> - 25+ free online tools. 
-              <strong>Velora is an online startup founded by Yadav Ravish</strong> that builds websites, SaaS, AI tools, boilerplates, and creator utilities.
-            </p>
-            <h2 className="text-[16px] font-bold text-black dark:text-white mt-4 mb-1">1. Data Collection</h2>
-            <p className="mb-3">We do not collect, store, or ask for any personal data. No login, no signup, no email required. You can use all our tools directly. Your input stays in your browser only.</p>
-            <h2 className="text-[16px] font-bold text-black dark:text-white mt-4 mb-1">2. Processing</h2>
-            <p className="mb-3">All text generation, calculations, and tool processing happens 100% inside your browser. It is not sent to or saved on our servers.</p>
-            <h2 className="text-[16px] font-bold text-black dark:text-white mt-4 mb-1">3. Cookies & Analytics</h2>
-            <p className="mb-3">We use privacy-friendly analytics like Google Analytics to understand total visitors and improve our products. We do not track personal identity.</p>
-            <h2 className="text-[16px] font-bold text-black dark:text-white mt-4 mb-1">4. AdSense & Third Parties</h2>
-            <p className="mb-3">Google AdSense may use cookies to show relevant ads. You can manage ad personalization in your Google Ad Settings. Google's DART cookie may be used to serve ads based on your visit.</p>
-            <h2 className="text-[16px] font-bold text-black dark:text-white mt-4 mb-1">5. Contact Us</h2>
-            <p>If you have any questions about this Privacy Policy, contact us at <strong>hello@velora.dev</strong> or visit <a href="https://velora-cloud.run4ravish.workers.dev/" target="_blank" rel="noopener noreferrer" className="text-[#FF7A1A] font-bold">velora-cloud.run4ravish.workers.dev</a></p>
-          </div>
-        )}
+              {activeModal && (
+        <div className="fixed inset-0 z-[100] bg-black/70 backdrop-blur flex items-center justify-center p-4" onClick={()=>setActiveModal(null)}>
+          <div className={`border rounded-2xl p-6 max-w-[600px] w-full max-h-[85vh] overflow-y-auto ${isDark ? "bg-[#15151F] border-white/10" : "bg-white border-black/10"}`} onClick={e=>e.stopPropagation()}>
+            <div className="flex justify-between items-center mb-4">
+              <h3 className="font-bold text-[18px]">{activeModal}</h3>
+              <button onClick={()=>setActiveModal(null)} className={isDark ? "text-white/50" : "text-black/50"}>✕</button>
+            </div>
 
-        {(activeModal==="Terms" || activeModal==="Terms & Conditions" || activeModal==="Terms and Conditions") && (
-          <div>
-            <h1 className="text-[20px] font-bold text-black dark:text-white mb-2">Terms & Conditions - Velora</h1>
-            <p className="text-[12px] opacity-60 mb-3">Last Updated: November 06, 2026</p>
-            <p className="mb-3">
-              Welcome to <strong>Velora</strong>. By using our website <a href="https://velora-cloud.run4ravish.workers.dev/" target="_blank" rel="noopener noreferrer" className="text-[#FF7A1A] font-bold">velora-cloud.run4ravish.workers.dev</a> and our products like <strong>Lorem Pro Tool</strong>, you agree to these Terms & Conditions. 
-              <strong>Velora is an online startup founded by Yadav Ravish</strong> that develops websites, web apps, SaaS products, AI tools, boilerplates, and free online tools. Please read these terms carefully.
-            </p>
-            <h2 className="text-[16px] font-bold text-black dark:text-white mt-4 mb-1">1. Acceptance of Terms</h2>
-            <p className="mb-3">By accessing Velora website or using Lorem Pro Tool and other Velora products, you agree to follow these terms. If you do not agree, please do not use our website or services.</p>
-            <h2 className="text-[16px] font-bold text-black dark:text-white mt-4 mb-1">2. Use of Our Services</h2>
-            <p className="mb-3">You can use our free tools like Word Counter, SIP Calculator, Lorem Ipsum Generator, YouTube Thumbnail Downloader, and AI Detector for personal, educational, and commercial purposes. You agree NOT to use our tools for any illegal, harmful, fraudulent, or abusive activity.</p>
-            <h2 className="text-[16px] font-bold text-black dark:text-white mt-4 mb-1">3. Intellectual Property</h2>
-            <p className="mb-3">All content, design, logo, code, boilerplates, and tools on Velora website are owned by Velora. You cannot copy, resell, or claim our Velora logo, brand name, or source code as your own without written permission from Yadav Ravish.</p>
-            <h2 className="text-[16px] font-bold text-black dark:text-white mt-4 mb-1">4. Client Projects & Services</h2>
-            <p className="mb-3">If you hire Velora for website development, SaaS development, AI tool, or boilerplate development, project timeline, price, and delivery will be discussed on email before starting work. Advance payment may be required for custom projects. Once delivered, client is responsible for maintaining their own website unless maintenance plan is taken.</p>
-            <h2 className="text-[16px] font-bold text-black dark:text-white mt-4 mb-1">5. Free Tools - No Warranty</h2>
-            <p className="mb-3">All free tools are provided AS IS, without any warranty. Finance calculators like SIP, FD, Income Tax Calculator give only estimates. Velora is not responsible for any financial loss based on these estimates.</p>
-            <h2 className="text-[16px] font-bold text-black dark:text-white mt-4 mb-1">6. Limitation of Liability</h2>
-            <p className="mb-3">Velora, Lorem Pro Tool, and founder Yadav Ravish shall not be liable for any direct, indirect, or consequential loss or damage arising from use of our website, tools, or services.</p>
-            <h2 className="text-[16px] font-bold text-black dark:text-white mt-4 mb-1">7. Changes To Terms</h2>
-            <p className="mb-3">Velora may update these Terms & Conditions at any time to reflect new products, services, or legal requirements. Updated terms will be shown on this page with new date.</p>
-            <h2 className="text-[16px] font-bold text-black dark:text-white mt-4 mb-1">8. Contact Us</h2>
-            <p>If you have any questions about these Terms, contact us at <strong>hello@velora.dev</strong> or visit <a href="https://velora-cloud.run4ravish.workers.dev/" target="_blank" rel="noopener noreferrer" className="text-[#FF7A1A] font-bold">velora-cloud.run4ravish.workers.dev</a>. Thank you for using Velora.</p>
-          </div>
-        )}
+            <div className="text-center mb-4">
+              <a href="https://velora-cloud.run4ravish.workers.dev/" target="_blank" rel="noopener noreferrer" title="Visit Velora - Developed by Yadav Ravish">
+                <img src={isDark ? "/logo-dark.png" : "/logo.png"} alt="Velora Logo - Online Startup by Yadav Ravish" className="w-[100px] h-auto rounded-xl mx-auto cursor-pointer" />
+              </a>
+              <p className="text-[12px] text-[#FF7A1A] font-bold mt-1">Developed By Velora - Click Logo To Visit Developer Website</p>
+            </div>
 
-      </div>
+            <div className={`text-[13px] leading-relaxed ${isDark ? "text-white/70" : "text-black/70"}`}>
+              {activeModal==="About" && (
+                <div>
+                  <h1 className="text-[20px] font-bold text-black dark:text-white mb-2">About Velora - Online Startup & Digital Product Company</h1>
+                  <p className="mb-3"><strong>Velora is an online startup and digital product company</strong> founded by <strong>Yadav Ravish</strong>. Velora is a modern platform that develops <strong>websites, web apps, mobile apps, SaaS products, boilerplates, AI tools, and free online tools</strong> for students, creators, startups, and small businesses in India and worldwide.</p>
+                  <h2 className="text-[16px] font-bold text-black dark:text-white mt-4 mb-1">What Does Velora Build?</h2>
+                  <ul className="list-disc pl-5 mb-3 space-y-1">
+                    <li><strong>Websites & Web Apps:</strong> Fast, SEO-friendly business websites, portfolio websites, and e-commerce websites.</li>
+                    <li><strong>SaaS Tools & Platforms:</strong> Complete SaaS products like Lorem Pro Tool - 25+ free online tools in one place.</li>
+                    <li><strong>AI Tools & Automation:</strong> AI Detector, AI content tools, YouTube tools, and AI automation workflows.</li>
+                    <li><strong>Boilerplates & Starters:</strong> Ready-to-launch Next.js, React, and Cloudflare boilerplates for developers.</li>
+                    <li><strong>Creator Utilities:</strong> Word Counter, SIP Calculator, FD Calculator, YouTube Thumbnail Downloader, and more.</li>
+                  </ul>
+                  <h2 className="text-[16px] font-bold text-black dark:text-white mt-4 mb-1">Our Projects</h2>
+                  <p className="mb-3">We have already developed many projects like <strong>Lorem Pro Tool</strong> - a free all-in-one tools website with 25+ tools like Lorem Ipsum Generator, Word Counter, SIP Calculator, Income Tax Calculator, and YouTube Tools. And many more upcoming SaaS, AI tools, and boilerplates are coming soon under Velora.</p>
+                  <h2 className="text-[16px] font-bold text-black dark:text-white mt-4 mb-1">Our Vision</h2>
+                  <p>Our vision at Velora is simple - Build fast, beautiful, and useful digital products that anyone can use for free or at low cost. Founded by Yadav Ravish, Velora believes every creator should have premium tools without paying heavy prices.</p>
+                  <p className="mt-3">Want your own website, SaaS, or tool? Visit <a href="https://velora-cloud.run4ravish.workers.dev/" target="_blank" rel="noopener noreferrer" className="text-[#FF7A1A] font-bold">velora-cloud.run4ravish.workers.dev</a></p>
+                </div>
+              )}
+              {activeModal==="Contact" && (
+                <div>
+                  <h1 className="text-[20px] font-bold text-black dark:text-white mb-2">Contact Velora - Get Your Website, App & SaaS Built</h1>
+                  <p className="mb-3">Have a project in mind? <strong>Contact Velora</strong> for <strong>website development, web app development, SaaS development, AI tools, boilerplates, and custom online tools</strong>. Velora is founded by <strong>Yadav Ravish</strong> and we reply within 24-48 hours.</p>
+                  <h2 className="text-[16px] font-bold text-black dark:text-white mt-4 mb-1">Contact Details</h2>
+                  <div className="bg-black/5 dark:bg-white/5 p-3 rounded-xl mb-3">
+                    <p><strong>Email:</strong> hello@velora.dev</p>
+                    <p><strong>Website:</strong> <a href="https://velora-cloud.run4ravish.workers.dev/" target="_blank" rel="noopener noreferrer" className="text-[#FF7A1A] font-bold">velora-cloud.run4ravish.workers.dev</a></p>
+                    <p><strong>Our Product:</strong> Lorem Pro Tool - 25+ Free Online Tools</p>
+                    <p><strong>Founder:</strong> Yadav Ravish</p>
+                  </div>
+                  <h2 className="text-[16px] font-bold text-black dark:text-white mt-4 mb-1">What Can We Build For You?</h2>
+                  <ul className="list-disc pl-5 space-y-1">
+                    <li>Business Website, Portfolio Website, Blog Website</li>
+                    <li>SaaS Product, AI Tool Website, Tools Website like Lorem Pro Tool</li>
+                    <li>Next.js Boilerplate, React App, Landing Page</li>
+                    <li>YouTube Tools, Finance Calculators, SEO Tools</li>
+                  </ul>
+                  <p className="mt-3">Email us at <strong>hello@velora.dev</strong> for projects, collaborations, and inquiries. Or click on Velora logo above to visit our developer website.</p>
+                </div>
+              )}
+              {activeModal==="Disclaimer" && (
+                <div>
+                  <h1 className="text-[20px] font-bold text-black dark:text-white mb-2">Disclaimer - Velora & Lorem Pro Tool</h1>
+                  <p className="mb-3">The information and tools provided by <strong>Velora</strong> and <strong>Lorem Pro Tool</strong> are for general, educational, and informational purposes only. <strong>Velora is an online startup founded by Yadav Ravish</strong> that develops websites, SaaS products, AI tools, boilerplates, and free online tools.</p>
+                  <h2 className="text-[16px] font-bold text-black dark:text-white mt-4 mb-1">1. General Information</h2>
+                  <p className="mb-3">While we try to keep all tools like SIP Calculator, FD Calculator, Income Tax Calculator, Word Counter, and YouTube Tools accurate, we make no warranties about completeness, reliability, or accuracy. Any reliance you place on such information is at your own risk.</p>
+                  <h2 className="text-[16px] font-bold text-black dark:text-white mt-4 mb-1">2. Financial Tools</h2>
+                  <p className="mb-3">Our finance calculators provide only estimates. Velora is not a financial advisor, bank, or CA. Please consult a professional before taking financial decisions.</p>
+                  <h2 className="text-[16px] font-bold text-black dark:text-white mt-4 mb-1">3. Generated Content</h2>
+                  <p className="mb-3">Fake data, lorem ipsum, fancy text, and other generated content should not be used for illegal or fraudulent purposes. It is only for testing, designing, and demo purposes.</p>
+                  <h2 className="text-[16px] font-bold text-black dark:text-white mt-4 mb-1">4. Liability</h2>
+                  <p>Velora, Lorem Pro Tool, and founder Yadav Ravish shall not be liable for any loss or damage arising from use of this website. For questions, contact us at hello@velora.dev or visit <a href="https://velora-cloud.run4ravish.workers.dev/" target="_blank" rel="noopener noreferrer" className="text-[#FF7A1A] font-bold">Velora Website</a>.</p>
+                </div>
+              )}
+              {(activeModal==="Privacy" || activeModal==="Privacy Policy") && (
+                <div>
+                  <h1 className="text-[20px] font-bold text-black dark:text-white mb-2">Privacy Policy - Velora</h1>
+                  <p className="text-[12px] opacity-60 mb-3">Last Updated: November 06, 2026</p>
+                  <p className="mb-3">At <strong>Velora</strong>, we respect your privacy. This policy explains how we handle information on Velora website and our products like <strong>Lorem Pro Tool</strong> - 25+ free online tools. <strong>Velora is an online startup founded by Yadav Ravish</strong> that builds websites, SaaS, AI tools, boilerplates, and creator utilities.</p>
+                  <h2 className="text-[16px] font-bold text-black dark:text-white mt-4 mb-1">1. Data Collection</h2>
+                  <p className="mb-3">We do not collect, store, or ask for any personal data. No login, no signup, no email required. You can use all our tools directly. Your input stays in your browser only.</p>
+                  <h2 className="text-[16px] font-bold text-black dark:text-white mt-4 mb-1">2. Processing</h2>
+                  <p className="mb-3">All text generation, calculations, and tool processing happens 100% inside your browser. It is not sent to or saved on our servers.</p>
+                  <h2 className="text-[16px] font-bold text-black dark:text-white mt-4 mb-1">3. Cookies & Analytics</h2>
+                  <p className="mb-3">We use privacy-friendly analytics like Google Analytics to understand total visitors and improve our products. We do not track personal identity.</p>
+                  <h2 className="text-[16px] font-bold text-black dark:text-white mt-4 mb-1">4. AdSense & Third Parties</h2>
+                  <p className="mb-3">Google AdSense may use cookies to show relevant ads. You can manage ad personalization in your Google Ad Settings. Google&apos;s DART cookie may be used to serve ads based on your visit.</p>
+                  <h2 className="text-[16px] font-bold text-black dark:text-white mt-4 mb-1">5. Contact Us</h2>
+                  <p>If you have any questions about this Privacy Policy, contact us at <strong>hello@velora.dev</strong> or visit <a href="https://velora-cloud.run4ravish.workers.dev/" target="_blank" rel="noopener noreferrer" className="text-[#FF7A1A] font-bold">velora-cloud.run4ravish.workers.dev</a></p>
+                </div>
+              )}
+              {(activeModal==="Terms" || activeModal==="Terms & Conditions" || activeModal==="Terms and Conditions") && (
+                <div>
+                  <h1 className="text-[20px] font-bold text-black dark:text-white mb-2">Terms & Conditions - Velora</h1>
+                  <p className="text-[12px] opacity-60 mb-3">Last Updated: November 06, 2026</p>
+                  <p className="mb-3">Welcome to <strong>Velora</strong>. By using our website <a href="https://velora-cloud.run4ravish.workers.dev/" target="_blank" rel="noopener noreferrer" className="text-[#FF7A1A] font-bold">velora-cloud.run4ravish.workers.dev</a> and our products like <strong>Lorem Pro Tool</strong>, you agree to these Terms & Conditions. <strong>Velora is an online startup founded by Yadav Ravish</strong> that develops websites, web apps, SaaS products, AI tools, boilerplates, and free online tools. Please read these terms carefully.</p>
+                  <h2 className="text-[16px] font-bold text-black dark:text-white mt-4 mb-1">1. Acceptance of Terms</h2>
+                  <p className="mb-3">By accessing Velora website or using Lorem Pro Tool and other Velora products, you agree to follow these terms. If you do not agree, please do not use our website or services.</p>
+                  <h2 className="text-[16px] font-bold text-black dark:text-white mt-4 mb-1">2. Use of Our Services</h2>
+                  <p className="mb-3">You can use our free tools like Word Counter, SIP Calculator, Lorem Ipsum Generator, YouTube Thumbnail Downloader, and AI Detector for personal, educational, and commercial purposes. You agree NOT to use our tools for any illegal, harmful, fraudulent, or abusive activity.</p>
+                  <h2 className="text-[16px] font-bold text-black dark:text-white mt-4 mb-1">3. Intellectual Property</h2>
+                  <p className="mb-3">All content, design, logo, code, boilerplates, and tools on Velora website are owned by Velora. You cannot copy, resell, or claim our Velora logo, brand name, or source code as your own without written permission from Yadav Ravish.</p>
+                  <h2 className="text-[16px] font-bold text-black dark:text-white mt-4 mb-1">4. Client Projects & Services</h2>
+                  <p className="mb-3">If you hire Velora for website development, SaaS development, AI tool, or boilerplate development, project timeline, price, and delivery will be discussed on email before starting work. Advance payment may be required for custom projects. Once delivered, client is responsible for maintaining their own website unless maintenance plan is taken.</p>
+                  <h2 className="text-[16px] font-bold text-black dark:text-white mt-4 mb-1">5. Free Tools - No Warranty</h2>
+                  <p className="mb-3">All free tools are provided AS IS, without any warranty. Finance calculators like SIP, FD, Income Tax Calculator give only estimates. Velora is not responsible for any financial loss based on these estimates.</p>
+                  <h2 className="text-[16px] font-bold text-black dark:text-white mt-4 mb-1">6. Limitation of Liability</h2>
+                  <p className="mb-3">Velora, Lorem Pro Tool, and founder Yadav Ravish shall not be liable for any direct, indirect, or consequential loss or damage arising from use of our website, tools, or services.</p>
+                  <h2 className="text-[16px] font-bold text-black dark:text-white mt-4 mb-1">7. Changes To Terms</h2>
+                  <p className="mb-3">Velora may update these Terms & Conditions at any time to reflect new products, services, or legal requirements. Updated terms will be shown on this page with new date.</p>
+                  <h2 className="text-[16px] font-bold text-black dark:text-white mt-4 mb-1">8. Contact Us</h2>
+                  <p>If you have any questions about these Terms, contact us at <strong>hello@velora.dev</strong> or visit <a href="https://velora-cloud.run4ravish.workers.dev/" target="_blank" rel="noopener noreferrer" className="text-[#FF7A1A] font-bold">velora-cloud.run4ravish.workers.dev</a>. Thank you for using Velora.</p>
+                </div>
+              )}
+            </div>
             <button onClick={()=>setActiveModal(null)} className="mt-5 w-full py-2.5 bg-[#FF7A1A] rounded-lg font-bold text-white">Close</button>
-    </div>      // 1. Modal ka andar wala box band
-  </div>        // 2. Modal ka black background band
-)}              // 3. {activeModal && ( ... )} band - YE WALI LINE TUMHARI MISSING THI
-    </div>      // 4. Poore page wala main div band
-  );            // 5. return() band
-}               // 6. Function band
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}
