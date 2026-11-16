@@ -109,11 +109,18 @@ export default function Home() {
         @keyframes veloraFloat { 0%,100%{transform:translateY(0) scale(1)} 50%{transform:translateY(-8px) scale(1.03)} }
         @keyframes veloraBlinkDot { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.3;transform:scale(.8)} }
         @keyframes hotPulse { 0%,100%{box-shadow:0 0 10px rgba(16,185,129,0.5)} 50%{box-shadow:0 0 20px rgba(16,185,129,0.9)} }
+        @keyframes writeForUsGlow { 0%,100%{ box-shadow:0 0 20px rgba(16,185,129,0.5), 0 0 40px rgba(16,185,129,0.2); transform:scale(1)} 50%{ box-shadow:0 0 35px rgba(16,185,129,0.9), 0 0 70px rgba(16,185,129,0.5); transform:scale(1.02)} }
+        @keyframes writeShine { 0%{left:-100%} 100%{left:200%} }
+        @keyframes writeBounce { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-4px)} }
         .animate-small-live{animation:smallPulse 2s infinite}
         .velora-glow{animation:veloraGlow 1.8s ease-in-out infinite}
         .velora-float{animation:veloraFloat 2.5s ease-in-out infinite}
         .velora-blink-dot{animation:veloraBlinkDot 1s ease-in-out infinite}
         .hot-glow{animation:hotPulse 1.5s infinite}
+        .write-glow{ animation:writeForUsGlow 2s ease-in-out infinite; }
+        .write-shine{ position:relative; overflow:hidden; }
+        .write-shine::after{ content:''; position:absolute; top:0; left:-100%; width:50%; height:100%; background:linear-gradient(120deg,transparent,rgba(255,255,255,0.5),transparent); animation:writeShine 2.2s infinite; pointer-events:none; }
+        .write-bounce{ animation:writeBounce 1.5s ease-in-out infinite; }
         .animate-big-live{background:linear-gradient(100deg,#FF7A1A 20%,#ffad66 50%,#FF7A1A 80%);background-size:200% auto;animation:shimmer 2.5s linear infinite;position:relative;overflow:hidden}
         .animate-big-live::after{content:'';position:absolute;top:0;left:-100%;width:50%;height:100%;background:linear-gradient(120deg,transparent,rgba(255,255,255,0.4),transparent);animation:shimmerSlide 2.2s infinite}
         @keyframes shimmerSlide{0%{left:-100%}100%{left:200%}}
@@ -135,8 +142,9 @@ export default function Home() {
             </div>
             <img src={isDark ? "/velora-text.png" : "/velora-white-text-logo.png"} alt="VELORA" className="h-[32px] md:h-[40px] object-contain" />
           </div>
-          <nav className="hidden md:flex items-center gap-6 text-[13px] font-medium">
+          <nav className="hidden md:flex items-center gap-4 text-[13px] font-medium">
             <a href="/boilerplates" className="text-[#FF7A1A] font-black">Boilerplates</a>
+            <a href="https://lorem-pro-tool.run4ravish.workers.dev/write-for-us" target="_blank" rel="noopener noreferrer" className="bg-emerald-500 text-black px-3 py-1.5 rounded-full font-black text-[12px] hover:bg-emerald-400 hover:scale-105 transition-all shadow-[0_0_15px_rgba(16,185,129,0.5)] whitespace-nowrap">✍️ Write For Us - FREE DoFollow</a>
             {["About","Contact","Disclaimer","Privacy"].map(l=>(
               <button key={l} onClick={()=>setActiveModal(l)} className={`${isDark ? "text-white/60 hover:text-[#FF7A1A]" : "text-black/60 hover:text-[#FF7A1A]"}`}>{l}</button>
             ))}
@@ -151,6 +159,7 @@ export default function Home() {
         {menuOpen && (
           <div className={`md:hidden max-w-[1100px] mx-auto mt-3 border rounded-xl p-4 flex flex-col gap-3 ${isDark ? "bg-[#14141F] border-white/10" : "bg-white border-black/10"}`}>
             <a href="/boilerplates" className="text-left py-2.5 text-[14px] font-black text-[#FF7A1A]">Boilerplates</a>
+            <a href="https://lorem-pro-tool.run4ravish.workers.dev/write-for-us" target="_blank" rel="noopener noreferrer" className="text-left py-2.5 text-[14px] font-black bg-emerald-500 text-black px-3 rounded-lg text-center">✍️ Write For Us - FREE DoFollow Link</a>
             {["About","Contact","Disclaimer","Privacy Policy"].map(l=>(
               <button key={l} onClick={()=>{setActiveModal(l); setMenuOpen(false)}} className={`text-left py-2.5 text-[14px] ${isDark ? "text-white/70" : "text-black/70"}`}>{l}</button>
             ))}
@@ -165,6 +174,41 @@ export default function Home() {
           <a href="#contact" className="w-[280px] max-w-[90vw] px-8 py-3.5 bg-[#FF7A1A] text-white font-bold rounded-xl">Start a Project →</a>
           <a href="#products" className={`w-[280px] max-w-[90vw] px-8 py-3 border rounded-xl ${isDark ? "border-[#FF7A1A]/40 text-[#FF7A1A]" : "border-[#FF7A1A]/40 text-[#FF7A1A] bg-white"}`}>View Our Work</a>
         </div>
+      </section>
+
+      {/* WRITE FOR US - DOFOLLOW BANNER */}
+      <section className="max-w-[1100px] mx-auto px-4 mt-2 mb-2">
+        <a 
+          href="https://lorem-pro-tool.run4ravish.workers.dev/write-for-us" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="write-glow write-shine group block relative bg-gradient-to-r from-emerald-500 via-green-500 to-teal-500 rounded-[24px] p-[2px] hover:scale-[1.02] transition-all duration-300"
+        >
+          <div className="bg-[#0A0A14] rounded-[22px] px-5 py-5 md:px-8 md:py-6 flex flex-col md:flex-row items-center justify-between gap-4 relative overflow-hidden">
+            <div className="absolute inset-0 bg-gradient-to-r from-emerald-500/10 via-transparent to-teal-500/10 group-hover:from-emerald-500/20 group-hover:to-teal-500/20 transition-all duration-500" />
+            <div className="relative flex items-center gap-4 text-center md:text-left">
+              <div className="write-bounce hidden sm:flex w-[56px] h-[56px] bg-gradient-to-br from-emerald-400 to-teal-500 rounded-2xl items-center justify-center text-[28px] shrink-0 shadow-lg shadow-emerald-500/30">
+                ✍️
+              </div>
+              <div>
+                <div className="flex items-center gap-2 justify-center md:justify-start flex-wrap">
+                  <h3 className="text-white font-black text-[18px] md:text-[22px] leading-tight">
+                    Write For Us - Get FREE DoFollow Link!
+                  </h3>
+                  <span className="bg-emerald-500 text-black text-[10px] font-black px-2.5 py-1 rounded-full animate-pulse">100% FREE</span>
+                </div>
+                <p className="text-white/60 text-[12px] md:text-[13px] mt-1">
+                  Blogger ho? Article likho aur apne blog ke liye <span className="text-emerald-400 font-bold">DoFollow Backlink + Free Traffic</span> pao.
+                </p>
+              </div>
+            </div>
+            <div className="relative shrink-0">
+              <span className="group-hover:scale-110 group-hover:shadow-[0_0_30px_rgba(16,185,129,0.6)] transition-all duration-300 flex items-center gap-2 bg-emerald-500 text-black font-black text-[14px] md:text-[15px] px-6 py-3.5 rounded-full">
+                Submit Article →
+              </span>
+            </div>
+          </div>
+        </a>
       </section>
 
       <div className="px-4 md:px-6">
@@ -294,7 +338,7 @@ export default function Home() {
       <footer className={`max-w-[1100px] mx-auto mt-8 border-t mx-3 md:mx-auto pt-8 pb-8 ${isDark ? "border-white/[0.06]" : "border-black/[0.06]"}`}>
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 px-6 md:px-2">
           <div className="pl-1"><div className="flex items-center gap-2"><img src={isDark ? "/logo-dark.png" : "/logo.png"} className="w-10 h-10 object-contain" alt="" /><img src={isDark ? "/velora-text.png" : "/velora-white-text-logo.png"} className="h-7 object-contain" alt="" /></div><p className={`text-[12px] mt-3 ${isDark ? "text-white/40" : "text-black/40"}`}>We build fast, modern products for founders.</p></div>
-          <div className="pl-2 md:pl-4"><p className="font-bold text-[13px] mb-3">Quick Links</p><div className={`flex flex-col gap-2.5 text-[13px] ${isDark ? "text-white/50" : "text-black/50"}`}><a href="#products" className="hover:text-[#FF7A1A]">Our Products</a><a href="#contact" className="hover:text-[#FF7A1A]">Start a Project</a></div></div>
+          <div className="pl-2 md:pl-4"><p className="font-bold text-[13px] mb-3">Quick Links</p><div className={`flex flex-col gap-2.5 text-[13px] ${isDark ? "text-white/50" : "text-black/50"}`}><a href="#products" className="hover:text-[#FF7A1A]">Our Products</a><a href="#contact" className="hover:text-[#FF7A1A]">Start a Project</a><a href="https://lorem-pro-tool.run4ravish.workers.dev/write-for-us" target="_blank" rel="noopener noreferrer" className="text-emerald-400 font-bold hover:text-emerald-300">✍️ Write For Us - FREE DoFollow</a></div></div>
           <div className="pl-2 md:pl-4"><p className="font-bold text-[13px] mb-3">Legal</p><div className={`flex flex-col gap-2.5 text-[13px] ${isDark ? "text-white/50" : "text-black/50"}`}><button onClick={()=>setActiveModal("Disclaimer")} className="text-left hover:text-[#FF7A1A]">Disclaimer</button><button onClick={()=>setActiveModal("Privacy")} className="text-left hover:text-[#FF7A1A]">Privacy Policy</button><button onClick={()=>setActiveModal("About")} className="text-left hover:text-[#FF7A1A]">About Us</button><button onClick={()=>setActiveModal("Terms")} className="text-left hover:text-[#FF7A1A]">Terms & Conditions</button></div></div>
           <div className="pl-2 md:pl-4"><p className="font-bold text-[13px] mb-3">Contact</p><p className={`text-[13px] ${isDark ? "text-white/50" : "text-black/50"}`}>hello@velora.dev</p><p className={`text-[11px] mt-2 ${isDark ? "text-white/30" : "text-black/30"}`}>Founded by Yadav Ravish</p></div>
         </div>
