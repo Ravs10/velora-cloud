@@ -2,6 +2,7 @@
 import { useState, useRef } from "react";
 
 const TOOLS_BASE = "https://lorem-pro-tool.run4ravish.workers.dev";
+const WHATSAPP_NUMBER = "918299746179";
 
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -211,8 +212,53 @@ export default function Home() {
         </a>
       </section>
 
+      {/* PRICING - CLIENT KO PAKADNE KE LIYE */}
+      <section className="max-w-[1100px] mx-auto px-4 mt-8">
+        <div className="text-center mb-6">
+          <h2 className="text-[24px] md:text-[32px] font-black">Kitne Me Banega? <span className="text-[#FF7A1A]">Clear Price.</span></h2>
+          <p className="text-white/60 text-[13px] mt-1">No Hidden Charges. No Bakwaas. Jo likha hai wahi price hai.</p>
+        </div>
+        <div className="grid md:grid-cols-3 gap-4">
+          <div className="bg-[#15151F] border border-white/10 rounded-[24px] p-6 hover:border-[#FF7A1A] hover:scale-[1.02] transition-all">
+            <p className="text-[12px] font-bold tracking-widest text-white/50">LANDING PAGE</p>
+            <h3 className="text-[28px] font-black mt-2">₹4,999<span className="text-[13px] text-white/50"> / onwards</span></h3>
+            <ul className="mt-4 space-y-2 text-[13px] text-white/70">
+              <li>✓ 1 Page - Fast + SEO Ready</li>
+              <li>✓ Mobile Friendly</li>
+              <li>✓ Delivery in 3 Days</li>
+              <li>✓ WhatsApp Button Free</li>
+            </ul>
+            <a href={`https://wa.me/${WHATSAPP_NUMBER}?text=Hi%20Ravish,%20Mujhe%20Landing%20Page%20Banwani%20Hai%20-%20Rs.4999%20Wali`} target="_blank" rel="noopener noreferrer" className="mt-5 block text-center bg-white text-black font-black py-3 rounded-full hover:bg-[#FF7A1A] hover:text-white transition">Start - ₹4,999 →</a>
+          </div>
+          <div className="relative bg-gradient-to-b from-[#FF7A1A] to-[#ff3c00] rounded-[24px] p-6 md:scale-[1.03] shadow-[0_0_40px_rgba(255,122,26,0.4)]">
+            <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-black text-white text-[10px] font-black px-3 py-1 rounded-full whitespace-nowrap">🔥 MOST POPULAR</span>
+            <p className="text-[12px] font-bold tracking-widest text-black/70">TOOLS WEBSITE</p>
+            <h3 className="text-[28px] font-black mt-2 text-black">₹14,999<span className="text-[13px] text-black/70"> / onwards</span></h3>
+            <ul className="mt-4 space-y-2 text-[13px] text-black font-medium">
+              <li>✓ Lorem Pro Tool Jaisi - 15+ Tools</li>
+              <li>✓ AdSense Ready - Paisa Kamane Ke Liye</li>
+              <li>✓ Delivery in 7 Days</li>
+              <li>✓ Free 1 Month Support</li>
+            </ul>
+            <a href={`https://wa.me/${WHATSAPP_NUMBER}?text=Hi%20Ravish,%20Mujhe%20Tools%20Website%20Banwani%20Hai%20-%20Rs.14999%20Wali`} target="_blank" rel="noopener noreferrer" className="mt-5 block text-center bg-black text-white font-black py-3 rounded-full hover:scale-105 transition">Start - ₹14,999 →</a>
+          </div>
+          <div className="bg-[#15151F] border border-white/10 rounded-[24px] p-6 hover:border-[#FF7A1A] hover:scale-[1.02] transition-all">
+            <p className="text-[12px] font-bold tracking-widest text-white/50">FULL SAAS / WEB APP</p>
+            <h3 className="text-[28px] font-black mt-2">₹29,999<span className="text-[13px] text-white/50"> / onwards</span></h3>
+            <ul className="mt-4 space-y-2 text-[13px] text-white/70">
+              <li>✓ Login + Dashboard + Payment</li>
+              <li>✓ Next.js + Supabase</li>
+              <li>✓ Delivery in 15-20 Days</li>
+              <li>✓ Full Source Code Milega</li>
+            </ul>
+            <a href={`https://wa.me/${WHATSAPP_NUMBER}?text=Hi%20Ravish,%20Mujhe%20SaaS%20Banwana%20Hai`} target="_blank" rel="noopener noreferrer" className="mt-5 block text-center bg-white text-black font-black py-3 rounded-full hover:bg-[#FF7A1A] hover:text-white transition">Baat Karo →</a>
+          </div>
+        </div>
+        <p className="text-center text-[11px] text-white/40 mt-4">⚡ 50% Advance Pe Kaam Shuru • Baaki Kaam Complete Hone Ke Baad</p>
+      </section>
+
       <div className="px-4 md:px-6">
-        <section id="contact" className="w-full bg-gradient-to-br from-orange-500 via-[#ff6b00] to-[#ff3c00] relative overflow-hidden py-10 px-4 rounded-[32px] max-w-[1020px] mx-auto mt-4 shadow-[0_0_0_1px_rgba(255,122,26,0.2)]">
+        <section id="contact" className="w-full bg-gradient-to-br from-orange-500 via-[#ff6b00] to-[#ff3c00] relative overflow-hidden py-10 px-4 rounded-[32px] max-w-[1020px] mx-auto mt-8 shadow-[0_0_0_1px_rgba(255,122,26,0.2)]">
           <div className="relative max-w-6xl mx-auto px-2 md:px-6">
             <div className="grid md:grid-cols-2 gap-10 items-center">
               <div className="text-center md:text-left">
@@ -232,7 +278,7 @@ export default function Home() {
                   <li className="flex gap-3"><span className="text-orange-500">✓</span><span><b className="text-white">SaaS Boilerplate Kits</b> — Auth + Payments + Dashboard, Launch in 48H</span></li>
                 </ul>
                 <div className="grid grid-cols-2 gap-3 mt-6">
-                  <a href="https://wa.me/919999999999?text=Hi%20Ravish,%20I%20want%20to%20build%20a%20project!" target="_blank" rel="noopener noreferrer" className="bg-[#25D366] text-black text-center py-3 rounded-full font-black text-sm hover:scale-105 transition">WhatsApp</a>
+                  <a href={`https://wa.me/${WHATSAPP_NUMBER}?text=Hi%20Ravish,%20I%20want%20to%20build%20a%20project!`} target="_blank" rel="noopener noreferrer" className="bg-[#25D366] text-black text-center py-3 rounded-full font-black text-sm hover:scale-105 transition">WhatsApp</a>
                   <a href="mailto:hello@velora.dev" className="bg-white text-black text-center py-3 rounded-full font-black text-sm hover:bg-zinc-200 transition">Email</a>
                 </div>
                 <p className="text-center text-[11px] text-zinc-500 mt-3">⚡ REPLY IN 2 HOURS • 100% CONFIDENTIAL</p>
@@ -340,10 +386,18 @@ export default function Home() {
           <div className="pl-1"><div className="flex items-center gap-2"><img src={isDark ? "/logo-dark.png" : "/logo.png"} className="w-10 h-10 object-contain" alt="" /><img src={isDark ? "/velora-text.png" : "/velora-white-text-logo.png"} className="h-7 object-contain" alt="" /></div><p className={`text-[12px] mt-3 ${isDark ? "text-white/40" : "text-black/40"}`}>We build fast, modern products for founders.</p></div>
           <div className="pl-2 md:pl-4"><p className="font-bold text-[13px] mb-3">Quick Links</p><div className={`flex flex-col gap-2.5 text-[13px] ${isDark ? "text-white/50" : "text-black/50"}`}><a href="#products" className="hover:text-[#FF7A1A]">Our Products</a><a href="#contact" className="hover:text-[#FF7A1A]">Start a Project</a><a href="https://lorem-pro-tool.run4ravish.workers.dev/write-for-us" target="_blank" rel="noopener noreferrer" className="text-emerald-400 font-bold hover:text-emerald-300">✍️ Write For Us - FREE DoFollow</a></div></div>
           <div className="pl-2 md:pl-4"><p className="font-bold text-[13px] mb-3">Legal</p><div className={`flex flex-col gap-2.5 text-[13px] ${isDark ? "text-white/50" : "text-black/50"}`}><button onClick={()=>setActiveModal("Disclaimer")} className="text-left hover:text-[#FF7A1A]">Disclaimer</button><button onClick={()=>setActiveModal("Privacy")} className="text-left hover:text-[#FF7A1A]">Privacy Policy</button><button onClick={()=>setActiveModal("About")} className="text-left hover:text-[#FF7A1A]">About Us</button><button onClick={()=>setActiveModal("Terms")} className="text-left hover:text-[#FF7A1A]">Terms & Conditions</button></div></div>
-          <div className="pl-2 md:pl-4"><p className="font-bold text-[13px] mb-3">Contact</p><p className={`text-[13px] ${isDark ? "text-white/50" : "text-black/50"}`}>hello@velora.dev</p><p className={`text-[11px] mt-2 ${isDark ? "text-white/30" : "text-black/30"}`}>Founded by Yadav Ravish</p></div>
+          <div className="pl-2 md:pl-4"><p className="font-bold text-[13px] mb-3">Contact</p><p className={`text-[13px] ${isDark ? "text-white/50" : "text-black/50"}`}>hello@velora.dev</p><p className={`text-[13px] mt-1 ${isDark ? "text-white/50" : "text-black/50"}`}>WhatsApp: +91 82997 46179</p><p className={`text-[11px] mt-2 ${isDark ? "text-white/30" : "text-black/30"}`}>Founded by Yadav Ravish</p></div>
         </div>
         <p className={`text-center text-[10px] mt-8 tracking-[0.2em] ${isDark ? "text-white/20" : "text-black/20"}`}>© 2024 VELORA • hello@velora.dev • All rights reserved</p>
       </footer>
+
+      {/* FLOATING WHATSAPP - HAMESHA DIKHEGA */}
+      <a href={`https://wa.me/${WHATSAPP_NUMBER}?text=Hi%20Ravish,%20Mujhe%20Website%20Banwani%20Hai!`}
+        target="_blank" rel="noopener noreferrer"
+        className="fixed bottom-5 right-5 z-[90] bg-[#25D366] w-[56px] h-[56px] rounded-full flex items-center justify-center text-[28px] shadow-[0_0_25px_rgba(37,211,102,0.6)] hover:scale-110 transition-all animate-bounce">
+        💬
+        <span className="absolute -top-1 -right-1 w-4 h-4 bg-red-500 rounded-full border-2 border-white animate-ping"></span>
+      </a>
 
       {activeModal && (
         <div className="fixed inset-0 z-[100] bg-black/70 backdrop-blur flex items-center justify-center p-4" onClick={()=>setActiveModal(null)}>
@@ -385,6 +439,7 @@ export default function Home() {
                   <h2 className="text-[16px] font-bold text-black dark:text-white mt-4 mb-1">Contact Details</h2>
                   <div className="bg-black/5 dark:bg-white/5 p-3 rounded-xl mb-3">
                     <p><strong>Email:</strong> hello@velora.dev</p>
+                    <p><strong>WhatsApp:</strong> +91 82997 46179</p>
                     <p><strong>Website:</strong> <a href="https://velora-cloud.run4ravish.workers.dev/" target="_blank" rel="noopener noreferrer" className="text-[#FF7A1A] font-bold">velora-cloud.run4ravish.workers.dev</a></p>
                     <p><strong>Our Product:</strong> Lorem Pro Tool - 25+ Free Online Tools</p>
                     <p><strong>Founder:</strong> Yadav Ravish</p>
