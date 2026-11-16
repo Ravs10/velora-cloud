@@ -212,13 +212,13 @@ export default function Home() {
         </a>
       </section>
 
-      {/* PRICING - CLIENT KO PAKADNE KE LIYE */}
+      {/* PRICING - 4 TIERS */}
       <section className="max-w-[1100px] mx-auto px-4 mt-8">
         <div className="text-center mb-6">
           <h2 className="text-[24px] md:text-[32px] font-black">Kitne Me Banega? <span className="text-[#FF7A1A]">Clear Price.</span></h2>
-          <p className="text-white/60 text-[13px] mt-1">No Hidden Charges. No Bakwaas. Jo likha hai wahi price hai.</p>
+          <p className="text-white/60 text-[13px] mt-1">No Hidden Charges. Jo likha hai wahi price hai. Bada kaam ho to baat kar lo.</p>
         </div>
-        <div className="grid md:grid-cols-3 gap-4">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
           <div className="bg-[#15151F] border border-white/10 rounded-[24px] p-6 hover:border-[#FF7A1A] hover:scale-[1.02] transition-all">
             <p className="text-[12px] font-bold tracking-widest text-white/50">LANDING PAGE</p>
             <h3 className="text-[28px] font-black mt-2">₹4,999<span className="text-[13px] text-white/50"> / onwards</span></h3>
@@ -230,13 +230,13 @@ export default function Home() {
             </ul>
             <a href={`https://wa.me/${WHATSAPP_NUMBER}?text=Hi%20Ravish,%20Mujhe%20Landing%20Page%20Banwani%20Hai%20-%20Rs.4999%20Wali`} target="_blank" rel="noopener noreferrer" className="mt-5 block text-center bg-white text-black font-black py-3 rounded-full hover:bg-[#FF7A1A] hover:text-white transition">Start - ₹4,999 →</a>
           </div>
-          <div className="relative bg-gradient-to-b from-[#FF7A1A] to-[#ff3c00] rounded-[24px] p-6 md:scale-[1.03] shadow-[0_0_40px_rgba(255,122,26,0.4)]">
+          <div className="relative bg-gradient-to-b from-[#FF7A1A] to-[#ff3c00] rounded-[24px] p-6 lg:scale-[1.03] shadow-[0_0_40px_rgba(255,122,26,0.4)]">
             <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-black text-white text-[10px] font-black px-3 py-1 rounded-full whitespace-nowrap">🔥 MOST POPULAR</span>
             <p className="text-[12px] font-bold tracking-widest text-black/70">TOOLS WEBSITE</p>
             <h3 className="text-[28px] font-black mt-2 text-black">₹14,999<span className="text-[13px] text-black/70"> / onwards</span></h3>
             <ul className="mt-4 space-y-2 text-[13px] text-black font-medium">
               <li>✓ Lorem Pro Tool Jaisi - 15+ Tools</li>
-              <li>✓ AdSense Ready - Paisa Kamane Ke Liye</li>
+              <li>✓ AdSense Ready</li>
               <li>✓ Delivery in 7 Days</li>
               <li>✓ Free 1 Month Support</li>
             </ul>
@@ -253,8 +253,20 @@ export default function Home() {
             </ul>
             <a href={`https://wa.me/${WHATSAPP_NUMBER}?text=Hi%20Ravish,%20Mujhe%20SaaS%20Banwana%20Hai`} target="_blank" rel="noopener noreferrer" className="mt-5 block text-center bg-white text-black font-black py-3 rounded-full hover:bg-[#FF7A1A] hover:text-white transition">Baat Karo →</a>
           </div>
+          <div className="bg-[#15151F] border-2 border-purple-500/50 rounded-[24px] p-6 hover:border-purple-400 hover:scale-[1.02] transition-all relative overflow-hidden">
+            <span className="absolute -top-0 right-0 bg-purple-500 text-white text-[10px] font-black px-3 py-1 rounded-bl-xl">PREMIUM</span>
+            <p className="text-[12px] font-bold tracking-widest text-purple-400">CUSTOM / ENTERPRISE</p>
+            <h3 className="text-[28px] font-black mt-2">₹49,999+<span className="text-[13px] text-white/50"> / Custom</span></h3>
+            <ul className="mt-4 space-y-2 text-[13px] text-white/70">
+              <li>✓ AI Tool + Mobile App + SaaS</li>
+              <li>✓ Complete Business System</li>
+              <li>✓ Priority Support + Team</li>
+              <li>✓ 1-2 Months Project</li>
+            </ul>
+            <a href={`https://wa.me/${WHATSAPP_NUMBER}?text=Hi%20Ravish,%20Mujhe%20Custom%20Enterprise%20Project%20Banwana%20Hai%20-%20Rs.49999%2B%20Wala`} target="_blank" rel="noopener noreferrer" className="mt-5 block text-center bg-purple-500 text-white font-black py-3 rounded-full hover:bg-purple-400 transition">Discuss Project →</a>
+          </div>
         </div>
-        <p className="text-center text-[11px] text-white/40 mt-4">⚡ 50% Advance Pe Kaam Shuru • Baaki Kaam Complete Hone Ke Baad</p>
+        <p className="text-center text-[11px] text-white/40 mt-4">⚡ 50% Advance Pe Kaam Shuru • Baaki Kaam Complete Hone Ke Baad • Price Kaam Ke Hisab Se Badh Sakta Hai</p>
       </section>
 
       <div className="px-4 md:px-6">
@@ -296,20 +308,46 @@ export default function Home() {
         </section>
       </div>
 
+      {/* NEW PROFILE - CLIENT FOCUSED */}
       <section className="max-w-[700px] mx-auto px-4 py-8">
         <p className="text-[#FF7A1A] font-bold tracking-[0.15em] text-[12px]">ABOUT FOUNDER</p>
         <p className={`text-[10px] tracking-[0.3em] mb-4 ${isDark ? "text-white/40" : "text-black/40"}`}>— THE BUILDER BEHIND VELORA</p>
         <div className={`border rounded-2xl p-5 md:p-6 relative overflow-hidden ${isDark ? "bg-[#15151F] border-white/[0.07]" : "bg-white border-black/[0.07] shadow-sm"}`}>
           <div className="absolute left-0 top-0 bottom-0 w-[3px] bg-[#FF7A1A]" />
-          <div className="flex items-center gap-4 mb-5">
-            <div className={`w-[68px] h-[68px] rounded-xl border flex items-center justify-center overflow-hidden shrink-0 ${isDark ? "bg-[#0A0A14] border-white/10" : "bg-white border-black/10"}`}><img src={isDark ? "/logo-dark.png" : "/logo.png"} className="w-12 h-12 object-contain" alt="VR" /></div>
-            <div><h2 className="font-extrabold text-[17px] md:text-[20px]">Ravish Chandra Yadav</h2><p className="text-[#FF7A1A] text-[10px] font-bold tracking-[0.15em]">Portfolio - FOUNDER @ VELORA</p></div>
+          <div className="flex items-center gap-4 mb-4">
+            <div className={`w-[72px] h-[72px] rounded-xl border flex items-center justify-center overflow-hidden shrink-0 ${isDark ? "bg-[#0A0A14] border-white/10" : "bg-white border-black/10"}`}><img src={isDark ? "/logo-dark.png" : "/logo.png"} className="w-12 h-12 object-contain" alt="VR" /></div>
+            <div>
+              <h2 className="font-extrabold text-[19px] md:text-[22px] leading-tight">Ravish Chandra Yadav</h2>
+              <p className="text-[#FF7A1A] text-[11px] font-bold tracking-[0.12em] mt-0.5">FOUNDER @ VELORA • AI PRODUCT BUILDER</p>
+              <p className={`text-[12px] mt-1 ${isDark ? "text-white/60" : "text-black/60"}`}>Main Founders & Bloggers ke liye <b className={isDark ? "text-white" : "text-black"}>Paisa Kamane Wale Tools, Websites & SaaS</b> banata hu - Jo fast ho, SEO-ready ho, aur AdSense se paisa kamaye.</p>
+            </div>
           </div>
+
+          <div className="grid grid-cols-3 gap-2 my-4">
+            <div className={`text-center rounded-xl py-3 ${isDark ? "bg-[#0A0A14]" : "bg-[#F8F8FC]"}`}>
+              <p className="text-[18px] font-black text-[#FF7A1A]">25+</p>
+              <p className={`text-[10px] font-bold ${isDark ? "text-white/50" : "text-black/50"}`}>TOOLS SHIPPED</p>
+            </div>
+            <div className={`text-center rounded-xl py-3 ${isDark ? "bg-[#0A0A14]" : "bg-[#F8F8FC]"}`}>
+              <p className="text-[18px] font-black text-[#FF7A1A]">7 Days</p>
+              <p className={`text-[10px] font-bold ${isDark ? "text-white/50" : "text-black/50"}`}>AVG. DELIVERY</p>
+            </div>
+            <div className={`text-center rounded-xl py-3 ${isDark ? "bg-[#0A0A14]" : "bg-[#F8F8FC]"}`}>
+              <p className="text-[18px] font-black text-[#FF7A1A]">100%</p>
+              <p className={`text-[10px] font-bold ${isDark ? "text-white/50" : "text-black/50"}`}>SOURCE CODE</p>
+            </div>
+          </div>
+
           <div className={`space-y-3 text-[12px] md:text-[13px] ${isDark ? "text-white/65" : "text-black/65"}`}>
-            <p className="flex gap-2.5"><span className="text-[#FF7A1A]">•</span> AI Product Engineer — Next.js, Cloudflare Workers, D1 Database, Vercel, Supabase</p>
-            <p className="flex gap-2.5"><span className="text-[#FF7A1A]">•</span> Founder of Velora — Building fast, modern tools and websites, SaaS Boilerplate, for founders & creators</p>
-            <p className="flex gap-2.5"><span className="text-[#FF7A1A]">•</span> SaaS Builder — Shipped 20+-in-1 Lorem Pro Tool + multiple products</p>
-            <p className="flex gap-2.5"><span className="text-[#FF7A1A]">•</span> Obsessed with AI Automation & Dev Tools that save weeks of work</p>
+            <p className="flex gap-2.5"><span className="text-[#FF7A1A]">✓</span><span><b className={isDark ? "text-white" : "text-black"}>Proof, Not Promise:</b> Lorem Pro Tool - 25+ Tools live hai, khud use karke dekho. Main wahi banata hu jo main khud use karta hu.</span></p>
+            <p className="flex gap-2.5"><span className="text-[#FF7A1A]">✓</span><span><b className={isDark ? "text-white" : "text-black"}>Speed = Paisa:</b> Next.js + Cloudflare Workers + Supabase - Tumhari site 1 sec me khulegi, Google me rank karegi.</span></p>
+            <p className="flex gap-2.5"><span className="text-[#FF7A1A]">✓</span><span><b className={isDark ? "text-white" : "text-black"}>Blogger Friendly:</b> AdSense Ready, SEO Ready, Mobile Ready - Tumhe sirf content daalna hai, paisa site kamayegi.</span></p>
+            <p className="flex gap-2.5"><span className="text-[#FF7A1A]">✓</span><span><b className={isDark ? "text-white" : "text-black"}>No Agency Bakwaas:</b> Direct mujhse baat hogi. No manager, no delay. WhatsApp karo, 2 ghante me reply.</span></p>
+          </div>
+
+          <div className="flex flex-wrap gap-2 mt-5">
+            <a href={`https://wa.me/${WHATSAPP_NUMBER}?text=Hi%20Ravish,%20Mujhe%20Apna%20Project%20Banwana%20Hai`} target="_blank" rel="noopener noreferrer" className="bg-[#25D366] text-black text-[12px] font-black px-4 py-2.5 rounded-full hover:scale-105 transition">💬 WhatsApp Pe Baat Karo</a>
+            <a href="#products" className={`text-[12px] font-bold px-4 py-2.5 rounded-full border ${isDark ? "border-white/15 text-white/80" : "border-black/15 text-black/80"}`}>Mera Kaam Dekho ↓</a>
           </div>
         </div>
       </section>
