@@ -12,6 +12,32 @@ export default function Home() {
   const [showSeo, setShowSeo] = useState(false);
   const [openFaq, setOpenFaq] = useState<number | null>(0);
   const [theme, setTheme] = useState("dark");
+    // --- VELORA AI CHAT ---
+  const [aiOpen, setAiOpen] = useState(false);
+  const [aiMessages, setAiMessages] = useState([{ role: "model", text: "Namaste! Main Velora AI hu. Aapko kya banwana hai? Landing Page, Tools Website ya SaaS?" }]);
+  const [aiInput, setAiInput] = useState("");
+  const [aiLoading, setAiLoading] = useState(false);
+
+  const sendAiMessage = async () => {
+    if (!aiInput.trim() || aiLoading) return;
+    const userMsg = aiInput;
+    setAiInput("");
+    const newHistory = [...aiMessages, { role: "user", text: userMsg }];
+    setAiMessages(newHistory);
+    setAiLoading(true);
+    try {
+      const res = await fetch(VELORA_AI_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ message: userMsg, history: newHistory.slice(-6) }),
+      });
+      const data = await res.json();
+      setAiMessages([...newHistory, { role: "model", text: data.reply }]);
+    } catch {
+      setAiMessages([...newHistory, { role: "model", text: "Thoda issue aa gaya. WhatsApp pe message karein - +91 82997 46179" }]);
+    }
+    setAiLoading(false);
+  };
   const audioCtxRef = useRef<AudioContext | null>(null);
 
   const isDark = theme === "dark";
