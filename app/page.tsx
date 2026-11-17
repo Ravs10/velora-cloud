@@ -3,6 +3,7 @@ import { useState, useRef } from "react";
 
 const TOOLS_BASE = "https://lorem-pro-tool.run4ravish.workers.dev";
 const WHATSAPP_NUMBER = "918299746179";
+const VELORA_AI_URL = "https://velora-ai.run4ravish.workers.dev";
 
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
