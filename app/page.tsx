@@ -3,7 +3,6 @@ import { useState, useRef } from "react";
 
 const TOOLS_BASE = "https://lorem-pro-tool.run4ravish.workers.dev";
 const WHATSAPP_NUMBER = "918299746179";
-const VELORA_AI_URL = "https://velora-ai.run4ravish.workers.dev";
 
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -12,32 +11,6 @@ export default function Home() {
   const [showSeo, setShowSeo] = useState(false);
   const [openFaq, setOpenFaq] = useState<number | null>(0);
   const [theme, setTheme] = useState("dark");
-    // --- VELORA AI CHAT ---
-  const [aiOpen, setAiOpen] = useState(false);
-  const [aiMessages, setAiMessages] = useState([{ role: "model", text: "Namaste! Main Velora AI hu. Aapko kya banwana hai? Landing Page, Tools Website ya SaaS?" }]);
-  const [aiInput, setAiInput] = useState("");
-  const [aiLoading, setAiLoading] = useState(false);
-
-  const sendAiMessage = async () => {
-    if (!aiInput.trim() || aiLoading) return;
-    const userMsg = aiInput;
-    setAiInput("");
-    const newHistory = [...aiMessages, { role: "user", text: userMsg }];
-    setAiMessages(newHistory);
-    setAiLoading(true);
-    try {
-      const res = await fetch(VELORA_AI_URL, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ message: userMsg, history: newHistory.slice(-6) }),
-      });
-      const data = await res.json();
-      setAiMessages([...newHistory, { role: "model", text: data.reply }]);
-    } catch {
-      setAiMessages([...newHistory, { role: "model", text: "Thoda issue aa gaya. WhatsApp pe message karein - +91 82997 46179" }]);
-    }
-    setAiLoading(false);
-  };
   const audioCtxRef = useRef<AudioContext | null>(null);
 
   const isDark = theme === "dark";
@@ -457,43 +430,7 @@ export default function Home() {
         </div>
         <p className={`text-center text-[10px] mt-8 tracking-[0.2em] ${isDark ? "text-white/20" : "text-black/20"}`}>© 2024 VELORA • hello@velora.dev • All rights reserved</p>
       </footer>
-      {/* VELORA AI - FLOATING CHAT */}
-      <div className="fixed bottom-5 left-5 z-[95] flex flex-col items-start gap-3">
-        {aiOpen && (
-          <div className={`w-[320px] max-w-[90vw] h-[420px] flex flex-col rounded-[20px] overflow-hidden border shadow-2xl ${isDark ? "bg-[#15151F] border-white/10" : "bg-white border-black/10"}`}>
-            <div className="bg-[#FF7A1A] px-4 py-3 flex items-center gap-2">
-              <div className="w-8 h-8 bg-black rounded-full flex items-center justify-center text-[16px]">✨</div>
-              <div className="flex-1">
-                <p className="text-white font-black text-[14px] leading-none">Velora AI</p>
-                <p className="text-white/80 text-[10px] mt-1">● Online - Replies in All Languages</p>
-              </div>
-              <button onClick={() => setAiOpen(false)} className="text-white text-[18px]">✕</button>
-            </div>
-            <div className="flex-1 overflow-y-auto p-3 space-y-2">
-              {aiMessages.map((m, i) => (
-                <div key={i} className={`max-w-[85%] px-3 py-2 rounded-2xl text-[13px] leading-relaxed ${m.role === "user" ? "ml-auto bg-[#FF7A1A] text-white rounded-br-none" : isDark ? "bg-white/10 text-white rounded-bl-none" : "bg-black/5 text-black rounded-bl-none"}`}>
-                  {m.text}
-                </div>
-              ))}
-              {aiLoading && <p className={`text-[12px] ${isDark ? "text-white/50" : "text-black/50"}`}>Velora AI typing...</p>}
-            </div>
-            <div className={`p-2 flex gap-2 border-t ${isDark ? "border-white/10" : "border-black/10"}`}>
-              <input
-                value={aiInput}
-                onChange={(e) => setAiInput(e.target.value)}
-                onKeyDown={(e) => e.key === "Enter" && sendAiMessage()}
-                placeholder="Kuch bhi pucho... Hindi / English"
-                className={`flex-1 px-3 py-2.5 rounded-full text-[13px] outline-none ${isDark ? "bg-white/10 text-white placeholder:text-white/40" : "bg-black/5 text-black placeholder:text-black/40"}`}
-              />
-              <button onClick={sendAiMessage} className="bg-[#FF7A1A] text-white w-10 h-10 rounded-full font-black shrink-0">➤</button>
-            </div>
-          </div>
-        )}
-        <button onClick={() => { setAiOpen(!aiOpen); playSound(); }} className="velora-glow w-[56px] h-[56px] rounded-full bg-[#FF7A1A] flex items-center justify-center text-[26px] shadow-2xl hover:scale-110 transition-all">
-          {aiOpen ? "✕" : "✨"}
-        </button>
-      </div>
-      
+
       {/* FLOATING WHATSAPP - ALWAYS VISIBLE */}
       <a href={`https://wa.me/${WHATSAPP_NUMBER}?text=Hi%20Ravish,%20I%20want%20to%20build%20a%20website!`}
         target="_blank" rel="noopener noreferrer"
