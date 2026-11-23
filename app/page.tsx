@@ -83,6 +83,15 @@ export default function Home() {
         { name: "Image to Text - OCR", url: `${TOOLS_BASE}/image-to-text`, icon: "📷" },
       ]
     },
+    {
+      title: "📸 ImgBazar - Free Image Hosting",
+      desc: "By Velora - Upload Photo, Get Link, Use Anywhere",
+      color: "from-pink-500 to-rose-600",
+      tools: [
+        { name: "ImgBazar - Upload Image & Get Link", url: `https://imgbazar.pages.dev`, hot: true, icon: "📸" },
+        { name: "Bazaru - Online Shopping", url: `https://bazaru.pages.dev`, hot: true, icon: "🛍️" },
+      ]
+    },
   ];
 
   const favouriteTools = [
@@ -94,11 +103,14 @@ export default function Home() {
   ];
 
   const faqs = [
-    { q: "What is Velora and what does it build?", a: "Velora is a product studio founded by Ravish Chandra Yadav. We build fast, modern tools for founders and creators — from 11-in-1 tool suites like Lorem Pro Tool to full-stack SaaS, AI automation systems, and high-converting websites. Our focus is shipping products in weeks, not months." },
-    { q: "How can I use Lorem Pro Tool for my Blogger website?", a: "Just open any tool, paste your content, and get results instantly. For Blogger, use Word Counter for post length, Case Converter for titles, Fancy Text for stylish headings, and Password Generator for secure admin. All tools work in browser, no data saved." },
-    { q: "Are Velora tools free to use?", a: "Yes, all 11 tools in Lorem Pro Tool suite are 100% free. No login, no watermark. We are building premium SaaS boilerplate and AI tools for founders which will have paid plans." },
-    { q: "Can I hire Velora for a custom project?", a: "Absolutely. We are available for new projects. Whether you need custom Blogger tools, a Next.js website, a web app, or a SaaS MVP — click WhatsApp Me or Email Me. We reply within 2 hours and keep everything confidential." },
-    { q: "Who is the founder of Velora?", a: "Ravish Chandra Yadav is the founder of Velora. He is an AI Product Builder and Full-Stack Developer specializing in Next.js, Cloudflare Workers, Vercel, Supabase, and AI automation." },
+    { q: "What is Velora and what does it build?", a: "Velora is a Digital Product Lab founded by Ravish Chandra Yadav. We engineer fast, SEO & AdSense-ready tools, boilerplates, SaaS, websites & apps on Next.js + Cloudflare. We are creators of Lorem Pro Tool (26+ Free Tools), ImgBazar (Free Image Hosting) & Bazaru (E-commerce). From tools websites to full SaaS, AI automation & high-converting websites, we ship in 7 days, not months." },
+    { q: "How can I use Lorem Pro Tool for my Blogger website?", a: "Just open any tool, paste your content, and get results instantly. For Blogger, use Word Counter for post length, Case Converter for titles, Character Counter to keep meta description under 160 chars, Fancy Text for stylish headings, Slug Generator for SEO-friendly URLs, and Password Generator for secure admin. All tools work in browser, no data saved, 100% free." },
+    { q: "Are Velora tools free to use?", a: "Yes, all 26+ tools in Lorem Pro Tool suite are 100% free. No login, no watermark, no limit. We also build premium SaaS boilerplate, ImgBazar image hosting and Bazaru e-commerce for founders which will have paid plans." },
+    { q: "What is ImgBazar? How to upload image and get link?", a: "ImgBazar is a free image hosting tool by Velora, built on Cloudflare R2 + Pages. Just open ImgBazar, upload your photo without login, and you get Direct Link, HTML Code & Markdown Link instantly. You can use that link in Blogger, Bazaru product images, WordPress, or anywhere. No ads on image, unlimited bandwidth, image never expires." },
+    { q: "What is Bazaru?", a: "Bazaru is an online shopping e-commerce website by Velora. Sellers can add products with ImgBazar image links, manage orders, and sell directly. It is fast, mobile-friendly and built on Next.js + Supabase + Cloudflare for best speed and SEO." },
+    { q: "Can I hire Velora for a custom project?", a: "Absolutely. We are available for new projects. Whether you need custom Blogger tools, a Next.js website, a tools website like Lorem Pro Tool, an image hosting site like ImgBazar, a web app, or a SaaS MVP — click WhatsApp Me or Email Me. We reply within 2 hours and keep everything confidential. Work starts with 50% advance." },
+    { q: "How much does a website cost at Velora?", a: "Clear pricing: Landing Page ₹4,999 onwards, Tools Website ₹14,999 onwards (like Lorem Pro Tool - 26+ tools, AdSense Ready), Full SaaS / Web App ₹29,999 onwards, Custom / Enterprise ₹49,999+. No hidden charges. Price may vary based on requirements." },
+    { q: "Who is the founder of Velora?", a: "Ravish Chandra Yadav is the founder of Velora. He is an AI Product Builder and Full-Stack Developer specializing in Next.js, Cloudflare Workers, Cloudflare Pages, R2, Vercel, Supabase, and AI automation. He built Lorem Pro Tool, ImgBazar and Bazaru." },
   ];
 
   return (
@@ -132,7 +144,7 @@ export default function Home() {
         .tool-card:active{transform:scale(.97)}
       `}</style>
 
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "Organization", "name": "Velora", "url": "https://velora.dev", "logo": "https://velora.dev/logo.png", "founder": { "@type": "Person", "name": "Ravish Chandra Yadav" }, "description": "Velora builds fast, modern tools for founders.", "email": "hello@velora.dev" }) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "Organization", "name": "Velora", "url": "https://velora.dev", "logo": "https://velora.dev/logo.png", "founder": { "@type": "Person", "name": "Ravish Chandra Yadav" }, "description": "Velora — Digital Product Lab by Ravish Chandra Yadav. We engineer fast, SEO & AdSense-ready tools, boilerplates, SaaS, websites & apps on Next.js + Cloudflare. Creators of Lorem Pro Tool (26+ Free Tools), ImgBazar & Bazaru.", "email": "hello@velora.dev" }) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": faqs.map(f=>({ "@type": "Question", "name": f.q, "acceptedAnswer": { "@type": "Answer", "text": f.a }})) }) }} />
 
       <div className="w-full pt-4 px-3 md:px-0">
@@ -170,7 +182,7 @@ export default function Home() {
 
       <section className="relative max-w-[1100px] mx-auto text-center pt-12 md:pt-20 pb-8 px-4">
         <h1 className="text-[36px] sm:text-[42px] md:text-[68px] font-extrabold leading-[0.95]">Got an Idea?<br/><span className="text-[#FF7A1A]">Let&apos;s Build It.</span></h1>
-        <p className={`mt-5 max-w-[520px] mx-auto text-[14px] md:text-[15px] px-2 ${isDark ? "text-white/60" : "text-black/60"}`}>We design & develop products that launch fast. From tools to SaaS, we build what founders need.</p>
+        <p className={`mt-5 max-w-[520px] mx-auto text-[14px] md:text-[15px] px-2 ${isDark ? "text-white/60" : "text-black/60"}`}>Velora is a Digital Product Lab by Ravish Chandra Yadav. We engineer fast, SEO & AdSense-ready tools, boilerplates, SaaS, websites & apps on Next.js + Cloudflare. Creators of Lorem Pro Tool (26+ Free Tools), ImgBazar & Bazaru.</p>
         <div className="mt-8 flex flex-col items-center gap-3">
           <a href="#contact" className="w-[280px] max-w-[90vw] px-8 py-3.5 bg-[#FF7A1A] text-white font-bold rounded-xl">Start a Project →</a>
           <a href="#products" className={`w-[280px] max-w-[90vw] px-8 py-3 border rounded-xl ${isDark ? "border-[#FF7A1A]/40 text-[#FF7A1A]" : "border-[#FF7A1A]/40 text-[#FF7A1A] bg-white"}`}>View Our Work</a>
@@ -235,7 +247,7 @@ export default function Home() {
             <p className="text-[12px] font-bold tracking-widest text-black/70">TOOLS WEBSITE</p>
             <h3 className="text-[28px] font-black mt-2 text-black">₹14,999<span className="text-[13px] text-black/70"> / onwards</span></h3>
             <ul className="mt-4 space-y-2 text-[13px] text-black font-medium">
-              <li>✓ Like Lorem Pro Tool - 15+ Tools</li>
+              <li>✓ Like Lorem Pro Tool - 26+ Tools</li>
               <li>✓ AdSense Ready - Earn Money</li>
               <li>✓ Delivery in 7 Days</li>
               <li>✓ Free 1 Month Support</li>
@@ -284,7 +296,7 @@ export default function Home() {
               <div className="bg-black rounded-[24px] p-7 border border-white/10 shadow-2xl">
                 <h3 className="text-xl font-black text-white flex items-center gap-2">What VELORA Can Do For You 👇</h3>
                 <ul className="mt-4 space-y-3 text-sm text-zinc-300">
-                  <li className="flex gap-3"><span className="text-orange-500">✓</span><span><b className="text-white">Custom Business Tools</b> — Like Lorem Pro - 20+ Tools Suite</span></li>
+                  <li className="flex gap-3"><span className="text-orange-500">✓</span><span><b className="text-white">Custom Business Tools</b> — Like Lorem Pro - 26+ Tools Suite</span></li>
                   <li className="flex gap-3"><span className="text-orange-500">✓</span><span><b className="text-white">Lightning Fast Websites</b> — Next.js, SEO Ready</span></li>
                   <li className="flex gap-3"><span className="text-orange-500">✓</span><span><b className="text-white">Web & Mobile Apps</b> — Idea to Play Store</span></li>
                   <li className="flex gap-3"><span className="text-orange-500">✓</span><span><b className="text-white">SaaS Boilerplate Kits</b> — Auth + Payments + Dashboard, Launch in 48H</span></li>
@@ -327,7 +339,7 @@ export default function Home() {
 
           <div className="grid grid-cols-3 gap-2 my-4">
             <div className={`text-center rounded-xl py-3 ${isDark ? "bg-[#0A0A14]" : "bg-[#F8F8FC]"}`}>
-              <p className="text-[18px] font-black text-[#FF7A1A]">25+</p>
+              <p className="text-[18px] font-black text-[#FF7A1A]">26+</p>
               <p className={`text-[10px] font-bold ${isDark ? "text-white/50" : "text-black/50"}`}>TOOLS SHIPPED</p>
             </div>
             <div className={`text-center rounded-xl py-3 ${isDark ? "bg-[#0A0A14]" : "bg-[#F8F8FC]"}`}>
@@ -341,7 +353,7 @@ export default function Home() {
           </div>
 
           <div className={`space-y-3 text-[12px] md:text-[13px] ${isDark ? "text-white/65" : "text-black/65"}`}>
-            <p className="flex gap-2.5"><span className="text-[#FF7A1A]">✓</span><span><b className={isDark ? "text-white" : "text-black"}>Proof, Not Promise:</b> Lorem Pro Tool with 25+ tools is live. Try it yourself. I build what I use.</span></p>
+            <p className="flex gap-2.5"><span className="text-[#FF7A1A]">✓</span><span><b className={isDark ? "text-white" : "text-black"}>Proof, Not Promise:</b> Lorem Pro Tool with 26+ tools is live. Try it yourself. I build what I use.</span></p>
             <p className="flex gap-2.5"><span className="text-[#FF7A1A]">✓</span><span><b className={isDark ? "text-white" : "text-black"}>Speed = Revenue:</b> Next.js + Cloudflare Workers + Supabase - Your site loads in 1 second and ranks on Google.</span></p>
             <p className="flex gap-2.5"><span className="text-[#FF7A1A]">✓</span><span><b className={isDark ? "text-white" : "text-black"}>Blogger Friendly:</b> AdSense Ready, SEO Ready, Mobile Ready - You just add content, the site earns for you.</span></p>
             <p className="flex gap-2.5"><span className="text-[#FF7A1A]">✓</span><span><b className={isDark ? "text-white" : "text-black"}>No Agency Delay:</b> You talk directly to me. No manager, no delay. Message on WhatsApp, reply within 2 hours.</span></p>
@@ -356,7 +368,7 @@ export default function Home() {
 
       <section id="products" className="max-w-[800px] mx-auto px-4 pb-10">
         <p className="text-[#FF7A1A] font-bold tracking-[0.15em] text-[12px]">OUR PRODUCTS</p>
-        <p className={`text-[10px] tracking-[0.3em] mb-5 ${isDark ? "text-white/40" : "text-black/40"}`}>— 25+ TOOLS BY VELORA (CATEGORY WISE)</p>
+        <p className={`text-[10px] tracking-[0.3em] mb-5 ${isDark ? "text-white/40" : "text-black/40"}`}>— 26+ TOOLS BY VELORA (CATEGORY WISE)</p>
         <div className="space-y-6">
           {toolCategories.map((cat, catIdx) => (
             <div key={catIdx} className={`border rounded-2xl p-4 md:p-6 ${isDark ? "bg-[#15151F] border-white/[0.07]" : "bg-white border-black/[0.07] shadow-sm"}`}>
@@ -383,7 +395,7 @@ export default function Home() {
             </div>
           ))}
         </div>
-        <a href={TOOLS_BASE} target="_blank" rel="noopener noreferrer" onClick={() => playSound()} className="animate-big-live mt-6 block w-full text-center py-3.5 rounded-xl font-bold text-white hover:scale-[1.02] transition-transform tool-card">Open All 25+ Tools Live →</a>
+        <a href={TOOLS_BASE} target="_blank" rel="noopener noreferrer" onClick={() => playSound()} className="animate-big-live mt-6 block w-full text-center py-3.5 rounded-xl font-bold text-white hover:scale-[1.02] transition-transform tool-card">Open All 26+ Tools Live →</a>
       </section>
 
       <section id="products-2" className="max-w-[700px] mx-auto px-4 pb-10">
@@ -410,12 +422,12 @@ export default function Home() {
         <div className={`border rounded-[28px] overflow-hidden relative ${isDark ? "bg-[#15151F] border-white/[0.07]" : "bg-white border-black/[0.07] shadow-sm"}`}>
           <div className="absolute top-0 left-0 w-full h-[3px] bg-gradient-to-r from-[#FF7A1A] to-orange-300" />
           <div className="p-6 md:p-8 pb-0 flex justify-between items-center gap-3"><div><p className="text-[#FF7A1A] font-bold tracking-[0.15em] text-[11px]">SEO • INFORMATION</p><h2 className="text-[20px] md:text-[24px] font-extrabold mt-1">About Velora & User Guide</h2></div><button onClick={()=>setShowSeo(!showSeo)} className="shrink-0 bg-[#FF7A1A] text-black font-black text-[12px] px-5 py-2.5 rounded-full hover:scale-105 transition-all">{showSeo ? "Hide ▲" : "Show ▼"}</button></div>
-          <div className="p-6 md:p-8 pt-4"><p className={`text-[13px] leading-relaxed ${isDark ? "text-white/60" : "text-black/60"}`}><strong className={isDark ? "text-white" : "text-black"}>Velora is a leading product studio</strong> founded by Ravish Chandra Yadav. We build fast tools like Lorem Pro Tool (11-in-1 suite) for founders, bloggers, and creators. All tools are free, browser-based, and SEO optimized. Click Show to read full company profile, how to use guide, and FAQs.</p></div>
+          <div className="p-6 md:p-8 pt-4"><p className={`text-[13px] leading-relaxed ${isDark ? "text-white/60" : "text-black/60"}`}><strong className={isDark ? "text-white" : "text-black"}>Velora is a leading Digital Product Lab</strong> founded by Ravish Chandra Yadav. We engineer fast tools like Lorem Pro Tool (26+ Free Tools), ImgBazar (Free Image Hosting) & Bazaru (E-commerce) for founders, bloggers, and creators. All tools are free, browser-based, and SEO optimized. Click Show to read full company profile, how to use guide, and FAQs.</p></div>
           <div className={`grid transition-all duration-500 ease-in-out ${showSeo ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"}`}>
             <div className="overflow-hidden"><div className={`px-6 md:px-8 pb-8 space-y-8 text-[14px] leading-[1.8] border-t mt-2 pt-6 ${isDark ? "text-white/70 border-white/[0.06]" : "text-black/70 border-black/[0.06]"}`}>
-              <div><h1 className={`text-[22px] md:text-[28px] font-extrabold leading-tight ${isDark ? "text-white" : "text-black"}`}>Velora - Company Profile: Leading Organization for Fast Product Development</h1><h2 className={`text-[18px] md:text-[20px] font-bold mt-6 mb-3 ${isDark ? "text-white" : "text-black"}`}>Who We Are & What We Build</h2><p>Velora is a modern product studio based in India, founded by <strong className={isDark ? "text-white" : "text-black"}>Ravish Chandra Yadav</strong>. We are not a traditional agency. We are builders who ship. Our mission is simple — to help founders, creators, and bloggers launch tools, websites, and SaaS products in weeks, not months. What started as a collection of small utility tools has now become <strong className={isDark ? "text-white" : "text-black"}>Lorem Pro Tool — an 11-in-1 toolkit</strong> used by thousands. Velora operates on three pillars: Speed, Quality, and Automation. We use Next.js, Cloudflare Workers, Vercel, Supabase, and AI to build products that are lightning fast, SEO ready, and scalable from day one.</p></div>
-              <div><h2 className={`text-[18px] md:text-[20px] font-bold mb-3 ${isDark ? "text-white" : "text-black"}`}>User Guide: How To Use Lorem Pro Tool for Blogger</h2><p><strong>Step 1:</strong> Go to Our Products section and click on any tool. <strong>Step 2:</strong> Paste your text or upload image — processing happens in browser, data never leaves device. <strong>Step 3:</strong> Click generate and copy result for your Blogger post. <strong>Step 4:</strong> For Blogger, use Case Converter for titles, Character Counter to keep meta description under 160 chars, Fancy Text for stylish headings, and Remove Duplicates to clean keyword lists. No account needed, no limits.</p></div>
-              <div><h2 className={`text-[20px] font-extrabold mb-4 ${isDark ? "text-white" : "text-black"}`}>Frequently Asked Questions</h2><div className="space-y-3">{faqs.map((faq, idx)=>(<div key={idx} className={`border rounded-2xl overflow-hidden ${isDark ? "bg-[#0A0A14] border-white/[0.06]" : "bg-[#F8F8FC] border-black/[0.06]"}`}><button onClick={()=>setOpenFaq(openFaq===idx?null:idx)} className="w-full text-left p-4 flex justify-between items-start gap-3"><span className={`font-bold text-[13px] md:text-[14px] ${isDark ? "text-white" : "text-black"}`}>{faq.q}</span><span className={`shrink-0 w-7 h-7 rounded-full flex items-center justify-center text-[12px] transition-all duration-300 ${openFaq===idx?'rotate-45 bg-[#FF7A1A] text-black': isDark ? 'bg-white/5' : 'bg-black/5'}`}>+</span></button><div className={`grid transition-all duration-300 ${openFaq===idx?'grid-rows-[1fr] opacity-100':'grid-rows-[0fr] opacity-0'}`}><div className="overflow-hidden"><p className={`px-4 pb-4 text-[12px] leading-relaxed ${isDark ? "text-white/60" : "text-black/60"}`}>{faq.a}</p></div></div></div>))}</div></div>
+              <div><h1 className={`text-[22px] md:text-[28px] font-extrabold leading-tight ${isDark ? "text-white" : "text-black"}`}>Velora - Digital Product Lab: Free Online Tools, SaaS, Websites & AI Automation</h1><h2 className={`text-[18px] md:text-[20px] font-bold mt-6 mb-3 ${isDark ? "text-white" : "text-black"}`}>Who We Are & What We Build - Velora Company Profile</h2><p>Velora is a modern Digital Product Lab based in India, founded by <strong className={isDark ? "text-white" : "text-black"}>Ravish Chandra Yadav</strong>. We are not a traditional agency. We are builders who ship. Our mission is simple — to help founders, creators, bloggers and small businesses launch tools, websites, and SaaS products in 7 days, not months. What started as a collection of small utility tools has now become <strong className={isDark ? "text-white" : "text-black"}>Lorem Pro Tool — a 26+ Free Online Tools suite</strong>, <strong className={isDark ? "text-white" : "text-black"}>ImgBazar — Free Image Hosting on Cloudflare R2</strong> and <strong className={isDark ? "text-white" : "text-black"}>Bazaru — Fast E-commerce Website</strong> used by thousands. Velora operates on three pillars: Speed, Quality, and Automation. We use Next.js, Cloudflare Workers, Cloudflare Pages, R2, Vercel, Supabase, and AI to build products that are lightning fast, SEO ready, AdSense ready, and scalable from day one.</p><h2 className={`text-[18px] md:text-[20px] font-bold mt-6 mb-3 ${isDark ? "text-white" : "text-black"}`}>Our Products - Lorem Pro Tool, ImgBazar & Bazaru</h2><p><strong>1. Lorem Pro Tool (26+ Free Tools):</strong> SIP Calculator, EMI Calculator, FIRE Calculator, Income Tax Calculator, Word Counter, AI Detector, YouTube Thumbnail Downloader, Hashtag Generator, QR Generator, Password Generator & more. Best for bloggers, students & creators.<br/><strong>2. ImgBazar (Free Image Hosting):</strong> Upload image without login, get Direct Link, HTML & Markdown link instantly. Use in Blogger, WordPress, Bazaru product images & anywhere. Built on Cloudflare R2 - Unlimited Bandwidth, No Ads on Image.<br/><strong>3. Bazaru (E-commerce):</strong> Fast online shopping website. Add product with ImgBazar link, manage orders, sell directly. Mobile-friendly, SEO-ready.<br/><strong>4. SaaS Boilerplates:</strong> Next.js + Supabase + Auth + Payments + Dashboard - Launch your SaaS in 48 hours.</p></div>
+              <div><h2 className={`text-[18px] md:text-[20px] font-bold mb-3 ${isDark ? "text-white" : "text-black"}`}>User Guide: How To Use Lorem Pro Tool for Blogger</h2><p><strong>Step 1:</strong> Go to Our Products section and click on any tool. <strong>Step 2:</strong> Paste your text or upload image — processing happens in browser, data never leaves device. <strong>Step 3:</strong> Click generate and copy result for your Blogger post. <strong>Step 4:</strong> For Blogger, use Case Converter for titles, Character Counter to keep meta description under 160 chars, Fancy Text for stylish headings, Slug Generator for SEO URLs, and Remove Duplicates to clean keyword lists. No account needed, no limits.</p><h2 className={`text-[18px] md:text-[20px] font-bold mt-6 mb-3 ${isDark ? "text-white" : "text-black"}`}>User Guide: How To Use ImgBazar for Blogger & Bazaru</h2><p><strong>Step 1:</strong> Open ImgBazar. <strong>Step 2:</strong> Drag & Drop or Select Photo from gallery. <strong>Step 3:</strong> Upload hote hi Direct Link copy karo. <strong>Step 4:</strong> Blogger me Image URL me paste karo ya Bazaru me Product Add karte waqt Image URL me paste karo. Photo automatically fit ho jayegi, kabhi gayab nahi hogi.</p></div>
+              <div><h2 className={`text-[20px] font-extrabold mb-4 ${isDark ? "text-white" : "text-black"}`}>Frequently Asked Questions - Velora, Lorem Pro Tool, ImgBazar & Bazaru</h2><div className="space-y-3">{faqs.map((faq, idx)=>(<div key={idx} className={`border rounded-2xl overflow-hidden ${isDark ? "bg-[#0A0A14] border-white/[0.06]" : "bg-[#F8F8FC] border-black/[0.06]"}`}><button onClick={()=>setOpenFaq(openFaq===idx?null:idx)} className="w-full text-left p-4 flex justify-between items-start gap-3"><span className={`font-bold text-[13px] md:text-[14px] ${isDark ? "text-white" : "text-black"}`}>{faq.q}</span><span className={`shrink-0 w-7 h-7 rounded-full flex items-center justify-center text-[12px] transition-all duration-300 ${openFaq===idx?'rotate-45 bg-[#FF7A1A] text-black': isDark ? 'bg-white/5' : 'bg-black/5'}`}>+</span></button><div className={`grid transition-all duration-300 ${openFaq===idx?'grid-rows-[1fr] opacity-100':'grid-rows-[0fr] opacity-0'}`}><div className="overflow-hidden"><p className={`px-4 pb-4 text-[12px] leading-relaxed ${isDark ? "text-white/60" : "text-black/60"}`}>{faq.a}</p></div></div></div>))}</div></div>
             </div></div>
           </div>
         </div>
@@ -423,10 +435,10 @@ export default function Home() {
 
       <footer className={`max-w-[1100px] mx-auto mt-8 border-t mx-3 md:mx-auto pt-8 pb-8 ${isDark ? "border-white/[0.06]" : "border-black/[0.06]"}`}>
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 px-6 md:px-2">
-          <div className="pl-1"><div className="flex items-center gap-2"><img src={isDark ? "/logo-dark.png" : "/logo.png"} className="w-10 h-10 object-contain" alt="" /><img src={isDark ? "/velora-text.png" : "/velora-white-text-logo.png"} className="h-7 object-contain" alt="" /></div><p className={`text-[12px] mt-3 ${isDark ? "text-white/40" : "text-black/40"}`}>We build fast, modern products for founders.</p></div>
+          <div className="pl-1"><div className="flex items-center gap-2"><img src={isDark ? "/logo-dark.png" : "/logo.png"} className="w-10 h-10 object-contain" alt="" /><img src={isDark ? "/velora-text.png" : "/velora-white-text-logo.png"} className="h-7 object-contain" alt="" /></div><p className={`text-[12px] mt-3 ${isDark ? "text-white/40" : "text-black/40"}`}>Velora - Digital Product Lab. We engineer fast, SEO & AdSense-ready products for founders.</p></div>
           <div className="pl-2 md:pl-4"><p className="font-bold text-[13px] mb-3">Quick Links</p><div className={`flex flex-col gap-2.5 text-[13px] ${isDark ? "text-white/50" : "text-black/50"}`}><a href="#products" className="hover:text-[#FF7A1A]">Our Products</a><a href="#contact" className="hover:text-[#FF7A1A]">Start a Project</a><a href="https://lorem-pro-tool.run4ravish.workers.dev/write-for-us" target="_blank" rel="noopener noreferrer" className="text-emerald-400 font-bold hover:text-emerald-300">✍️ Write For Us - FREE DoFollow</a></div></div>
           <div className="pl-2 md:pl-4"><p className="font-bold text-[13px] mb-3">Legal</p><div className={`flex flex-col gap-2.5 text-[13px] ${isDark ? "text-white/50" : "text-black/50"}`}><button onClick={()=>setActiveModal("Disclaimer")} className="text-left hover:text-[#FF7A1A]">Disclaimer</button><button onClick={()=>setActiveModal("Privacy")} className="text-left hover:text-[#FF7A1A]">Privacy Policy</button><button onClick={()=>setActiveModal("About")} className="text-left hover:text-[#FF7A1A]">About Us</button><button onClick={()=>setActiveModal("Terms")} className="text-left hover:text-[#FF7A1A]">Terms & Conditions</button></div></div>
-          <div className="pl-2 md:pl-4"><p className="font-bold text-[13px] mb-3">Contact</p><p className={`text-[13px] ${isDark ? "text-white/50" : "text-black/50"}`}>hello@velora.dev</p><p className={`text-[13px] mt-1 ${isDark ? "text-white/50" : "text-black/50"}`}>WhatsApp: +91 82997 46179</p><p className={`text-[11px] mt-2 ${isDark ? "text-white/30" : "text-black/30"}`}>Founded by Yadav Ravish</p></div>
+          <div className="pl-2 md:pl-4"><p className="font-bold text-[13px] mb-3">Contact</p><p className={`text-[13px] ${isDark ? "text-white/50" : "text-black/50"}`}>hello@velora.dev</p><p className={`text-[13px] mt-1 ${isDark ? "text-white/50" : "text-black/50"}`}>WhatsApp: +91 82997 46179</p><p className={`text-[11px] mt-2 ${isDark ? "text-white/30" : "text-black/30"}`}>Founded by Ravish Chandra Yadav</p></div>
         </div>
         <p className={`text-center text-[10px] mt-8 tracking-[0.2em] ${isDark ? "text-white/20" : "text-black/20"}`}>© 2024 VELORA • hello@velora.dev • All rights reserved</p>
       </footer>
@@ -447,47 +459,50 @@ export default function Home() {
               <button onClick={()=>setActiveModal(null)} className={isDark ? "text-white/50" : "text-black/50"}>✕</button>
             </div>
             <div className="text-center mb-4">
-              <a href="https://velora-cloud.run4ravish.workers.dev/" target="_blank" rel="noopener noreferrer" title="Visit Velora - Developed by Yadav Ravish">
-                <img src={isDark ? "/logo-dark.png" : "/logo.png"} alt="Velora Logo - Online Startup by Yadav Ravish" className="w-[120px] h-auto rounded-xl mx-auto cursor-pointer" />
+              <a href="https://velora-cloud.run4ravish.workers.dev/" target="_blank" rel="noopener noreferrer" title="Visit Velora - Developed by Ravish Chandra Yadav">
+                <img src={isDark ? "/logo-dark.png" : "/logo.png"} alt="Velora Logo - Digital Product Lab by Ravish Chandra Yadav" className="w-[120px] h-auto rounded-xl mx-auto cursor-pointer" />
               </a>
               <p className="text-[12px] text-[#FF7A1A] font-bold mt-1">Developed By Velora - Click Logo To Visit Developer Website</p>
             </div>
             <div className={`text-[13px] leading-relaxed ${isDark ? "text-white/70" : "text-black/70"}`}>
               {activeModal==="About" && (
                 <div>
-                  <h1 className="text-[20px] font-bold text-black dark:text-white mb-2">About Velora - Online Startup & Digital Product Company</h1>
-                  <p className="mb-3"><strong>Velora is an online startup and digital product company</strong> founded by <strong>Yadav Ravish</strong>. Velora is a modern platform that develops <strong>websites, web apps, mobile apps, SaaS products, boilerplates, AI tools, and free online tools</strong> for students, creators, startups, and small businesses in India and worldwide.</p>
+                  <h1 className="text-[20px] font-bold text-black dark:text-white mb-2">About Velora - Digital Product Lab & Online Startup</h1>
+                  <p className="mb-3"><strong>Velora is a Digital Product Lab and online startup</strong> founded by <strong>Ravish Chandra Yadav</strong>. Velora is a modern platform that engineers <strong>websites, web apps, mobile apps, SaaS products, boilerplates, AI tools, free online tools, image hosting & e-commerce</strong> for students, creators, startups, and small businesses in India and worldwide.</p>
                   <h2 className="text-[16px] font-bold text-black dark:text-white mt-4 mb-1">What Does Velora Build?</h2>
                   <ul className="list-disc pl-5 mb-3 space-y-1">
                     <li><strong>Websites & Web Apps:</strong> Fast, SEO-friendly business websites, portfolio websites, and e-commerce websites.</li>
-                    <li><strong>SaaS Tools & Platforms:</strong> Complete SaaS products like Lorem Pro Tool - 25+ free online tools in one place.</li>
+                    <li><strong>SaaS Tools & Platforms:</strong> Complete SaaS products like Lorem Pro Tool - 26+ free online tools in one place.</li>
                     <li><strong>AI Tools & Automation:</strong> AI Detector, AI content tools, YouTube tools, and AI automation workflows.</li>
                     <li><strong>Boilerplates & Starters:</strong> Ready-to-launch Next.js, React, and Cloudflare boilerplates for developers.</li>
+                    <li><strong>ImgBazar - Free Image Hosting:</strong> Upload image, get Direct Link, use in Blogger, Bazaru & anywhere.</li>
+                    <li><strong>Bazaru - E-commerce:</strong> Fast online shopping website with product management.</li>
                     <li><strong>Creator Utilities:</strong> Word Counter, SIP Calculator, FD Calculator, YouTube Thumbnail Downloader, and more.</li>
                   </ul>
                   <h2 className="text-[16px] font-bold text-black dark:text-white mt-4 mb-1">Our Projects</h2>
-                  <p className="mb-3">We have already developed many projects like <strong>Lorem Pro Tool</strong> - a free all-in-one tools website with 25+ tools like Lorem Ipsum Generator, Word Counter, SIP Calculator, Income Tax Calculator, and YouTube Tools. And many more upcoming SaaS, AI tools, and boilerplates are coming soon under Velora.</p>
+                  <p className="mb-3">We have already developed many projects like <strong>Lorem Pro Tool</strong> - a free all-in-one tools website with 26+ tools like Lorem Ipsum Generator, Word Counter, SIP Calculator, Income Tax Calculator, and YouTube Tools. <strong>ImgBazar</strong> - free image hosting on Cloudflare R2. <strong>Bazaru</strong> - e-commerce. And many more upcoming SaaS, AI tools, and boilerplates are coming soon under Velora.</p>
                   <h2 className="text-[16px] font-bold text-black dark:text-white mt-4 mb-1">Our Vision</h2>
-                  <p>Our vision at Velora is simple - Build fast, beautiful, and useful digital products that anyone can use for free or at low cost. Founded by Yadav Ravish, Velora believes every creator should have premium tools without paying heavy prices.</p>
+                  <p>Our vision at Velora is simple - Build fast, beautiful, and useful digital products that anyone can use for free or at low cost. Founded by Ravish Chandra Yadav, Velora believes every creator should have premium tools without paying heavy prices.</p>
                   <p className="mt-3">Want your own website, SaaS, or tool? Visit <a href="https://velora-cloud.run4ravish.workers.dev/" target="_blank" rel="noopener noreferrer" className="text-[#FF7A1A] font-bold">velora-cloud.run4ravish.workers.dev</a></p>
                 </div>
               )}
               {activeModal==="Contact" && (
                 <div>
                   <h1 className="text-[20px] font-bold text-black dark:text-white mb-2">Contact Velora - Get Your Website, App & SaaS Built</h1>
-                  <p className="mb-3">Have a project in mind? <strong>Contact Velora</strong> for <strong>website development, web app development, SaaS development, AI tools, boilerplates, and custom online tools</strong>. Velora is founded by <strong>Yadav Ravish</strong> and we reply within 24-48 hours.</p>
+                  <p className="mb-3">Have a project in mind? <strong>Contact Velora</strong> for <strong>website development, web app development, SaaS development, AI tools, boilerplates, image hosting like ImgBazar, e-commerce like Bazaru, and custom online tools</strong>. Velora is founded by <strong>Ravish Chandra Yadav</strong> and we reply within 2 hours.</p>
                   <h2 className="text-[16px] font-bold text-black dark:text-white mt-4 mb-1">Contact Details</h2>
                   <div className="bg-black/5 dark:bg-white/5 p-3 rounded-xl mb-3">
                     <p><strong>Email:</strong> hello@velora.dev</p>
                     <p><strong>WhatsApp:</strong> +91 82997 46179</p>
                     <p><strong>Website:</strong> <a href="https://velora-cloud.run4ravish.workers.dev/" target="_blank" rel="noopener noreferrer" className="text-[#FF7A1A] font-bold">velora-cloud.run4ravish.workers.dev</a></p>
-                    <p><strong>Our Product:</strong> Lorem Pro Tool - 25+ Free Online Tools</p>
-                    <p><strong>Founder:</strong> Yadav Ravish</p>
+                    <p><strong>Our Products:</strong> Lorem Pro Tool - 26+ Free Online Tools, ImgBazar, Bazaru</p>
+                    <p><strong>Founder:</strong> Ravish Chandra Yadav</p>
                   </div>
                   <h2 className="text-[16px] font-bold text-black dark:text-white mt-4 mb-1">What Can We Build For You?</h2>
                   <ul className="list-disc pl-5 space-y-1">
                     <li>Business Website, Portfolio Website, Blog Website</li>
                     <li>SaaS Product, AI Tool Website, Tools Website like Lorem Pro Tool</li>
+                    <li>Image Hosting Website like ImgBazar, E-commerce like Bazaru</li>
                     <li>Next.js Boilerplate, React App, Landing Page</li>
                     <li>YouTube Tools, Finance Calculators, SEO Tools</li>
                   </ul>
@@ -497,7 +512,7 @@ export default function Home() {
               {activeModal==="Disclaimer" && (
                 <div>
                   <h1 className="text-[20px] font-bold text-black dark:text-white mb-2">Disclaimer - Velora & Lorem Pro Tool</h1>
-                  <p className="mb-3">The information and tools provided by <strong>Velora</strong> and <strong>Lorem Pro Tool</strong> are for general, educational, and informational purposes only. <strong>Velora is an online startup founded by Yadav Ravish</strong> that develops websites, SaaS products, AI tools, boilerplates, and free online tools.</p>
+                  <p className="mb-3">The information and tools provided by <strong>Velora</strong> and <strong>Lorem Pro Tool</strong> are for general, educational, and informational purposes only. <strong>Velora is a Digital Product Lab founded by Ravish Chandra Yadav</strong> that engineers websites, SaaS products, AI tools, boilerplates, image hosting, e-commerce and free online tools.</p>
                   <h2 className="text-[16px] font-bold text-black dark:text-white mt-4 mb-1">1. General Information</h2>
                   <p className="mb-3">While we try to keep all tools like SIP Calculator, FD Calculator, Income Tax Calculator, Word Counter, and YouTube Tools accurate, we make no warranties about completeness, reliability, or accuracy. Any reliance you place on such information is at your own risk.</p>
                   <h2 className="text-[16px] font-bold text-black dark:text-white mt-4 mb-1">2. Financial Tools</h2>
@@ -505,14 +520,14 @@ export default function Home() {
                   <h2 className="text-[16px] font-bold text-black dark:text-white mt-4 mb-1">3. Generated Content</h2>
                   <p className="mb-3">Fake data, lorem ipsum, fancy text, and other generated content should not be used for illegal or fraudulent purposes. It is only for testing, designing, and demo purposes.</p>
                   <h2 className="text-[16px] font-bold text-black dark:text-white mt-4 mb-1">4. Liability</h2>
-                  <p>Velora, Lorem Pro Tool, and founder Yadav Ravish shall not be liable for any loss or damage arising from use of this website. For questions, contact us at hello@velora.dev or visit <a href="https://velora-cloud.run4ravish.workers.dev/" target="_blank" rel="noopener noreferrer" className="text-[#FF7A1A] font-bold">Velora Website</a>.</p>
+                  <p>Velora, Lorem Pro Tool, ImgBazar, Bazaru and founder Ravish Chandra Yadav shall not be liable for any loss or damage arising from use of this website. For questions, contact us at hello@velora.dev or visit <a href="https://velora-cloud.run4ravish.workers.dev/" target="_blank" rel="noopener noreferrer" className="text-[#FF7A1A] font-bold">Velora Website</a>.</p>
                 </div>
               )}
               {(activeModal==="Privacy" || activeModal==="Privacy Policy") && (
                 <div>
                   <h1 className="text-[20px] font-bold text-black dark:text-white mb-2">Privacy Policy - Velora</h1>
                   <p className="text-[12px] opacity-60 mb-3">Last Updated: November 06, 2026</p>
-                  <p className="mb-3">At <strong>Velora</strong>, we respect your privacy. This policy explains how we handle information on Velora website and our products like <strong>Lorem Pro Tool</strong> - 25+ free online tools. <strong>Velora is an online startup founded by Yadav Ravish</strong> that builds websites, SaaS, AI tools, boilerplates, and creator utilities.</p>
+                  <p className="mb-3">At <strong>Velora</strong>, we respect your privacy. This policy explains how we handle information on Velora website and our products like <strong>Lorem Pro Tool</strong> - 26+ free online tools, <strong>ImgBazar</strong> & <strong>Bazaru</strong>. <strong>Velora is a Digital Product Lab founded by Ravish Chandra Yadav</strong> that builds websites, SaaS, AI tools, boilerplates, and creator utilities.</p>
                   <h2 className="text-[16px] font-bold text-black dark:text-white mt-4 mb-1">1. Data Collection</h2>
                   <p className="mb-3">We do not collect, store, or ask for any personal data. No login, no signup, no email required. You can use all our tools directly. Your input stays in your browser only.</p>
                   <h2 className="text-[16px] font-bold text-black dark:text-white mt-4 mb-1">2. Processing</h2>
@@ -529,19 +544,19 @@ export default function Home() {
                 <div>
                   <h1 className="text-[20px] font-bold text-black dark:text-white mb-2">Terms & Conditions - Velora</h1>
                   <p className="text-[12px] opacity-60 mb-3">Last Updated: November 06, 2026</p>
-                  <p className="mb-3">Welcome to <strong>Velora</strong>. By using our website <a href="https://velora-cloud.run4ravish.workers.dev/" target="_blank" rel="noopener noreferrer" className="text-[#FF7A1A] font-bold">velora-cloud.run4ravish.workers.dev</a> and our products like <strong>Lorem Pro Tool</strong>, you agree to these Terms & Conditions. <strong>Velora is an online startup founded by Yadav Ravish</strong> that develops websites, web apps, SaaS products, AI tools, boilerplates, and free online tools. Please read these terms carefully.</p>
+                  <p className="mb-3">Welcome to <strong>Velora</strong>. By using our website <a href="https://velora-cloud.run4ravish.workers.dev/" target="_blank" rel="noopener noreferrer" className="text-[#FF7A1A] font-bold">velora-cloud.run4ravish.workers.dev</a> and our products like <strong>Lorem Pro Tool, ImgBazar & Bazaru</strong>, you agree to these Terms & Conditions. <strong>Velora is a Digital Product Lab founded by Ravish Chandra Yadav</strong> that engineers websites, web apps, SaaS products, AI tools, boilerplates, image hosting, e-commerce and free online tools. Please read these terms carefully.</p>
                   <h2 className="text-[16px] font-bold text-black dark:text-white mt-4 mb-1">1. Acceptance of Terms</h2>
-                  <p className="mb-3">By accessing Velora website or using Lorem Pro Tool and other Velora products, you agree to follow these terms. If you do not agree, please do not use our website or services.</p>
+                  <p className="mb-3">By accessing Velora website or using Lorem Pro Tool, ImgBazar, Bazaru and other Velora products, you agree to follow these terms. If you do not agree, please do not use our website or services.</p>
                   <h2 className="text-[16px] font-bold text-black dark:text-white mt-4 mb-1">2. Use of Our Services</h2>
                   <p className="mb-3">You can use our free tools like Word Counter, SIP Calculator, Lorem Ipsum Generator, YouTube Thumbnail Downloader, and AI Detector for personal, educational, and commercial purposes. You agree NOT to use our tools for any illegal, harmful, fraudulent, or abusive activity.</p>
                   <h2 className="text-[16px] font-bold text-black dark:text-white mt-4 mb-1">3. Intellectual Property</h2>
-                  <p className="mb-3">All content, design, logo, code, boilerplates, and tools on Velora website are owned by Velora. You cannot copy, resell, or claim our Velora logo, brand name, or source code as your own without written permission from Yadav Ravish.</p>
+                  <p className="mb-3">All content, design, logo, code, boilerplates, and tools on Velora website are owned by Velora. You cannot copy, resell, or claim our Velora logo, brand name, or source code as your own without written permission from Ravish Chandra Yadav.</p>
                   <h2 className="text-[16px] font-bold text-black dark:text-white mt-4 mb-1">4. Client Projects & Services</h2>
-                  <p className="mb-3">If you hire Velora for website development, SaaS development, AI tool, or boilerplate development, project timeline, price, and delivery will be discussed on email before starting work. Advance payment may be required for custom projects. Once delivered, client is responsible for maintaining their own website unless maintenance plan is taken.</p>
+                  <p className="mb-3">If you hire Velora for website development, SaaS development, AI tool, image hosting, e-commerce or boilerplate development, project timeline, price, and delivery will be discussed on email before starting work. Advance payment may be required for custom projects. Once delivered, client is responsible for maintaining their own website unless maintenance plan is taken.</p>
                   <h2 className="text-[16px] font-bold text-black dark:text-white mt-4 mb-1">5. Free Tools - No Warranty</h2>
                   <p className="mb-3">All free tools are provided AS IS, without any warranty. Finance calculators like SIP, FD, Income Tax Calculator give only estimates. Velora is not responsible for any financial loss based on these estimates.</p>
                   <h2 className="text-[16px] font-bold text-black dark:text-white mt-4 mb-1">6. Limitation of Liability</h2>
-                  <p className="mb-3">Velora, Lorem Pro Tool, and founder Yadav Ravish shall not be liable for any direct, indirect, or consequential loss or damage arising from use of our website, tools, or services.</p>
+                  <p className="mb-3">Velora, Lorem Pro Tool, ImgBazar, Bazaru and founder Ravish Chandra Yadav shall not be liable for any direct, indirect, or consequential loss or damage arising from use of our website, tools, or services.</p>
                   <h2 className="text-[16px] font-bold text-black dark:text-white mt-4 mb-1">7. Changes To Terms</h2>
                   <p className="mb-3">Velora may update these Terms & Conditions at any time to reflect new products, services, or legal requirements. Updated terms will be shown on this page with new date.</p>
                   <h2 className="text-[16px] font-bold text-black dark:text-white mt-4 mb-1">8. Contact Us</h2>
