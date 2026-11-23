@@ -3,8 +3,8 @@ import type { Metadata, Viewport } from "next";
 
 const SITE_URL = "https://velora-cloud.run4ravish.workers.dev";
 const SITE_NAME = "VELORA";
-const TITLE = "VELORA - Founded by Yadav Ravish | AI Product Studio";
-const DESCRIPTION = "Velora is a product studio founded by Yadav Ravish. We build fast, modern tools like Lorem Pro Tool (11-in-1 suite), SaaS, websites & AI automation for founders. Available for new projects.";
+const TITLE = "VELORA - Digital Product Lab by Ravish Chandra Yadav | Tools, SaaS & AI";
+const DESCRIPTION = "Velora — Digital Product Lab by Ravish Chandra Yadav. We engineer fast, SEO & AdSense-ready tools, boilerplates, SaaS, websites & apps on Next.js + Cloudflare. Creators of Lorem Pro Tool (26+ Free Tools), ImgBazar & Bazaru. Launch your idea in 7 days. Available for new projects.";
 
 export const viewport: Viewport = {
   themeColor: "#FF7A1A",
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   },
   description: DESCRIPTION,
   applicationName: SITE_NAME,
-  keywords: ["Velora", "Yadav Ravish", "Ravish Chandra Yadav", "Lorem Pro Tool", "AI Product Studio", "SaaS Builder", "Next.js Developer", "Blogger Tools", "Velora cloud"],
+  keywords: ["Velora", "Yadav Ravish", "Ravish Chandra Yadav", "Lorem Pro Tool", "Digital Product Lab", "ImgBazar", "Bazaru", "AI Product Studio", "SaaS Builder", "Next.js Developer", "Cloudflare Developer", "Blogger Tools", "Velora cloud", "Free Image Hosting"],
   authors: [{ name: "Ravish Chandra Yadav", url: SITE_URL }],
   creator: "Ravish Chandra Yadav",
   publisher: "Velora",
@@ -61,7 +61,7 @@ export const metadata: Metadata = {
         url: `${SITE_URL}/opengraph-image.png`,
         width: 1200,
         height: 630,
-        alt: "VELORA - Founded by Yadav Ravish",
+        alt: "VELORA - Digital Product Lab by Ravish Chandra Yadav",
       },
     ],
   },
