@@ -35,14 +35,14 @@ export default function Home() {
       desc: "Most profitable tools - $10+ CPC",
       color: "from-emerald-500 to-green-600",
       tools: [
-        { name: "Personal Loan EMI Calculator", url: `${TOOLS_BASE}/personal-loan-emi-calculator`, hot: true, icon: "💰" },
-        { name: "FIRE Calculator", url: `${TOOLS_BASE}/fire-calculator`, hot: true, icon: "🔥" },
-        { name: "SIP Calculator", url: `${TOOLS_BASE}/sip-calculator`, hot: true, icon: "📈" },
-        { name: "Mortgage Calculator", url: `${TOOLS_BASE}/mortgage-calculator`, hot: true, icon: "🏠" },
-        { name: "YouTube Earnings Calculator", url: `${TOOLS_BASE}/youtube-earnings-calculator`, hot: true, icon: "▶️" },
-        { name: "Income Tax Calculator Pro", url: `${TOOLS_BASE}/income-tax-calculator`, hot: true, icon: "🧾" },
-        { name: "Resume Builder", url: `${TOOLS_BASE}/resume-builder`, hot: true, icon: "📄" },
-        { name: "FD + RD + Compound Calculator", url: `${TOOLS_BASE}/fd-rd-calculator`, hot: true, icon: "🏦" },
+        { name: "Personal Loan EMI Calculator", url: `${TOOLS_BASE}/personal-loan-emi-calculator`, hot: true, icon: "💰", desc: "Monthly EMI + total interest breakdown" },
+        { name: "FIRE Calculator", url: `${TOOLS_BASE}/fire-calculator`, hot: true, icon: "🔥", desc: "Plan your financial freedom number" },
+        { name: "SIP Calculator", url: `${TOOLS_BASE}/sip-calculator`, hot: true, icon: "📈", desc: "Compound growth of mutual fund SIPs" },
+        { name: "Mortgage Calculator", url: `${TOOLS_BASE}/mortgage-calculator`, hot: true, icon: "🏠", desc: "Home loan EMI + amortization chart" },
+        { name: "YouTube Earnings Calculator", url: `${TOOLS_BASE}/youtube-earnings-calculator`, hot: true, icon: "▶️", desc: "Estimate YouTube income per 1000 views" },
+        { name: "Income Tax Calculator Pro", url: `${TOOLS_BASE}/income-tax-calculator`, hot: true, icon: "🧾", desc: "New vs old regime slab calculator" },
+        { name: "Resume Builder", url: `${TOOLS_BASE}/resume-builder`, hot: true, icon: "📄", desc: "Professional resumes in minutes" },
+        { name: "FD + RD + Compound Calculator", url: `${TOOLS_BASE}/fd-rd-calculator`, hot: true, icon: "🏦", desc: "Fixed & recurring deposit maturity" },
       ]
     },
     {
@@ -50,10 +50,10 @@ export default function Home() {
       desc: "Smart + Viral - High traffic",
       color: "from-red-500 to-orange-500",
       tools: [
-        { name: "AI Detector", url: `${TOOLS_BASE}/ai-detector`, icon: "🤖" },
-        { name: "Hashtag Generator", url: `${TOOLS_BASE}/hashtag-generator`, icon: "#️⃣" },
-        { name: "YouTube Title Generator", url: `${TOOLS_BASE}/youtube-title-generator`, icon: "🎬" },
-        { name: "YouTube Thumbnail Downlodar", url: `${TOOLS_BASE}/youtube-thumbnail-downlodar`, icon: "🖼️" },
+        { name: "AI Detector", url: `${TOOLS_BASE}/ai-detector`, icon: "🤖", desc: "Spot AI-written content instantly" },
+        { name: "Hashtag Generator", url: `${TOOLS_BASE}/hashtag-generator`, icon: "#️⃣", desc: "Trending hashtags for any topic" },
+        { name: "YouTube Title Generator", url: `${TOOLS_BASE}/youtube-title-generator`, icon: "🎬", desc: "Click-worthy SEO video titles" },
+        { name: "YouTube Thumbnail Downlodar", url: `${TOOLS_BASE}/youtube-thumbnail-downlodar`, icon: "🖼️", desc: "Download HD thumbnails free" },
       ]
     },
     {
@@ -61,13 +61,13 @@ export default function Home() {
       desc: "For content writers",
       color: "from-blue-500 to-cyan-500",
       tools: [
-        { name: "Word Counter", url: `${TOOLS_BASE}/word-counter`, icon: "📝" },
-        { name: "Character Counter", url: `${TOOLS_BASE}/character-counter`, icon: "🔤" },
-        { name: "Case Converter", url: `${TOOLS_BASE}/case-converter`, icon: "🔠" },
-        { name: "Fancy Text", url: `${TOOLS_BASE}/fancy-text`, icon: "✨" },
-        { name: "Remove Duplicates", url: `${TOOLS_BASE}/remove-duplicates`, icon: "🧹" },
-        { name: "Slug Generator", url: `${TOOLS_BASE}/slug-generator`, icon: "🔗" },
-        { name: "Text to Handwriting", url: `${TOOLS_BASE}/text-to-handwriting`, icon: "✍️" },
+        { name: "Word Counter", url: `${TOOLS_BASE}/word-counter`, icon: "📝", desc: "Words, chars, sentences, reading time" },
+        { name: "Character Counter", url: `${TOOLS_BASE}/character-counter`, icon: "🔤", desc: "Live counter for tweets & meta" },
+        { name: "Case Converter", url: `${TOOLS_BASE}/case-converter`, icon: "🔠", desc: "UPPERCASE, lowercase, Title Case" },
+        { name: "Fancy Text", url: `${TOOLS_BASE}/fancy-text`, icon: "✨", desc: "Bold aesthetic fonts for bio" },
+        { name: "Remove Duplicates", url: `${TOOLS_BASE}/remove-duplicates`, icon: "🧹", desc: "Clean duplicate lines instantly" },
+        { name: "Slug Generator", url: `${TOOLS_BASE}/slug-generator`, icon: "🔗", desc: "SEO URL from any title" },
+        { name: "Text to Handwriting", url: `${TOOLS_BASE}/text-to-handwriting`, icon: "✍️", desc: "Convert text to handwritten style" },
       ]
     },
     {
@@ -75,31 +75,22 @@ export default function Home() {
       desc: "Daily use tools",
       color: "from-purple-500 to-pink-500",
       tools: [
-        { name: "Avatar Generator", url: `${TOOLS_BASE}/avatar`, icon: "👤" },
-        { name: "Fake Data Generator", url: `${TOOLS_BASE}/fake-data-generator`, icon: "🧪" },
-        { name: "Password Generator", url: `${TOOLS_BASE}/password-generator`, icon: "🔐" },
-        { name: "QR Generator", url: `${TOOLS_BASE}/placeholder-qr-generator`, icon: "📱" },
-        { name: "Color Palette Generator", url: `${TOOLS_BASE}/color-palette`, icon: "🎨" },
-        { name: "Image to Text - OCR", url: `${TOOLS_BASE}/image-to-text`, icon: "📷" },
-      ]
-    },
-    {
-      title: "📸 ImgBazar - Free Image Hosting",
-      desc: "By Velora - Upload Photo, Get Link, Use Anywhere",
-      color: "from-pink-500 to-rose-600",
-      tools: [
-        { name: "ImgBazar - Upload Image & Get Link", url: `https://imgbazar.pages.dev`, hot: true, icon: "📸" },
-        { name: "Bazaru - Online Shopping", url: `https://bazaru.pages.dev`, hot: true, icon: "🛍️" },
+        { name: "Avatar Generator", url: `${TOOLS_BASE}/avatar`, icon: "👤", desc: "Random cool avatars for profiles" },
+        { name: "Fake Data Generator", url: `${TOOLS_BASE}/fake-data-generator`, icon: "🧪", desc: "Test data for devs & designers" },
+        { name: "Password Generator", url: `${TOOLS_BASE}/password-generator`, icon: "🔐", desc: "Strong secure passwords" },
+        { name: "QR Generator", url: `${TOOLS_BASE}/placeholder-qr-generator`, icon: "📱", desc: "Instant QR for any URL" },
+        { name: "Color Palette Generator", url: `${TOOLS_BASE}/color-palette`, icon: "🎨", desc: "Beautiful color schemes" },
+        { name: "Image to Text - OCR", url: `${TOOLS_BASE}/image-to-text`, icon: "📷", desc: "Extract text from screenshots" },
       ]
     },
   ];
 
   const favouriteTools = [
-    { name: "Lorem Ipsum Pro", url: "https://loremipsumpro.blogspot.com/" },
-    { name: "AI BG Remover", url: "https://aibg-remover.blogspot.com/" },
-    { name: "Advance Favicon Generator", url: "https://advancefavicongenerator.blogspot.com/" },
-    { name: "How To Effect", url: "https://howtoeffect.blogspot.com/" },
-    { name: "Image Manipulation Tools", url: "https://imagemanipulationtools.blogspot.com/" },
+    { name: "Lorem Ipsum Pro", url: "https://loremipsumpro.blogspot.com/", desc: "Free dummy text generator" },
+    { name: "AI BG Remover", url: "https://aibg-remover.blogspot.com/", desc: "Remove backgrounds in 1 click" },
+    { name: "Advance Favicon Generator", url: "https://advancefavicongenerator.blogspot.com/", desc: "All favicon sizes from logo" },
+    { name: "How To Effect", url: "https://howtoeffect.blogspot.com/", desc: "Blogger tips & tricks hub" },
+    { name: "Image Manipulation Tools", url: "https://imagemanipulationtools.blogspot.com/", desc: "Crop, resize, edit online" },
   ];
 
   const faqs = [
@@ -125,6 +116,95 @@ export default function Home() {
         @keyframes writeForUsGlow { 0%,100%{ box-shadow:0 0 20px rgba(16,185,129,0.5), 0 0 40px rgba(16,185,129,0.2); transform:scale(1)} 50%{ box-shadow:0 0 35px rgba(16,185,129,0.9), 0 0 70px rgba(16,185,129,0.5); transform:scale(1.02)} }
         @keyframes writeShine { 0%{left:-100%} 100%{left:200%} }
         @keyframes writeBounce { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-4px)} }
+        @keyframes shimmerSlide{0%{left:-100%}100%{left:200%}}
+
+        @keyframes imgbazarGlow {
+          0%, 100% { box-shadow: 0 0 25px rgba(236, 72, 153, 0.25), inset 0 0 25px rgba(236, 72, 153, 0.05); }
+          50% { box-shadow: 0 0 55px rgba(236, 72, 153, 0.6), inset 0 0 45px rgba(236, 72, 153, 0.12); }
+        }
+        @keyframes imgbazarCardFloat {
+          0%, 100% { transform: translateY(0); }
+          50% { transform: translateY(-4px); }
+        }
+        @keyframes imgbazarIconFloat {
+          0%, 100% { transform: translateY(0) rotate(-4deg); }
+          50% { transform: translateY(-5px) rotate(4deg); }
+        }
+        @keyframes imgbazarShine {
+          0% { transform: translateX(-150%) skewX(-15deg); opacity: 0; }
+          20% { opacity: 1; }
+          80% { opacity: 1; }
+          100% { transform: translateX(200%) skewX(-15deg); opacity: 0; }
+        }
+        @keyframes imgbazarBadgePulse {
+          0%, 100% { transform: scale(1); box-shadow: 0 0 10px rgba(236, 72, 153, 0.5); }
+          50% { transform: scale(1.12); box-shadow: 0 0 22px rgba(236, 72, 153, 0.95); }
+        }
+        @keyframes imgbazarAccent {
+          0%, 100% { height: 32px; opacity: 1; }
+          50% { height: 38px; opacity: 0.65; }
+        }
+        @keyframes imgbazarDot {
+          0%, 100% { transform: translateY(0) scale(1); opacity: 0.5; }
+          50% { transform: translateY(-10px) scale(1.6); opacity: 1; }
+        }
+        @keyframes imgbazarTopShine {
+          0% { left: -100%; }
+          100% { left: 200%; }
+        }
+
+        @keyframes bazaruGlow {
+          0%, 100% { box-shadow: 0 0 25px rgba(139, 92, 246, 0.25), inset 0 0 25px rgba(139, 92, 246, 0.05); }
+          50% { box-shadow: 0 0 55px rgba(139, 92, 246, 0.6), inset 0 0 45px rgba(139, 92, 246, 0.12); }
+        }
+        @keyframes bazaruCardBounce {
+          0%, 100% { transform: translateY(0); }
+          50% { transform: translateY(-5px); }
+        }
+        @keyframes bazaruIconBounce {
+          0%, 100% { transform: translateY(0) scale(1); }
+          50% { transform: translateY(-5px) scale(1.12); }
+        }
+        @keyframes bazaruShine {
+          0% { transform: translateX(200%) skewX(15deg); opacity: 0; }
+          20% { opacity: 1; }
+          80% { opacity: 1; }
+          100% { transform: translateX(-150%) skewX(15deg); opacity: 0; }
+        }
+        @keyframes bazaruBadgePulse {
+          0%, 100% { transform: scale(1); box-shadow: 0 0 10px rgba(139, 92, 246, 0.5); }
+          50% { transform: scale(1.12); box-shadow: 0 0 22px rgba(139, 92, 246, 0.95); }
+        }
+        @keyframes bazaruAccent {
+          0%, 100% { height: 32px; opacity: 1; }
+          50% { height: 38px; opacity: 0.65; }
+        }
+        @keyframes bazaruDot {
+          0%, 100% { transform: translateY(0) rotate(0) scale(1); opacity: 0.5; }
+          50% { transform: translateY(-12px) rotate(180deg) scale(1.5); opacity: 1; }
+        }
+
+        @keyframes popularGlowAnim {
+          0%, 100% { box-shadow: 0 0 40px rgba(255, 122, 26, 0.4), 0 0 80px rgba(255, 122, 26, 0.2); }
+          50% { box-shadow: 0 0 65px rgba(255, 122, 26, 0.8), 0 0 120px rgba(255, 122, 26, 0.35); }
+        }
+        @keyframes founderAccentPulse {
+          0%, 100% { width: 3px; opacity: 1; }
+          50% { width: 5px; opacity: 0.6; }
+        }
+        @keyframes seoBarFlow {
+          0% { background-position: 0% 50%; }
+          100% { background-position: 200% 50%; }
+        }
+        @keyframes contactShift {
+          0%, 100% { background-position: 0% 50%; }
+          50% { background-position: 100% 50%; }
+        }
+        @keyframes toolIconWiggle {
+          0%, 100% { transform: rotate(-8deg) scale(1.15); }
+          50% { transform: rotate(8deg) scale(1.22); }
+        }
+
         .animate-small-live{animation:smallPulse 2s infinite}
         .velora-glow{animation:veloraGlow 1.8s ease-in-out infinite}
         .velora-float{animation:veloraFloat 2.5s ease-in-out infinite}
@@ -134,14 +214,89 @@ export default function Home() {
         .write-shine{ position:relative; overflow:hidden; }
         .write-shine::after{ content:''; position:absolute; top:0; left:-100%; width:50%; height:100%; background:linear-gradient(120deg,transparent,rgba(255,255,255,0.5),transparent); animation:writeShine 2.2s infinite; pointer-events:none; }
         .write-bounce{ animation:writeBounce 1.5s ease-in-out infinite; }
+
         .animate-big-live{background:linear-gradient(100deg,#FF7A1A 20%,#ffad66 50%,#FF7A1A 80%);background-size:200% auto;animation:shimmer 2.5s linear infinite;position:relative;overflow:hidden}
         .animate-big-live::after{content:'';position:absolute;top:0;left:-100%;width:50%;height:100%;background:linear-gradient(120deg,transparent,rgba(255,255,255,0.4),transparent);animation:shimmerSlide 2.2s infinite}
-        @keyframes shimmerSlide{0%{left:-100%}100%{left:200%}}
+
         .tool-card{transition:all .35s cubic-bezier(.4,0,.2,1);position:relative;isolation:isolate}
         .tool-card::before{content:'';position:absolute;inset:0;border-radius:inherit;padding:1px;background:linear-gradient(135deg,rgba(255,122,26,0),rgba(255,122,26,.7),rgba(255,255,255,.2));-webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);-webkit-mask-composite:xor;mask-composite:exclude;opacity:0;transition:opacity .35s;z-index:1}
-        .tool-card:hover{transform:translateY(-4px) scale(1.03);box-shadow:0 12px 30px rgba(255,122,26,.25),0 4px 12px rgba(0,0,0,.3)}
+        .tool-card:hover{transform:translateY(-4px) scale(1.02);box-shadow:0 12px 30px rgba(255,122,26,.25),0 4px 12px rgba(0,0,0,.3)}
         .tool-card:hover::before{opacity:1}
         .tool-card:active{transform:scale(.97)}
+        .tool-card:hover .tool-icon-wiggle{animation:toolIconWiggle 0.5s ease infinite}
+
+        .imgbazar-section { animation: imgbazarGlow 4s ease-in-out infinite; }
+        .imgbazar-glow-overlay {
+          background: radial-gradient(circle at 25% 20%, rgba(236, 72, 153, 0.18), transparent 55%),
+                      radial-gradient(circle at 75% 80%, rgba(244, 63, 94, 0.12), transparent 55%);
+        }
+        .imgbazar-card { animation: imgbazarCardFloat 3s ease-in-out infinite; }
+        .imgbazar-card:hover { transform: translateY(-5px) scale(1.02); animation-play-state: paused; }
+        .imgbazar-icon-float { animation: imgbazarIconFloat 2s ease-in-out infinite; display: inline-block; }
+        .imgbazar-badge-pulse { animation: imgbazarBadgePulse 1.5s ease-in-out infinite; }
+        .imgbazar-accent { animation: imgbazarAccent 2s ease-in-out infinite; }
+        .imgbazar-dot { animation: imgbazarDot 3s ease-in-out infinite; }
+        .imgbazar-shine {
+          background: linear-gradient(120deg, transparent 30%, rgba(236, 72, 153, 0.3) 50%, transparent 70%);
+          animation: imgbazarShine 3s ease-in-out infinite;
+        }
+        .imgbazar-top-line {
+          background: linear-gradient(90deg, transparent, #ec4899, #f43f5e, #ec4899, transparent);
+          background-size: 200% 100%;
+          animation: seoBarFlow 3s linear infinite;
+        }
+
+        .bazaru-section { animation: bazaruGlow 4.5s ease-in-out infinite; }
+        .bazaru-glow-overlay {
+          background: radial-gradient(circle at 75% 25%, rgba(139, 92, 246, 0.18), transparent 55%),
+                      radial-gradient(circle at 25% 80%, rgba(99, 102, 241, 0.12), transparent 55%);
+        }
+        .bazaru-card { animation: bazaruCardBounce 3.5s ease-in-out infinite; }
+        .bazaru-card:hover { transform: translateY(-5px) scale(1.02); animation-play-state: paused; }
+        .bazaru-icon-bounce { animation: bazaruIconBounce 2.2s ease-in-out infinite; display: inline-block; }
+        .bazaru-badge-pulse { animation: bazaruBadgePulse 1.8s ease-in-out infinite; }
+        .bazaru-accent { animation: bazaruAccent 2.2s ease-in-out infinite; }
+        .bazaru-dot { animation: bazaruDot 4s ease-in-out infinite; }
+        .bazaru-shine {
+          background: linear-gradient(120deg, transparent 30%, rgba(139, 92, 246, 0.3) 50%, transparent 70%);
+          animation: bazaruShine 4s ease-in-out infinite;
+        }
+        .bazaru-top-line {
+          background: linear-gradient(90deg, transparent, #8b5cf6, #6366f1, #8b5cf6, transparent);
+          background-size: 200% 100%;
+          animation: seoBarFlow 3.5s linear infinite;
+        }
+
+        .pricing-card { transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+        .pricing-card:hover { transform: translateY(-6px) scale(1.02); box-shadow: 0 20px 45px rgba(255, 122, 26, 0.28); }
+        .popular-card { animation: popularGlowAnim 3s ease-in-out infinite; }
+
+        .founder-accent { animation: founderAccentPulse 2.5s ease-in-out infinite; }
+
+        .seo-bar-flow {
+          background: linear-gradient(90deg, #FF7A1A, #ffad66, #FF7A1A, #ffad66);
+          background-size: 200% 100%;
+          animation: seoBarFlow 3s linear infinite;
+        }
+
+        .contact-section-anim {
+          background-size: 200% 200%;
+          animation: contactShift 8s ease-in-out infinite;
+        }
+
+        .favorite-card { position: relative; overflow: hidden; }
+        .favorite-card::after {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: -100%;
+          width: 50%;
+          height: 100%;
+          background: linear-gradient(120deg, transparent, rgba(139, 92, 246, 0.3), transparent);
+          transition: left 0.7s ease;
+          pointer-events: none;
+        }
+        .favorite-card:hover::after { left: 200%; }
       `}</style>
 
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "Organization", "name": "Velora", "url": "https://velora.dev", "logo": "https://velora.dev/logo.png", "founder": { "@type": "Person", "name": "Ravish Chandra Yadav" }, "description": "Velora — Digital Product Lab by Ravish Chandra Yadav. We engineer fast, SEO & AdSense-ready tools, boilerplates, SaaS, websites & apps on Next.js + Cloudflare. Creators of Lorem Pro Tool (26+ Free Tools), ImgBazar & Bazaru.", "email": "hello@velora.dev" }) }} />
@@ -189,7 +344,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* WRITE FOR US - DOFOLLOW BANNER */}
+      {/* WRITE FOR US - DOFOLLOW BANNER (UNCHANGED - Green animation preserved) */}
       <section className="max-w-[1100px] mx-auto px-4 mt-2 mb-2">
         <a 
           href="https://lorem-pro-tool.run4ravish.workers.dev/write-for-us" 
@@ -231,7 +386,7 @@ export default function Home() {
           <p className="text-white/60 text-[13px] mt-1">No Hidden Charges. What you see is what you pay. For bigger projects, let&apos;s talk.</p>
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
-          <div className="bg-[#15151F] border border-white/10 rounded-[24px] p-6 hover:border-[#FF7A1A] hover:scale-[1.02] transition-all">
+          <div className="pricing-card bg-[#15151F] border border-white/10 rounded-[24px] p-6 hover:border-[#FF7A1A]">
             <p className="text-[12px] font-bold tracking-widest text-white/50">LANDING PAGE</p>
             <h3 className="text-[28px] font-black mt-2">₹4,999<span className="text-[13px] text-white/50"> / onwards</span></h3>
             <ul className="mt-4 space-y-2 text-[13px] text-white/70">
@@ -242,7 +397,7 @@ export default function Home() {
             </ul>
             <a href={`https://wa.me/${WHATSAPP_NUMBER}?text=Hi%20Ravish,%20I%20want%20a%20Landing%20Page%20-%20Rs.4999%20Plan`} target="_blank" rel="noopener noreferrer" className="mt-5 block text-center bg-white text-black font-black py-3 rounded-full hover:bg-[#FF7A1A] hover:text-white transition">Start - ₹4,999 →</a>
           </div>
-          <div className="relative bg-gradient-to-b from-[#FF7A1A] to-[#ff3c00] rounded-[24px] p-6 lg:scale-[1.03] shadow-[0_0_40px_rgba(255,122,26,0.4)]">
+          <div className="popular-card relative bg-gradient-to-b from-[#FF7A1A] to-[#ff3c00] rounded-[24px] p-6 lg:scale-[1.03]">
             <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-black text-white text-[10px] font-black px-3 py-1 rounded-full whitespace-nowrap">🔥 MOST POPULAR</span>
             <p className="text-[12px] font-bold tracking-widest text-black/70">TOOLS WEBSITE</p>
             <h3 className="text-[28px] font-black mt-2 text-black">₹14,999<span className="text-[13px] text-black/70"> / onwards</span></h3>
@@ -254,7 +409,7 @@ export default function Home() {
             </ul>
             <a href={`https://wa.me/${WHATSAPP_NUMBER}?text=Hi%20Ravish,%20I%20want%20a%20Tools%20Website%20-%20Rs.14999%20Plan`} target="_blank" rel="noopener noreferrer" className="mt-5 block text-center bg-black text-white font-black py-3 rounded-full hover:scale-105 transition">Start - ₹14,999 →</a>
           </div>
-          <div className="bg-[#15151F] border border-white/10 rounded-[24px] p-6 hover:border-[#FF7A1A] hover:scale-[1.02] transition-all">
+          <div className="pricing-card bg-[#15151F] border border-white/10 rounded-[24px] p-6 hover:border-[#FF7A1A]">
             <p className="text-[12px] font-bold tracking-widest text-white/50">FULL SAAS / WEB APP</p>
             <h3 className="text-[28px] font-black mt-2">₹29,999<span className="text-[13px] text-white/50"> / onwards</span></h3>
             <ul className="mt-4 space-y-2 text-[13px] text-white/70">
@@ -265,7 +420,7 @@ export default function Home() {
             </ul>
             <a href={`https://wa.me/${WHATSAPP_NUMBER}?text=Hi%20Ravish,%20I%20want%20to%20build%20a%20SaaS`} target="_blank" rel="noopener noreferrer" className="mt-5 block text-center bg-white text-black font-black py-3 rounded-full hover:bg-[#FF7A1A] hover:text-white transition">Let&apos;s Talk →</a>
           </div>
-          <div className="bg-[#15151F] border-2 border-purple-500/50 rounded-[24px] p-6 hover:border-purple-400 hover:scale-[1.02] transition-all relative overflow-hidden">
+          <div className="pricing-card bg-[#15151F] border-2 border-purple-500/50 rounded-[24px] p-6 hover:border-purple-400 relative overflow-hidden">
             <span className="absolute -top-0 right-0 bg-purple-500 text-white text-[10px] font-black px-3 py-1 rounded-bl-xl">PREMIUM</span>
             <p className="text-[12px] font-bold tracking-widest text-purple-400">CUSTOM / ENTERPRISE</p>
             <h3 className="text-[28px] font-black mt-2">₹49,999+<span className="text-[13px] text-white/50"> / Custom</span></h3>
@@ -282,7 +437,7 @@ export default function Home() {
       </section>
 
       <div className="px-4 md:px-6">
-        <section id="contact" className="w-full bg-gradient-to-br from-orange-500 via-[#ff6b00] to-[#ff3c00] relative overflow-hidden py-10 px-4 rounded-[32px] max-w-[1020px] mx-auto mt-8 shadow-[0_0_0_1px_rgba(255,122,26,0.2)]">
+        <section id="contact" className="contact-section-anim w-full bg-gradient-to-br from-orange-500 via-[#ff6b00] to-[#ff3c00] relative overflow-hidden py-10 px-4 rounded-[32px] max-w-[1020px] mx-auto mt-8 shadow-[0_0_0_1px_rgba(255,122,26,0.2)]">
           <div className="relative max-w-6xl mx-auto px-2 md:px-6">
             <div className="grid md:grid-cols-2 gap-10 items-center">
               <div className="text-center md:text-left">
@@ -320,12 +475,12 @@ export default function Home() {
         </section>
       </div>
 
-      {/* PROFILE - FIXED LOGO SIZE + FULL ENGLISH */}
+      {/* PROFILE - FOUNDER */}
       <section className="max-w-[700px] mx-auto px-4 py-8">
         <p className="text-[#FF7A1A] font-bold tracking-[0.15em] text-[12px]">ABOUT FOUNDER</p>
         <p className={`text-[10px] tracking-[0.3em] mb-4 ${isDark ? "text-white/40" : "text-black/40"}`}>— THE BUILDER BEHIND VELORA</p>
         <div className={`border rounded-2xl p-5 md:p-6 relative overflow-hidden ${isDark ? "bg-[#15151F] border-white/[0.07]" : "bg-white border-black/[0.07] shadow-sm"}`}>
-          <div className="absolute left-0 top-0 bottom-0 w-[3px] bg-[#FF7A1A]" />
+          <div className="founder-accent absolute left-0 top-0 bottom-0 bg-[#FF7A1A]" />
           <div className="flex items-start gap-4 mb-4">
             <div className={`w-[96px] h-[96px] min-w-[96px] min-h-[96px] rounded-2xl border-2 flex items-center justify-center overflow-hidden shrink-0 p-2 ${isDark ? "bg-[#0A0A14] border-[#FF7A1A]/30" : "bg-white border-[#FF7A1A]/30"}`}>
               <img src={isDark ? "/logo-dark.png" : "/logo.png"} className="w-full h-full object-contain" alt="Ravish Chandra Yadav - Velora Founder Logo" />
@@ -382,12 +537,15 @@ export default function Home() {
                   const isSelected = selectedTool === t.name;
                   return (
                     <a key={t.name} href={t.url} target="_blank" rel="noopener noreferrer" onClick={() => { playSound(); setSelectedTool(t.name); }}
-                      className={`tool-card group relative border rounded-xl px-2.5 sm:px-3.5 py-3.5 text-[11px] sm:text-[12px] font-bold flex items-center gap-2 overflow-hidden ${isSelected ? "bg-[#FF7A1A] border-[#FF7A1A] text-white scale-[1.02]" : t.hot ? `bg-gradient-to-br from-emerald-500/10 to-green-600/10 border-emerald-500/30 hover:border-emerald-500 hover:bg-emerald-500/20 ${isDark ? "text-white" : "text-black"} hot-glow` : isDark ? "bg-[#1E1E2A] border-white/5 text-white/70 hover:bg-[#FF7A1A]/10 hover:text-[#FF7A1A] hover:border-[#FF7A1A]/30" : "bg-[#F2F2F6] border-black/5 text-black/70 hover:bg-[#FF7A1A]/10 hover:text-[#FF7A1A] hover:border-[#FF7A1A]/30"}`}>
+                      className={`tool-card group relative border rounded-xl px-2.5 sm:px-3 py-2.5 sm:py-3 overflow-hidden flex items-center gap-2 ${isSelected ? "bg-[#FF7A1A] border-[#FF7A1A] text-white scale-[1.02]" : t.hot ? `bg-gradient-to-br from-emerald-500/10 to-green-600/10 border-emerald-500/30 hover:border-emerald-500 hover:bg-emerald-500/20 ${isDark ? "text-white" : "text-black"} hot-glow` : isDark ? "bg-[#1E1E2A] border-white/5 text-white/70 hover:bg-[#FF7A1A]/10 hover:text-[#FF7A1A] hover:border-[#FF7A1A]/30" : "bg-[#F2F2F6] border-black/5 text-black/70 hover:bg-[#FF7A1A]/10 hover:text-[#FF7A1A] hover:border-[#FF7A1A]/30"}`}>
                       <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
-                      <span className="text-[16px] group-hover:scale-125 group-hover:-rotate-6 transition-transform duration-300 shrink-0">{t.icon}</span>
-                      <span className="flex-1 relative z-10 leading-tight">{t.name}</span>
-                      {t.hot && <span className="bg-[#10B981] text-black text-[8px] font-black px-1.5 py-0.5 rounded-full animate-pulse shrink-0 hidden sm:block">HOT</span>}
-                      <span className="opacity-30 group-hover:opacity-100 group-hover:translate-x-1 transition-all shrink-0">↗</span>
+                      <span className="tool-icon-wiggle text-[16px] shrink-0 relative z-10 transition-transform duration-300">{t.icon}</span>
+                      <div className="flex-1 min-w-0 relative z-10 leading-tight">
+                        <div className="text-[11px] sm:text-[12px] font-bold truncate">{t.name}</div>
+                        <div className={`text-[9px] sm:text-[9.5px] font-medium mt-0.5 truncate ${isSelected ? "text-white/80" : isDark ? "text-white/40" : "text-black/40"}`}>{t.desc}</div>
+                      </div>
+                      {t.hot && <span className="bg-[#10B981] text-black text-[8px] font-black px-1.5 py-0.5 rounded-full animate-pulse shrink-0 relative z-10 hidden sm:block">HOT</span>}
+                      <span className="opacity-30 group-hover:opacity-100 group-hover:translate-x-1 transition-all shrink-0 relative z-10">↗</span>
                     </a>
                   )
                 })}
@@ -396,6 +554,78 @@ export default function Home() {
           ))}
         </div>
         <a href={TOOLS_BASE} target="_blank" rel="noopener noreferrer" onClick={() => playSound()} className="animate-big-live mt-6 block w-full text-center py-3.5 rounded-xl font-bold text-white hover:scale-[1.02] transition-transform tool-card">Open All 26+ Tools Live →</a>
+      </section>
+
+      {/* ===== NEW SECTION 1: FREE IMAGE HOSTING ===== */}
+      <section className="max-w-[800px] mx-auto px-4 pb-5 mt-2">
+        <div className={`imgbazar-section relative border-2 rounded-[24px] p-5 md:p-7 overflow-hidden ${isDark ? "bg-gradient-to-br from-[#1A0F1C] via-[#15151F] to-[#1A0F1C] border-pink-500/30" : "bg-gradient-to-br from-pink-50/70 via-white to-rose-50/50 border-pink-500/30"}`}>
+          <div className="absolute top-0 left-0 right-0 h-[3px] imgbazar-top-line" />
+          <div className="absolute inset-0 imgbazar-glow-overlay pointer-events-none rounded-[24px]" />
+          <div className="absolute top-6 right-10 w-2 h-2 bg-pink-500 rounded-full imgbazar-dot" />
+          <div className="absolute bottom-8 right-20 w-1.5 h-1.5 bg-rose-400 rounded-full imgbazar-dot" style={{animationDelay: '1.2s'}} />
+          <div className="absolute top-1/2 right-6 w-1 h-1 bg-pink-300 rounded-full imgbazar-dot" style={{animationDelay: '0.6s'}} />
+
+          <div className="relative z-10">
+            <div className="flex items-center gap-3 mb-4">
+              <div className="imgbazar-accent w-1.5 rounded-full bg-gradient-to-b from-pink-400 to-rose-600" />
+              <div>
+                <h3 className={`font-extrabold text-[15px] md:text-[17px] bg-gradient-to-r from-pink-400 to-rose-500 bg-clip-text text-transparent`}>📸 Free Image Hosting</h3>
+                <p className={`text-[10px] md:text-[11px] ${isDark ? "text-white/40" : "text-black/40"}`}>By Velora — Upload Photo, Get Link, Use Anywhere</p>
+              </div>
+              <div className="ml-auto">
+                <span className="imgbazar-badge-pulse text-[10px] font-black px-2.5 py-1 rounded-full bg-gradient-to-r from-pink-500 to-rose-600 text-white">1 Tool</span>
+              </div>
+            </div>
+
+            <a href="https://imgbazar.pages.dev" target="_blank" rel="noopener noreferrer"
+              className={`imgbazar-card group relative border-2 rounded-xl px-4 py-4 flex items-center gap-3 overflow-hidden transition-all duration-300 ${isDark ? "bg-[#1E1E2A]/90 border-pink-500/20 hover:border-pink-500" : "bg-white/90 border-pink-500/20 hover:border-pink-500"}`}>
+              <div className="absolute inset-0 imgbazar-shine pointer-events-none" />
+              <div className="relative z-10 text-[32px] imgbazar-icon-float">📸</div>
+              <div className="relative z-10 flex-1 min-w-0">
+                <div className={`font-black text-[13px] md:text-[14px] ${isDark ? "text-white" : "text-black"} group-hover:text-pink-400 transition-colors`}>ImgBazar — Free Image Hosting</div>
+                <div className={`text-[10px] md:text-[11px] font-medium mt-0.5 leading-tight ${isDark ? "text-white/50" : "text-black/50"}`}>Upload image, get direct link instantly. No login, unlimited bandwidth, use anywhere.</div>
+              </div>
+              <span className="relative z-10 bg-pink-500 text-white text-[8px] font-black px-1.5 py-0.5 rounded-full imgbazar-badge-pulse hidden sm:block">HOT</span>
+              <span className="relative z-10 opacity-40 group-hover:opacity-100 group-hover:translate-x-1 transition-all text-pink-500">→</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* ===== NEW SECTION 2: E-COMMERCE / ONLINE SHOPPING ===== */}
+      <section className="max-w-[800px] mx-auto px-4 pb-10">
+        <div className={`bazaru-section relative border-2 rounded-[24px] p-5 md:p-7 overflow-hidden ${isDark ? "bg-gradient-to-br from-[#0F0F1C] via-[#15151F] to-[#0F0F1C] border-purple-500/30" : "bg-gradient-to-br from-purple-50/70 via-white to-blue-50/50 border-purple-500/30"}`}>
+          <div className="absolute top-0 left-0 right-0 h-[3px] bazaru-top-line" />
+          <div className="absolute inset-0 bazaru-glow-overlay pointer-events-none rounded-[24px]" />
+          <div className="absolute top-6 right-10 w-2 h-2 bg-purple-500 rounded-full bazaru-dot" />
+          <div className="absolute bottom-8 right-20 w-1.5 h-1.5 bg-indigo-400 rounded-full bazaru-dot" style={{animationDelay: '1s'}} />
+          <div className="absolute top-1/2 right-6 w-1 h-1 bg-purple-300 rounded-full bazaru-dot" style={{animationDelay: '0.4s'}} />
+
+          <div className="relative z-10">
+            <div className="flex items-center gap-3 mb-4">
+              <div className="bazaru-accent w-1.5 rounded-full bg-gradient-to-b from-purple-400 to-indigo-600" />
+              <div>
+                <h3 className={`font-extrabold text-[15px] md:text-[17px] bg-gradient-to-r from-purple-400 to-indigo-500 bg-clip-text text-transparent`}>🛍️ E-commerce / Online Shopping</h3>
+                <p className={`text-[10px] md:text-[11px] ${isDark ? "text-white/40" : "text-black/40"}`}>By Velora — Fast Shopping Website, Mobile Ready</p>
+              </div>
+              <div className="ml-auto">
+                <span className="bazaru-badge-pulse text-[10px] font-black px-2.5 py-1 rounded-full bg-gradient-to-r from-purple-500 to-indigo-600 text-white">1 Store</span>
+              </div>
+            </div>
+
+            <a href="https://bazaru.pages.dev" target="_blank" rel="noopener noreferrer"
+              className={`bazaru-card group relative border-2 rounded-xl px-4 py-4 flex items-center gap-3 overflow-hidden transition-all duration-300 ${isDark ? "bg-[#1E1E2A]/90 border-purple-500/20 hover:border-purple-500" : "bg-white/90 border-purple-500/20 hover:border-purple-500"}`}>
+              <div className="absolute inset-0 bazaru-shine pointer-events-none" />
+              <div className="relative z-10 text-[32px] bazaru-icon-bounce">🛍️</div>
+              <div className="relative z-10 flex-1 min-w-0">
+                <div className={`font-black text-[13px] md:text-[14px] ${isDark ? "text-white" : "text-black"} group-hover:text-purple-400 transition-colors`}>Bazaru — Online Shopping</div>
+                <div className={`text-[10px] md:text-[11px] font-medium mt-0.5 leading-tight ${isDark ? "text-white/50" : "text-black/50"}`}>Shop products, deals & offers. Fast delivery. Add to cart, wishlist & more.</div>
+              </div>
+              <span className="relative z-10 bg-purple-500 text-white text-[8px] font-black px-1.5 py-0.5 rounded-full bazaru-badge-pulse hidden sm:block">HOT</span>
+              <span className="relative z-10 opacity-40 group-hover:opacity-100 group-hover:translate-x-1 transition-all text-purple-500">→</span>
+            </a>
+          </div>
+        </div>
       </section>
 
       <section id="products-2" className="max-w-[700px] mx-auto px-4 pb-10">
@@ -408,8 +638,12 @@ export default function Home() {
               const isSelected = selectedTool === t.name;
               return (
                 <a key={t.name} href={t.url} target="_blank" rel="noopener noreferrer" onClick={() => { playSound(); setSelectedTool(t.name); }}
-                  className={`tool-card border rounded-xl px-3 py-3.5 text-[11px] sm:text-[12px] font-bold transition-all flex justify-between items-center gap-1 ${isSelected ? "bg-[#FF7A1A] border-[#FF7A1A] text-white" : isDark ? "bg-[#1E1E2A] border-white/5 text-white/70 hover:bg-[#FF7A1A]/10 hover:text-[#FF7A1A]" : "bg-[#F2F2F6] border-black/5 text-black/70 hover:bg-[#FF7A1A]/10 hover:text-[#FF7A1A]"}`}>
-                  <span className="leading-tight">{t.name}</span><span className="shrink-0">↗</span>
+                  className={`favorite-card tool-card border rounded-xl px-3 py-2.5 transition-all flex flex-col gap-0.5 ${isSelected ? "bg-[#FF7A1A] border-[#FF7A1A] text-white" : isDark ? "bg-[#1E1E2A] border-white/5 text-white/70 hover:bg-[#FF7A1A]/10 hover:text-[#FF7A1A]" : "bg-[#F2F2F6] border-black/5 text-black/70 hover:bg-[#FF7A1A]/10 hover:text-[#FF7A1A]"}`}>
+                  <div className="flex justify-between items-center gap-1">
+                    <span className="leading-tight font-bold text-[11px] sm:text-[12px]">{t.name}</span>
+                    <span className="shrink-0 opacity-40 group-hover:opacity-100 transition-all">↗</span>
+                  </div>
+                  <span className={`text-[9px] sm:text-[9.5px] font-medium truncate ${isSelected ? "text-white/80" : isDark ? "text-white/40" : "text-black/40"}`}>{t.desc}</span>
                 </a>
               )
             })}
@@ -420,14 +654,14 @@ export default function Home() {
 
       <section id="seo-content" className="max-w-[700px] mx-auto px-4 pb-10">
         <div className={`border rounded-[28px] overflow-hidden relative ${isDark ? "bg-[#15151F] border-white/[0.07]" : "bg-white border-black/[0.07] shadow-sm"}`}>
-          <div className="absolute top-0 left-0 w-full h-[3px] bg-gradient-to-r from-[#FF7A1A] to-orange-300" />
+          <div className="seo-bar-flow absolute top-0 left-0 w-full h-[3px]" />
           <div className="p-6 md:p-8 pb-0 flex justify-between items-center gap-3"><div><p className="text-[#FF7A1A] font-bold tracking-[0.15em] text-[11px]">SEO • INFORMATION</p><h2 className="text-[20px] md:text-[24px] font-extrabold mt-1">About Velora & User Guide</h2></div><button onClick={()=>setShowSeo(!showSeo)} className="shrink-0 bg-[#FF7A1A] text-black font-black text-[12px] px-5 py-2.5 rounded-full hover:scale-105 transition-all">{showSeo ? "Hide ▲" : "Show ▼"}</button></div>
           <div className="p-6 md:p-8 pt-4"><p className={`text-[13px] leading-relaxed ${isDark ? "text-white/60" : "text-black/60"}`}><strong className={isDark ? "text-white" : "text-black"}>Velora is a leading Digital Product Lab</strong> founded by Ravish Chandra Yadav. We engineer fast tools like Lorem Pro Tool (26+ Free Tools), ImgBazar (Free Image Hosting) & Bazaru (E-commerce) for founders, bloggers, and creators. All tools are free, browser-based, and SEO optimized. Click Show to read full company profile, how to use guide, and FAQs.</p></div>
           <div className={`grid transition-all duration-500 ease-in-out ${showSeo ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"}`}>
             <div className="overflow-hidden"><div className={`px-6 md:px-8 pb-8 space-y-8 text-[14px] leading-[1.8] border-t mt-2 pt-6 ${isDark ? "text-white/70 border-white/[0.06]" : "text-black/70 border-black/[0.06]"}`}>
-              <div><h1 className={`text-[22px] md:text-[28px] font-extrabold leading-tight ${isDark ? "text-white" : "text-black"}`}>Velora - Digital Product Lab: Free Online Tools, SaaS, Websites & AI Automation</h1><h2 className={`text-[18px] md:text-[20px] font-bold mt-6 mb-3 ${isDark ? "text-white" : "text-black"}`}>Who We Are & What We Build - Velora Company Profile</h2><p>Velora is a modern Digital Product Lab based in India, founded by <strong className={isDark ? "text-white" : "text-black"}>Ravish Chandra Yadav</strong>. We are not a traditional agency. We are builders who ship. Our mission is simple — to help founders, creators, bloggers and small businesses launch tools, websites, and SaaS products in 7 days, not months. What started as a collection of small utility tools has now become <strong className={isDark ? "text-white" : "text-black"}>Lorem Pro Tool — a 26+ Free Online Tools suite</strong>, <strong className={isDark ? "text-white" : "text-black"}>ImgBazar — Free Image Hosting on Cloudflare R2</strong> and <strong className={isDark ? "text-white" : "text-black"}>Bazaru — Fast E-commerce Website</strong> used by thousands. Velora operates on three pillars: Speed, Quality, and Automation. We use Next.js, Cloudflare Workers, Cloudflare Pages, R2, Vercel, Supabase, and AI to build products that are lightning fast, SEO ready, AdSense ready, and scalable from day one.</p><h2 className={`text-[18px] md:text-[20px] font-bold mt-6 mb-3 ${isDark ? "text-white" : "text-black"}`}>Our Products - Lorem Pro Tool, ImgBazar & Bazaru</h2><p><strong>1. Lorem Pro Tool (26+ Free Tools):</strong> SIP Calculator, EMI Calculator, FIRE Calculator, Income Tax Calculator, Word Counter, AI Detector, YouTube Thumbnail Downloader, Hashtag Generator, QR Generator, Password Generator & more. Best for bloggers, students & creators.<br/><strong>2. ImgBazar (Free Image Hosting):</strong> Upload image without login, get Direct Link, HTML & Markdown link instantly. Use in Blogger, WordPress, Bazaru product images & anywhere. Built on Cloudflare R2 - Unlimited Bandwidth, No Ads on Image.<br/><strong>3. Bazaru (E-commerce):</strong> Fast online shopping website. Add product with ImgBazar link, manage orders, sell directly. Mobile-friendly, SEO-ready.<br/><strong>4. SaaS Boilerplates:</strong> Next.js + Supabase + Auth + Payments + Dashboard - Launch your SaaS in 48 hours.</p></div>
-              <div><h2 className={`text-[18px] md:text-[20px] font-bold mb-3 ${isDark ? "text-white" : "text-black"}`}>User Guide: How To Use Lorem Pro Tool for Blogger</h2><p><strong>Step 1:</strong> Go to Our Products section and click on any tool. <strong>Step 2:</strong> Paste your text or upload image — processing happens in browser, data never leaves device. <strong>Step 3:</strong> Click generate and copy result for your Blogger post. <strong>Step 4:</strong> For Blogger, use Case Converter for titles, Character Counter to keep meta description under 160 chars, Fancy Text for stylish headings, Slug Generator for SEO URLs, and Remove Duplicates to clean keyword lists. No account needed, no limits.</p><h2 className={`text-[18px] md:text-[20px] font-bold mt-6 mb-3 ${isDark ? "text-white" : "text-black"}`}>User Guide: How To Use ImgBazar for Blogger & Bazaru</h2><p><strong>Step 1:</strong> Open ImgBazar. <strong>Step 2:</strong> Drag & Drop or Select Photo from gallery. <strong>Step 3:</strong> Upload hote hi Direct Link copy karo. <strong>Step 4:</strong> Blogger me Image URL me paste karo ya Bazaru me Product Add karte waqt Image URL me paste karo. Photo automatically fit ho jayegi, kabhi gayab nahi hogi.</p></div>
-              <div><h2 className={`text-[20px] font-extrabold mb-4 ${isDark ? "text-white" : "text-black"}`}>Frequently Asked Questions - Velora, Lorem Pro Tool, ImgBazar & Bazaru</h2><div className="space-y-3">{faqs.map((faq, idx)=>(<div key={idx} className={`border rounded-2xl overflow-hidden ${isDark ? "bg-[#0A0A14] border-white/[0.06]" : "bg-[#F8F8FC] border-black/[0.06]"}`}><button onClick={()=>setOpenFaq(openFaq===idx?null:idx)} className="w-full text-left p-4 flex justify-between items-start gap-3"><span className={`font-bold text-[13px] md:text-[14px] ${isDark ? "text-white" : "text-black"}`}>{faq.q}</span><span className={`shrink-0 w-7 h-7 rounded-full flex items-center justify-center text-[12px] transition-all duration-300 ${openFaq===idx?'rotate-45 bg-[#FF7A1A] text-black': isDark ? 'bg-white/5' : 'bg-black/5'}`}>+</span></button><div className={`grid transition-all duration-300 ${openFaq===idx?'grid-rows-[1fr] opacity-100':'grid-rows-[0fr] opacity-0'}`}><div className="overflow-hidden"><p className={`px-4 pb-4 text-[12px] leading-relaxed ${isDark ? "text-white/60" : "text-black/60"}`}>{faq.a}</p></div></div></div>))}</div></div>
+              <div><h2 className={`text-[22px] md:text-[28px] font-extrabold leading-tight ${isDark ? "text-white" : "text-black"}`}>Velora - Digital Product Lab: Free Online Tools, SaaS, Websites & AI Automation</h2><h3 className={`text-[18px] md:text-[20px] font-bold mt-6 mb-3 ${isDark ? "text-white" : "text-black"}`}>Who We Are & What We Build - Velora Company Profile</h3><p>Velora is a modern Digital Product Lab based in India, founded by <strong className={isDark ? "text-white" : "text-black"}>Ravish Chandra Yadav</strong>. We are not a traditional agency. We are builders who ship. Our mission is simple — to help founders, creators, bloggers and small businesses launch tools, websites, and SaaS products in 7 days, not months. What started as a collection of small utility tools has now become <strong className={isDark ? "text-white" : "text-black"}>Lorem Pro Tool — a 26+ Free Online Tools suite</strong>, <strong className={isDark ? "text-white" : "text-black"}>ImgBazar — Free Image Hosting on Cloudflare R2</strong> and <strong className={isDark ? "text-white" : "text-black"}>Bazaru — Fast E-commerce Website</strong> used by thousands. Velora operates on three pillars: Speed, Quality, and Automation. We use Next.js, Cloudflare Workers, Cloudflare Pages, R2, Vercel, Supabase, and AI to build products that are lightning fast, SEO ready, AdSense ready, and scalable from day one.</p><h3 className={`text-[18px] md:text-[20px] font-bold mt-6 mb-3 ${isDark ? "text-white" : "text-black"}`}>Our Products - Lorem Pro Tool, ImgBazar & Bazaru</h3><p><strong>1. Lorem Pro Tool (26+ Free Tools):</strong> SIP Calculator, EMI Calculator, FIRE Calculator, Income Tax Calculator, Word Counter, AI Detector, YouTube Thumbnail Downloader, Hashtag Generator, QR Generator, Password Generator & more. Best for bloggers, students & creators.<br/><strong>2. ImgBazar (Free Image Hosting):</strong> Upload image without login, get Direct Link, HTML & Markdown link instantly. Use in Blogger, WordPress, Bazaru product images & anywhere. Built on Cloudflare R2 - Unlimited Bandwidth, No Ads on Image.<br/><strong>3. Bazaru (E-commerce):</strong> Fast online shopping website. Add product with ImgBazar link, manage orders, sell directly. Mobile-friendly, SEO-ready.<br/><strong>4. SaaS Boilerplates:</strong> Next.js + Supabase + Auth + Payments + Dashboard - Launch your SaaS in 48 hours.</p></div>
+              <div><h3 className={`text-[18px] md:text-[20px] font-bold mb-3 ${isDark ? "text-white" : "text-black"}`}>User Guide: How To Use Lorem Pro Tool for Blogger</h3><p><strong>Step 1:</strong> Go to Our Products section and click on any tool. <strong>Step 2:</strong> Paste your text or upload image — processing happens in browser, data never leaves device. <strong>Step 3:</strong> Click generate and copy result for your Blogger post. <strong>Step 4:</strong> For Blogger, use Case Converter for titles, Character Counter to keep meta description under 160 chars, Fancy Text for stylish headings, Slug Generator for SEO URLs, and Remove Duplicates to clean keyword lists. No account needed, no limits.</p><h3 className={`text-[18px] md:text-[20px] font-bold mt-6 mb-3 ${isDark ? "text-white" : "text-black"}`}>User Guide: How To Use ImgBazar for Blogger & Bazaru</h3><p><strong>Step 1:</strong> Open ImgBazar. <strong>Step 2:</strong> Drag & Drop or Select Photo from gallery. <strong>Step 3:</strong> Upload hote hi Direct Link copy karo. <strong>Step 4:</strong> Blogger me Image URL me paste karo ya Bazaru me Product Add karte waqt Image URL me paste karo. Photo automatically fit ho jayegi, kabhi gayab nahi hogi.</p></div>
+              <div><h3 className={`text-[20px] font-extrabold mb-4 ${isDark ? "text-white" : "text-black"}`}>Frequently Asked Questions - Velora, Lorem Pro Tool, ImgBazar & Bazaru</h3><div className="space-y-3">{faqs.map((faq, idx)=>(<div key={idx} className={`border rounded-2xl overflow-hidden ${isDark ? "bg-[#0A0A14] border-white/[0.06]" : "bg-[#F8F8FC] border-black/[0.06]"}`}><button onClick={()=>setOpenFaq(openFaq===idx?null:idx)} className="w-full text-left p-4 flex justify-between items-start gap-3"><span className={`font-bold text-[13px] md:text-[14px] ${isDark ? "text-white" : "text-black"}`}>{faq.q}</span><span className={`shrink-0 w-7 h-7 rounded-full flex items-center justify-center text-[12px] transition-all duration-300 ${openFaq===idx?'rotate-45 bg-[#FF7A1A] text-black': isDark ? 'bg-white/5' : 'bg-black/5'}`}>+</span></button><div className={`grid transition-all duration-300 ${openFaq===idx?'grid-rows-[1fr] opacity-100':'grid-rows-[0fr] opacity-0'}`}><div className="overflow-hidden"><p className={`px-4 pb-4 text-[12px] leading-relaxed ${isDark ? "text-white/60" : "text-black/60"}`}>{faq.a}</p></div></div></div>))}</div></div>
             </div></div>
           </div>
         </div>
@@ -443,7 +677,7 @@ export default function Home() {
         <p className={`text-center text-[10px] mt-8 tracking-[0.2em] ${isDark ? "text-white/20" : "text-black/20"}`}>© 2024 VELORA • hello@velora.dev • All rights reserved</p>
       </footer>
 
-      {/* FLOATING WHATSAPP - ALWAYS VISIBLE */}
+      {/* FLOATING WHATSAPP */}
       <a href={`https://wa.me/${WHATSAPP_NUMBER}?text=Hi%20Ravish,%20I%20want%20to%20build%20a%20website!`}
         target="_blank" rel="noopener noreferrer"
         className="fixed bottom-5 right-5 z-[90] bg-[#25D366] w-[56px] h-[56px] rounded-full flex items-center justify-center text-[28px] shadow-[0_0_25px_rgba(37,211,102,0.6)] hover:scale-110 transition-all animate-bounce">
@@ -467,9 +701,9 @@ export default function Home() {
             <div className={`text-[13px] leading-relaxed ${isDark ? "text-white/70" : "text-black/70"}`}>
               {activeModal==="About" && (
                 <div>
-                  <h1 className="text-[20px] font-bold text-black dark:text-white mb-2">About Velora - Digital Product Lab & Online Startup</h1>
+                  <h2 className="text-[20px] font-bold text-black dark:text-white mb-2">About Velora - Digital Product Lab & Online Startup</h2>
                   <p className="mb-3"><strong>Velora is a Digital Product Lab and online startup</strong> founded by <strong>Yadav Ravish</strong>. Velora is a modern platform that engineers <strong>websites, web apps, mobile apps, SaaS products, boilerplates, AI tools, free online tools, image hosting & e-commerce</strong> for students, creators, startups, and small businesses in India and worldwide.</p>
-                  <h2 className="text-[16px] font-bold text-black dark:text-white mt-4 mb-1">What Does Velora Build?</h2>
+                  <h3 className="text-[16px] font-bold text-black dark:text-white mt-4 mb-1">What Does Velora Build?</h3>
                   <ul className="list-disc pl-5 mb-3 space-y-1">
                     <li><strong>Websites & Web Apps:</strong> Fast, SEO-friendly business websites, portfolio websites, and e-commerce websites.</li>
                     <li><strong>SaaS Tools & Platforms:</strong> Complete SaaS products like Lorem Pro Tool - 26+ free online tools in one place.</li>
@@ -479,18 +713,18 @@ export default function Home() {
                     <li><strong>Bazaru - E-commerce:</strong> Fast online shopping website with product management.</li>
                     <li><strong>Creator Utilities:</strong> Word Counter, SIP Calculator, FD Calculator, YouTube Thumbnail Downloader, and more.</li>
                   </ul>
-                  <h2 className="text-[16px] font-bold text-black dark:text-white mt-4 mb-1">Our Projects</h2>
+                  <h3 className="text-[16px] font-bold text-black dark:text-white mt-4 mb-1">Our Projects</h3>
                   <p className="mb-3">We have already developed many projects like <strong>Lorem Pro Tool</strong> - a free all-in-one tools website with 26+ tools like Lorem Ipsum Generator, Word Counter, SIP Calculator, Income Tax Calculator, and YouTube Tools. <strong>ImgBazar</strong> - free image hosting on Cloudflare R2. <strong>Bazaru</strong> - e-commerce. And many more upcoming SaaS, AI tools, and boilerplates are coming soon under Velora.</p>
-                  <h2 className="text-[16px] font-bold text-black dark:text-white mt-4 mb-1">Our Vision</h2>
+                  <h3 className="text-[16px] font-bold text-black dark:text-white mt-4 mb-1">Our Vision</h3>
                   <p>Our vision at Velora is simple - Build fast, beautiful, and useful digital products that anyone can use for free or at low cost. Founded by Yadav Ravish, Velora believes every creator should have premium tools without paying heavy prices.</p>
                   <p className="mt-3">Want your own website, SaaS, or tool? Visit <a href="https://velora-cloud.run4ravish.workers.dev/" target="_blank" rel="noopener noreferrer" className="text-[#FF7A1A] font-bold">velora-cloud.run4ravish.workers.dev</a></p>
                 </div>
               )}
               {activeModal==="Contact" && (
                 <div>
-                  <h1 className="text-[20px] font-bold text-black dark:text-white mb-2">Contact Velora - Get Your Website, App & SaaS Built</h1>
+                  <h2 className="text-[20px] font-bold text-black dark:text-white mb-2">Contact Velora - Get Your Website, App & SaaS Built</h2>
                   <p className="mb-3">Have a project in mind? <strong>Contact Velora</strong> for <strong>website development, web app development, SaaS development, AI tools, boilerplates, image hosting like ImgBazar, e-commerce like Bazaru, and custom online tools</strong>. Velora is founded by <strong>Yadav Ravish</strong> and we reply within 2 hours.</p>
-                  <h2 className="text-[16px] font-bold text-black dark:text-white mt-4 mb-1">Contact Details</h2>
+                  <h3 className="text-[16px] font-bold text-black dark:text-white mt-4 mb-1">Contact Details</h3>
                   <div className="bg-black/5 dark:bg-white/5 p-3 rounded-xl mb-3">
                     <p><strong>Email:</strong> hello@velora.dev</p>
                     <p><strong>WhatsApp:</strong> +91 82997 46179</p>
@@ -498,7 +732,7 @@ export default function Home() {
                     <p><strong>Our Products:</strong> Lorem Pro Tool - 26+ Free Online Tools, ImgBazar, Bazaru</p>
                     <p><strong>Founder:</strong> Yadav Ravish</p>
                   </div>
-                  <h2 className="text-[16px] font-bold text-black dark:text-white mt-4 mb-1">What Can We Build For You?</h2>
+                  <h3 className="text-[16px] font-bold text-black dark:text-white mt-4 mb-1">What Can We Build For You?</h3>
                   <ul className="list-disc pl-5 space-y-1">
                     <li>Business Website, Portfolio Website, Blog Website</li>
                     <li>SaaS Product, AI Tool Website, Tools Website like Lorem Pro Tool</li>
@@ -511,55 +745,55 @@ export default function Home() {
               )}
               {activeModal==="Disclaimer" && (
                 <div>
-                  <h1 className="text-[20px] font-bold text-black dark:text-white mb-2">Disclaimer - Velora & Lorem Pro Tool</h1>
+                  <h2 className="text-[20px] font-bold text-black dark:text-white mb-2">Disclaimer - Velora & Lorem Pro Tool</h2>
                   <p className="mb-3">The information and tools provided by <strong>Velora</strong> and <strong>Lorem Pro Tool</strong> are for general, educational, and informational purposes only. <strong>Velora is a Digital Product Lab founded by Yadav Ravish</strong> that engineers websites, SaaS products, AI tools, boilerplates, image hosting, e-commerce and free online tools.</p>
-                  <h2 className="text-[16px] font-bold text-black dark:text-white mt-4 mb-1">1. General Information</h2>
+                  <h3 className="text-[16px] font-bold text-black dark:text-white mt-4 mb-1">1. General Information</h3>
                   <p className="mb-3">While we try to keep all tools like SIP Calculator, FD Calculator, Income Tax Calculator, Word Counter, and YouTube Tools accurate, we make no warranties about completeness, reliability, or accuracy. Any reliance you place on such information is at your own risk.</p>
-                  <h2 className="text-[16px] font-bold text-black dark:text-white mt-4 mb-1">2. Financial Tools</h2>
+                  <h3 className="text-[16px] font-bold text-black dark:text-white mt-4 mb-1">2. Financial Tools</h3>
                   <p className="mb-3">Our finance calculators provide only estimates. Velora is not a financial advisor, bank, or CA. Please consult a professional before taking financial decisions.</p>
-                  <h2 className="text-[16px] font-bold text-black dark:text-white mt-4 mb-1">3. Generated Content</h2>
+                  <h3 className="text-[16px] font-bold text-black dark:text-white mt-4 mb-1">3. Generated Content</h3>
                   <p className="mb-3">Fake data, lorem ipsum, fancy text, and other generated content should not be used for illegal or fraudulent purposes. It is only for testing, designing, and demo purposes.</p>
-                  <h2 className="text-[16px] font-bold text-black dark:text-white mt-4 mb-1">4. Liability</h2>
+                  <h3 className="text-[16px] font-bold text-black dark:text-white mt-4 mb-1">4. Liability</h3>
                   <p>Velora, Lorem Pro Tool, ImgBazar, Bazaru and founder Yadav Ravish shall not be liable for any loss or damage arising from use of this website. For questions, contact us at hello@velora.dev or visit <a href="https://velora-cloud.run4ravish.workers.dev/" target="_blank" rel="noopener noreferrer" className="text-[#FF7A1A] font-bold">Velora Website</a>.</p>
                 </div>
               )}
               {(activeModal==="Privacy" || activeModal==="Privacy Policy") && (
                 <div>
-                  <h1 className="text-[20px] font-bold text-black dark:text-white mb-2">Privacy Policy - Velora</h1>
+                  <h2 className="text-[20px] font-bold text-black dark:text-white mb-2">Privacy Policy - Velora</h2>
                   <p className="text-[12px] opacity-60 mb-3">Last Updated: November 06, 2026</p>
                   <p className="mb-3">At <strong>Velora</strong>, we respect your privacy. This policy explains how we handle information on Velora website and our products like <strong>Lorem Pro Tool</strong> - 26+ free online tools, <strong>ImgBazar</strong> & <strong>Bazaru</strong>. <strong>Velora is a Digital Product Lab founded by Yadav Ravish</strong> that builds websites, SaaS, AI tools, boilerplates, and creator utilities.</p>
-                  <h2 className="text-[16px] font-bold text-black dark:text-white mt-4 mb-1">1. Data Collection</h2>
+                  <h3 className="text-[16px] font-bold text-black dark:text-white mt-4 mb-1">1. Data Collection</h3>
                   <p className="mb-3">We do not collect, store, or ask for any personal data. No login, no signup, no email required. You can use all our tools directly. Your input stays in your browser only.</p>
-                  <h2 className="text-[16px] font-bold text-black dark:text-white mt-4 mb-1">2. Processing</h2>
+                  <h3 className="text-[16px] font-bold text-black dark:text-white mt-4 mb-1">2. Processing</h3>
                   <p className="mb-3">All text generation, calculations, and tool processing happens 100% inside your browser. It is not sent to or saved on our servers.</p>
-                  <h2 className="text-[16px] font-bold text-black dark:text-white mt-4 mb-1">3. Cookies & Analytics</h2>
+                  <h3 className="text-[16px] font-bold text-black dark:text-white mt-4 mb-1">3. Cookies & Analytics</h3>
                   <p className="mb-3">We use privacy-friendly analytics like Google Analytics to understand total visitors and improve our products. We do not track personal identity.</p>
-                  <h2 className="text-[16px] font-bold text-black dark:text-white mt-4 mb-1">4. AdSense & Third Parties</h2>
+                  <h3 className="text-[16px] font-bold text-black dark:text-white mt-4 mb-1">4. AdSense & Third Parties</h3>
                   <p className="mb-3">Google AdSense may use cookies to show relevant ads. You can manage ad personalization in your Google Ad Settings. Google&apos;s DART cookie may be used to serve ads based on your visit.</p>
-                  <h2 className="text-[16px] font-bold text-black dark:text-white mt-4 mb-1">5. Contact Us</h2>
+                  <h3 className="text-[16px] font-bold text-black dark:text-white mt-4 mb-1">5. Contact Us</h3>
                   <p>If you have any questions about this Privacy Policy, contact us at <strong>hello@velora.dev</strong> or visit <a href="https://velora-cloud.run4ravish.workers.dev/" target="_blank" rel="noopener noreferrer" className="text-[#FF7A1A] font-bold">velora-cloud.run4ravish.workers.dev</a></p>
                 </div>
               )}
               {(activeModal==="Terms" || activeModal==="Terms & Conditions" || activeModal==="Terms and Conditions") && (
                 <div>
-                  <h1 className="text-[20px] font-bold text-black dark:text-white mb-2">Terms & Conditions - Velora</h1>
+                  <h2 className="text-[20px] font-bold text-black dark:text-white mb-2">Terms & Conditions - Velora</h2>
                   <p className="text-[12px] opacity-60 mb-3">Last Updated: November 06, 2026</p>
                   <p className="mb-3">Welcome to <strong>Velora</strong>. By using our website <a href="https://velora-cloud.run4ravish.workers.dev/" target="_blank" rel="noopener noreferrer" className="text-[#FF7A1A] font-bold">velora-cloud.run4ravish.workers.dev</a> and our products like <strong>Lorem Pro Tool, ImgBazar & Bazaru</strong>, you agree to these Terms & Conditions. <strong>Velora is a Digital Product Lab founded by Yadav Ravish</strong> that engineers websites, web apps, SaaS products, AI tools, boilerplates, image hosting, e-commerce and free online tools. Please read these terms carefully.</p>
-                  <h2 className="text-[16px] font-bold text-black dark:text-white mt-4 mb-1">1. Acceptance of Terms</h2>
+                  <h3 className="text-[16px] font-bold text-black dark:text-white mt-4 mb-1">1. Acceptance of Terms</h3>
                   <p className="mb-3">By accessing Velora website or using Lorem Pro Tool, ImgBazar, Bazaru and other Velora products, you agree to follow these terms. If you do not agree, please do not use our website or services.</p>
-                  <h2 className="text-[16px] font-bold text-black dark:text-white mt-4 mb-1">2. Use of Our Services</h2>
+                  <h3 className="text-[16px] font-bold text-black dark:text-white mt-4 mb-1">2. Use of Our Services</h3>
                   <p className="mb-3">You can use our free tools like Word Counter, SIP Calculator, Lorem Ipsum Generator, YouTube Thumbnail Downloader, and AI Detector for personal, educational, and commercial purposes. You agree NOT to use our tools for any illegal, harmful, fraudulent, or abusive activity.</p>
-                  <h2 className="text-[16px] font-bold text-black dark:text-white mt-4 mb-1">3. Intellectual Property</h2>
+                  <h3 className="text-[16px] font-bold text-black dark:text-white mt-4 mb-1">3. Intellectual Property</h3>
                   <p className="mb-3">All content, design, logo, code, boilerplates, and tools on Velora website are owned by Velora. You cannot copy, resell, or claim our Velora logo, brand name, or source code as your own without written permission from Yadav Ravish.</p>
-                  <h2 className="text-[16px] font-bold text-black dark:text-white mt-4 mb-1">4. Client Projects & Services</h2>
+                  <h3 className="text-[16px] font-bold text-black dark:text-white mt-4 mb-1">4. Client Projects & Services</h3>
                   <p className="mb-3">If you hire Velora for website development, SaaS development, AI tool, image hosting, e-commerce or boilerplate development, project timeline, price, and delivery will be discussed on email before starting work. Advance payment may be required for custom projects. Once delivered, client is responsible for maintaining their own website unless maintenance plan is taken.</p>
-                  <h2 className="text-[16px] font-bold text-black dark:text-white mt-4 mb-1">5. Free Tools - No Warranty</h2>
+                  <h3 className="text-[16px] font-bold text-black dark:text-white mt-4 mb-1">5. Free Tools - No Warranty</h3>
                   <p className="mb-3">All free tools are provided AS IS, without any warranty. Finance calculators like SIP, FD, Income Tax Calculator give only estimates. Velora is not responsible for any financial loss based on these estimates.</p>
-                  <h2 className="text-[16px] font-bold text-black dark:text-white mt-4 mb-1">6. Limitation of Liability</h2>
+                  <h3 className="text-[16px] font-bold text-black dark:text-white mt-4 mb-1">6. Limitation of Liability</h3>
                   <p className="mb-3">Velora, Lorem Pro Tool, ImgBazar, Bazaru and founder Yadav Ravish shall not be liable for any direct, indirect, or consequential loss or damage arising from use of our website, tools, or services.</p>
-                  <h2 className="text-[16px] font-bold text-black dark:text-white mt-4 mb-1">7. Changes To Terms</h2>
+                  <h3 className="text-[16px] font-bold text-black dark:text-white mt-4 mb-1">7. Changes To Terms</h3>
                   <p className="mb-3">Velora may update these Terms & Conditions at any time to reflect new products, services, or legal requirements. Updated terms will be shown on this page with new date.</p>
-                  <h2 className="text-[16px] font-bold text-black dark:text-white mt-4 mb-1">8. Contact Us</h2>
+                  <h3 className="text-[16px] font-bold text-black dark:text-white mt-4 mb-1">8. Contact Us</h3>
                   <p>If you have any questions about these Terms, contact us at <strong>hello@velora.dev</strong> or visit <a href="https://velora-cloud.run4ravish.workers.dev/" target="_blank" rel="noopener noreferrer" className="text-[#FF7A1A] font-bold">velora-cloud.run4ravish.workers.dev</a>. Thank you for using Velora.</p>
                 </div>
               )}
